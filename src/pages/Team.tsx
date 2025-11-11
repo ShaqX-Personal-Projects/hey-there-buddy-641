@@ -19,8 +19,14 @@ const Team = () => {
               <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src={member.portrait}
+                  srcSet={`${member.portrait} 1x, ${member.portrait} 2x`}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   alt={member.name}
+                  width={600}
+                  height={800}
                   className="w-full h-full object-cover bw-image hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <CardHeader>
