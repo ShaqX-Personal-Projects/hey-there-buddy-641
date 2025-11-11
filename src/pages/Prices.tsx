@@ -1,11 +1,29 @@
+import { useState, useEffect } from "react";
 import CTAButton from "@/components/CTAButton";
 import SectionHeading from "@/components/SectionHeading";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { pricesPageData } from "@/data/prices";
 import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Prices = () => {
   const { dict } = useLanguage();
+  const [openSection, setOpenSection] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("prices-open-section") || "item-0";
+    }
+    return "item-0";
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("prices-open-section", openSection);
+    }
+  }, [openSection]);
 
   return (
     <div className="py-20 px-4">
@@ -16,15 +34,29 @@ const Prices = () => {
           subtitle={dict.prices.subtitle}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <Accordion 
+          type="single" 
+          collapsible 
+          value={openSection}
+          onValueChange={setOpenSection}
+          className="space-y-4 mb-12"
+        >
           {pricesPageData.categories.map((category, index) => (
-            <Card key={index} className="border-gold/20">
-              <CardHeader>
-                <CardTitle className="font-playfair text-2xl">{category.category}</CardTitle>
-                <CardDescription className="font-inter">{dict.prices.startingPrices}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
+            <AccordionItem 
+              key={index} 
+              value={`item-${index}`}
+              className="border border-gold/20 rounded-2xl overflow-hidden bg-card"
+            >
+              <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-muted/30 transition-colors">
+                <div className="text-left">
+                  <h3 className="font-playfair text-2xl font-semibold">{category.category}</h3>
+                  <p className="font-inter text-sm text-muted-foreground mt-1">
+                    {dict.prices.startingPrices}
+                  </p>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
+                <div className="space-y-4 pt-2">
                   {category.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="space-y-1">
                       <div className="flex justify-between items-baseline gap-4">
@@ -48,10 +80,10 @@ const Prices = () => {
                     </div>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
 
         <div className="bg-muted/30 rounded-2xl p-8 mb-12">
           <h3 className="text-xl font-playfair font-semibold mb-4 text-center">

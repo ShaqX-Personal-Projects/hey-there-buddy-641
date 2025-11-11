@@ -3,7 +3,7 @@ import { PricesPageData } from "@/types/cms";
 export const pricesPageData: PricesPageData = {
   categories: [
     {
-      category: "Herreservice",
+      category: "Herre Klip",
       items: [
         { name: "Herreklip", duration: 30, fromPriceDKK: 200, description: "En \"All Around\" klipning" },
         { name: "Skinfade", duration: 30, fromPriceDKK: 200, description: "Her fokuser vi kun på skinfade" },
