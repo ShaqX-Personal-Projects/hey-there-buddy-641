@@ -25,9 +25,16 @@ const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
       </AnimatePresence>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isLoading ? 0 : 1 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ 
+          opacity: isLoading ? 0 : 1,
+          scale: isLoading ? 0.98 : 1
+        }}
+        transition={{ 
+          duration: 0.8, 
+          delay: 0.2,
+          ease: [0.43, 0.13, 0.23, 0.96]
+        }}
       >
         {children}
       </motion.div>

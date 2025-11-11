@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const LoadingScreen = () => {
   const [text, setText] = useState("");
-  const fullText = "Initiating Luxury Experience";
+  const fullText = "Initializing Interface";
 
   useEffect(() => {
     let index = 0;
@@ -14,192 +14,157 @@ const LoadingScreen = () => {
       } else {
         clearInterval(timer);
       }
-    }, 50);
+    }, 60);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 1.05 }}
-      transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
-      style={{
-        background: "radial-gradient(ellipse at center, hsl(var(--background)) 0%, hsl(0 0% 0%) 100%)",
-      }}
-    >
-      {/* Animated gradient mesh background */}
+    <>
+      {/* Split panels for box-opening animation */}
       <motion.div
-        animate={{
-          opacity: [0.3, 0.5, 0.3],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: "radial-gradient(circle at 20% 50%, hsl(var(--gold) / 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 50%, hsl(var(--gold) / 0.1) 0%, transparent 50%)",
-        }}
+        initial={{ x: 0 }}
+        exit={{ x: "-100%" }}
+        transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="fixed inset-y-0 left-0 w-1/2 z-50 bg-background border-r border-gold/10"
+      />
+      <motion.div
+        initial={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="fixed inset-y-0 right-0 w-1/2 z-50 bg-background border-l border-gold/10"
       />
 
-      {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 rounded-full bg-gold"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            opacity: 0,
-          }}
-          animate={{
-            y: [null, Math.random() * window.innerHeight],
-            opacity: [0, 0.6, 0],
-          }}
-          transition={{
-            duration: Math.random() * 3 + 3,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-            ease: "linear",
-          }}
-        />
-      ))}
-
-      {/* Glass container */}
+      {/* Main loading content */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative z-10 px-12 py-16 rounded-3xl backdrop-blur-2xl border border-gold/20"
+        initial={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, hsl(var(--background) / 0.1) 0%, hsl(var(--background) / 0.05) 100%)",
-          boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 0 60px 0 hsl(var(--gold) / 0.05)",
+          background: "linear-gradient(135deg, hsl(var(--background)) 0%, hsl(0 0% 3%) 100%)",
         }}
       >
-        <div className="flex flex-col items-center gap-8">
-          {/* Logo with shimmer effect */}
+        {/* Subtle texture overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"/%3E')",
+            backgroundSize: "100px 100px",
+          }}
+        />
+
+        {/* Minimal geometric accent lines */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
+          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"
+        />
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
+          className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"
+        />
+
+        {/* Center content */}
+        <div className="relative z-10 flex flex-col items-center gap-12 px-6">
+          {/* Logo/Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-center relative"
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.43, 0.13, 0.23, 0.96] }}
+            className="text-center"
           >
-            <motion.div
-              animate={{
-                opacity: [0.4, 1, 0.4],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute inset-0 blur-xl bg-gold/20 rounded-full"
-            />
-            <h1 className="text-4xl md:text-6xl font-playfair text-foreground mb-3 relative z-10">
-              <motion.span
-                animate={{
-                  textShadow: [
-                    "0 0 10px hsl(var(--gold) / 0.5)",
-                    "0 0 20px hsl(var(--gold) / 0.8)",
-                    "0 0 10px hsl(var(--gold) / 0.5)",
-                  ],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              >
-                Hair by Gashi
-              </motion.span>
+            <h1 className="text-5xl md:text-7xl font-playfair text-foreground tracking-tight mb-4">
+              Hair by Gashi
             </h1>
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-gold to-transparent"
+              transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
+              className="h-px w-64 mx-auto bg-gradient-to-r from-transparent via-gold to-transparent"
             />
           </motion.div>
 
-          {/* Typewriter text */}
+          {/* Progress indicator - minimal geometric */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="text-center"
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex flex-col items-center gap-4"
           >
-            <p className="text-sm md:text-base font-inter text-muted-foreground tracking-wider">
-              {text}
-              <motion.span
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-                className="inline-block ml-1"
-              >
-                |
-              </motion.span>
-            </p>
-          </motion.div>
-
-          {/* Animated progress dots */}
-          <div className="flex gap-3">
-            {[0, 1, 2, 3, 4].map((index) => (
+            {/* Animated line */}
+            <div className="relative w-48 h-px bg-border overflow-hidden">
               <motion.div
-                key={index}
-                initial={{ opacity: 0.2, scale: 0.8 }}
                 animate={{
-                  opacity: [0.2, 1, 0.2],
-                  scale: [0.8, 1.2, 0.8],
-                  boxShadow: [
-                    "0 0 0px hsl(var(--gold) / 0.5)",
-                    "0 0 15px hsl(var(--gold) / 0.8)",
-                    "0 0 0px hsl(var(--gold) / 0.5)",
-                  ],
+                  x: ["-100%", "100%"],
                 }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
-                  delay: index * 0.15,
                   ease: "easeInOut",
                 }}
-                className="w-2 h-2 rounded-full bg-gold"
+                className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-gold to-transparent"
               />
-            ))}
-          </div>
+            </div>
 
-          {/* Scanning line effect */}
-          <motion.div
-            animate={{
-              scaleX: [0, 1, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="w-64 h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"
-          />
+            {/* Minimal dots */}
+            <div className="flex gap-2">
+              {[0, 1, 2].map((index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0.2 }}
+                  animate={{
+                    opacity: [0.2, 1, 0.2],
+                  }}
+                  transition={{
+                    duration: 1.2,
+                    repeat: Infinity,
+                    delay: index * 0.2,
+                    ease: "easeInOut",
+                  }}
+                  className="w-1.5 h-1.5 bg-gold"
+                />
+              ))}
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
 
-      {/* Corner accents */}
-      {["top-left", "top-right", "bottom-left", "bottom-right"].map((corner) => (
+        {/* Corner status text - optional typewriter */}
         <motion.div
-          key={corner}
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className={`absolute w-20 h-20 border-gold/40 ${
-            corner.includes("top") ? "border-t-2" : "border-b-2"
-          } ${corner.includes("left") ? "border-l-2 left-8" : "border-r-2 right-8"} ${
-            corner.includes("top") ? "top-8" : "bottom-8"
-          }`}
-        />
-      ))}
-    </motion.div>
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="absolute bottom-8 left-8 text-xs font-inter text-muted-foreground tracking-widest uppercase"
+        >
+          {text}
+          <motion.span
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ duration: 0.8, repeat: Infinity }}
+            className="inline-block ml-1"
+          >
+            _
+          </motion.span>
+        </motion.div>
+
+        {/* Minimal corner accents */}
+        {["top-left", "top-right", "bottom-left", "bottom-right"].map((corner) => (
+          <motion.div
+            key={corner}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className={`absolute w-12 h-12 border-gold/20 ${
+              corner.includes("top") ? "border-t" : "border-b"
+            } ${corner.includes("left") ? "border-l left-6" : "border-r right-6"} ${
+              corner.includes("top") ? "top-6" : "bottom-6"
+            }`}
+          />
+        ))}
+      </motion.div>
+    </>
   );
 };
 
