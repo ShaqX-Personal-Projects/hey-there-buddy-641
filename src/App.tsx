@@ -23,9 +23,9 @@ const App = () => (
     <ThemeProvider>
       <LanguageProvider>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
           <BrowserRouter>
+            <Toaster />
+            <Sonner />
             <Layout>
               <Routes>
                 <Route path="/" element={<Index />} />

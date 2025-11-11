@@ -44,14 +44,20 @@
   <body>
     <script>
       (function() {
-        const storedTheme = localStorage.getItem('theme') || 'system';
-        let effectiveTheme = storedTheme;
-        if (storedTheme === 'system') {
-          effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        try {
+          const storedTheme = localStorage.getItem('theme') || 'system';
+          let effectiveTheme = storedTheme;
+          if (storedTheme === 'system') {
+            effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.classList.add(effectiveTheme);
+          const storedLang = localStorage.getItem('language') || 'da';
+          document.documentElement.lang = storedLang;
+        } catch (e) {
+          // Fallback: just set defaults
+          document.documentElement.classList.add('light');
+          document.documentElement.lang = 'da';
         }
-        document.documentElement.classList.add(effectiveTheme);
-        const storedLang = localStorage.getItem('language') || 'da';
-        document.documentElement.lang = storedLang;
       })();
     </script>
     <div id="root"></div>
