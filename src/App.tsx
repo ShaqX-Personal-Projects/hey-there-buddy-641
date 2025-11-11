@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import Treatments from "./pages/Treatments";
@@ -18,25 +20,29 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/treatments" element={<Treatments />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/philosophy" element={<Philosophy />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/prices" element={<Prices />} />
-            <Route path="/booking" element={<Booking />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </TooltipProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/treatments" element={<Treatments />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/philosophy" element={<Philosophy />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/prices" element={<Prices />} />
+                <Route path="/booking" element={<Booking />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </BrowserRouter>
+        </TooltipProvider>
+      </LanguageProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

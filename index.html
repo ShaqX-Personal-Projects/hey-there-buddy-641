@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,6 +42,18 @@
   </head>
 
   <body>
+    <script>
+      (function() {
+        const storedTheme = localStorage.getItem('theme') || 'system';
+        let effectiveTheme = storedTheme;
+        if (storedTheme === 'system') {
+          effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.classList.add(effectiveTheme);
+        const storedLang = localStorage.getItem('language') || 'da';
+        document.documentElement.lang = storedLang;
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

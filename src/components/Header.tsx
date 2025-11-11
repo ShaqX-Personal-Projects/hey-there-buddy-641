@@ -3,11 +3,26 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { NavLink } from "./NavLink";
+import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { globalSettings } from "@/data/globals";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { logo, navLinks, primaryCTA } = globalSettings;
+  const { dict } = useLanguage();
+  const { logo, primaryCTA } = globalSettings;
+
+  const navLinks = [
+    { to: "/", label: dict.nav.home },
+    { to: "/treatments", label: dict.nav.treatments },
+    { to: "/gallery", label: dict.nav.gallery },
+    { to: "/philosophy", label: dict.nav.philosophy },
+    { to: "/team", label: dict.nav.team },
+    { to: "/prices", label: dict.nav.prices },
+    { to: "/booking", label: dict.nav.booking },
+    { to: "/contact", label: dict.nav.contact },
+  ];
 
   return (
     <header className="sticky top-0 z-50 glass-effect">
@@ -32,14 +47,16 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:block">
+          {/* Desktop Controls */}
+          <div className="hidden lg:flex items-center gap-2">
+            <ThemeToggle />
+            <LanguageSwitcher />
             <Button
               asChild
-              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
+              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium ml-2"
             >
               <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
-                {primaryCTA.label}
+                {dict.cta.bookAppointment}
               </a>
             </Button>
           </div>
@@ -70,12 +87,16 @@ const Header = () => {
                 {link.label}
               </NavLink>
             ))}
+            <div className="flex items-center gap-2 mt-2 pb-2 border-b border-gold/20">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </div>
             <Button
               asChild
-              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium mt-2"
+              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
             >
               <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
-                {primaryCTA.label}
+                {dict.cta.bookAppointment}
               </a>
             </Button>
           </nav>

@@ -1,0 +1,363 @@
+export const dictionaries = {
+  da: {
+    nav: {
+      home: "Hjem",
+      treatments: "Behandlinger",
+      gallery: "Galleri",
+      philosophy: "Filosofi",
+      team: "Team",
+      prices: "Priser",
+      booking: "Booking",
+      contact: "Kontakt",
+    },
+    cta: {
+      bookAppointment: "Book Tid",
+      bookConsultation: "Book Konsultation",
+      viewGallery: "Se Fuld Galleri",
+      contactUs: "Kontakt Os",
+    },
+    home: {
+      eyebrow: "Eksklusiv Frisør",
+      h1: "Ren, diskret luksus til dit hår",
+      subtext: "Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser. Minimalistisk, kompromisløs med fokus på upåklagelig finish.",
+      trustChips: {
+        handpicked: "Håndplukkede produkter",
+        luxury: "Diskret luksusindstilling",
+        aesthetic: "Sort/hvid æstetik",
+        best: "For dem der vil have det bedste",
+      },
+      featuredWork: {
+        title: "Udvalgt Arbejde",
+        subtitle: "Et udvalg af vores seneste kreationer, der viser præcision og håndværk",
+      },
+      ctaSection: {
+        heading: "Klar til at opleve ekspertise?",
+        subtext: "Book din tid i dag og oplev kunsten ved skræddersyet luksushårpleje.",
+      },
+    },
+    treatments: {
+      eyebrow: "Services",
+      title: "Behandlinger",
+      subtitle: "Hver service begynder med en personlig konsultation og farveanalyse",
+      precisionCut: {
+        name: "Præcisions Klipning",
+        blurb: "Skulpturel klipning med rene linjer og skræddersyet finish. Hver klipning er designet til at komplementere dine naturlige træk og livsstil.",
+      },
+      coutureColor: {
+        name: "Couture Farve",
+        blurb: "Flerdimensionelle toner med dybde og glans. Bruger premium farveteknikker for resultater der udstråler sofistikation.",
+      },
+      blowDry: {
+        name: "Røde Løber Føntørring",
+        blurb: "Poleret, fotoklar styling til særlige lejligheder. Upåklagelig finish med langtidsholdbar hold og strålende glans.",
+      },
+      note: "Priserne er vejledende. Endelig pris bekræftes efter konsultation.",
+    },
+    gallery: {
+      eyebrow: "Portfolio",
+      title: "Galleri",
+      subtitle: "En fremvisning af vores arbejde — præcision, håndværk og kompromisløs finish",
+    },
+    philosophy: {
+      eyebrow: "Vores Tilgang",
+      title: "Filosofi",
+      body1: "Vi kombinerer moderne teknik med klassisk smag. Hver session er rolig, fokuseret og kompromisløs—for et resultat der taler stille og rækker langt.",
+      body2: "Hos Hair by Gashi handler luksus ikke om overdrivelse. Det handler om præcision, opmærksomhed på detaljer og en dyb forståelse for hvordan hår skal bevæge sig, skinne og komplementere din naturlige skønhed.",
+      body3: "Hver aftale er privat, uskyndet og skræddersyet til dig. Vi arbejder med de fineste produkter og teknikker og skaber resultater der er både moderne og tidløse.",
+      strip: {
+        heading: "Private aftaler",
+        text: "Oplev diskret luksus i vores rolige københavnske setting. Kun efter aftale.",
+      },
+      values: {
+        precision: {
+          title: "Præcision",
+          description: "Hver klipning, hver farve, udført med omhyggelig opmærksomhed på detaljer og teknisk ekspertise.",
+        },
+        discretion: {
+          title: "Diskretion",
+          description: "Private aftaler i et roligt miljø hvor du kan slappe af og stole helt på processen.",
+        },
+        excellence: {
+          title: "Ekspertise",
+          description: "Kompromisløse standarder i produkter, teknik og service. Luksus der taler for sig selv.",
+        },
+      },
+    },
+    contact: {
+      eyebrow: "Kom i Kontakt",
+      title: "Kontakt",
+      subtitle: "Vi vil elske at høre fra dig",
+      form: {
+        name: "Navn",
+        email: "E-mail",
+        message: "Besked",
+        messagePlaceholder: "Fortæl os om dine hårmål...",
+        submit: "Send Besked",
+        sending: "Sender...",
+        success: "Besked sendt",
+        successDescription: "Tak fordi du kontaktede os. Vi svarer inden for 24 timer.",
+      },
+      location: "Beliggenhed",
+      area: "København, Danmark",
+      byAppointment: "Kun efter aftale",
+      hours: {
+        title: "Åbningstider",
+        text: "Vi opererer kun efter aftale for at sikre en privat, uskyndet oplevelse.",
+        note: "Book din konsultation for at diskutere tilgængelighed",
+      },
+    },
+    booking: {
+      eyebrow: "Planlæg",
+      title: "Book Din Tid",
+      subtitle: "Oplev eksklusiv luksushårpleje i København",
+      ctaSubtext: "Klik på knappen ovenfor for at få adgang til vores bookingsystem",
+      policies: {
+        appointment: {
+          title: "Aftalepolitik",
+          description: "Bemærk venligst vores bookingretningslinjer",
+          points: [
+            "Kun efter aftale — Vi opererer på privat aftalebasis for at sikre din fulde komfort og privatliv.",
+            "Konsultation inkluderet — Hver service begynder med en personlig konsultation og farveanalyse.",
+            "Premium tidsblokke — Vi afsætter tilstrækkelig tid til hver aftale for at garantere en uskyndet, exceptionel oplevelse.",
+          ],
+        },
+        cancellation: {
+          title: "Aflysnin gspolitik",
+          description: "Vi beder venligst om din hensynsfuldhed",
+          points: [
+            "48 timers varsel påkrævet — Giv venligst mindst 48 timers varsel ved aflysninger eller ændringer.",
+            "Sen aflysning — Aflysninger med mindre end 48 timers varsel kan medføre et gebyr på 50% af serviceprisen.",
+            "Udeblivelsespolitik — Missede aftaler uden varsel vil blive opkrævet 100% af serviceprisen.",
+          ],
+        },
+      },
+      contactNote: "For spørgsmål vedrørende booking eller vores politikker, venligst",
+      contactLink: "kontakt os",
+    },
+    prices: {
+      eyebrow: "Investering",
+      title: "Priser",
+      subtitle: "Hver service begynder med en personlig konsultation og farveanalyse",
+      categories: {
+        cuts: "Klipninger",
+        colour: "Farve",
+        styling: "Styling",
+        treatments: "Behandlinger",
+      },
+      startingPrices: "Startpriser",
+      note: {
+        title: "Vigtig Information",
+        points: [
+          "Alle priser er vejledende og afhænger af bekræftelse efter konsultation",
+          "Endelig pris afhænger af hårlængde, tæthed og tilstand",
+          "Vi bruger kun premium produkter og avancerede teknikker",
+          "Gratis konsultation inkluderet i alle farveservices",
+          "Depositum påkrævet for bookinger over 2.000 DKK",
+        ],
+      },
+    },
+    team: {
+      eyebrow: "Mød Vores Team",
+      title: "Team",
+      subtitle: "Dedikerede professionelle forpligtet til ekspertise i hver detalje",
+      specialties: "Specialer:",
+      joinTeam: {
+        heading: "Bliv en Del af Vores Team",
+        text: "Vi leder altid efter talentfulde professionelle der deler vores passion for ekspertise og luksushårpleje.",
+        link: "Kontakt os om muligheder",
+      },
+    },
+    footer: {
+      summary: "Ren, diskret luksushårpleje i København. Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser.",
+      navigation: "Navigation",
+      bookSection: {
+        title: "Book Din Tid",
+        text: "Oplev eksklusiv luksushårpleje. Kun efter aftale.",
+        cta: "Book Nu",
+      },
+      copyright: "Alle rettigheder forbeholdes.",
+    },
+  },
+  en: {
+    nav: {
+      home: "Home",
+      treatments: "Treatments",
+      gallery: "Gallery",
+      philosophy: "Philosophy",
+      team: "Team",
+      prices: "Prices",
+      booking: "Booking",
+      contact: "Contact",
+    },
+    cta: {
+      bookAppointment: "Book Appointment",
+      bookConsultation: "Book Consultation",
+      viewGallery: "View Full Gallery",
+      contactUs: "Contact Us",
+    },
+    home: {
+      eyebrow: "Exclusive Hairdresser",
+      h1: "Pure, understated luxury for your hair",
+      subtext: "Tailor-made treatments, couture color and precision cuts in serene surroundings. Minimal, uncompromising, with a focus on immaculate finish.",
+      trustChips: {
+        handpicked: "Hand-picked products",
+        luxury: "Discreet luxury setting",
+        aesthetic: "Black/white aesthetic",
+        best: "For those who want the best",
+      },
+      featuredWork: {
+        title: "Featured Work",
+        subtitle: "A selection of our recent creations, showcasing precision and artistry",
+      },
+      ctaSection: {
+        heading: "Ready to experience excellence?",
+        subtext: "Book your appointment today and discover the art of tailored luxury haircare.",
+      },
+    },
+    treatments: {
+      eyebrow: "Services",
+      title: "Treatments",
+      subtitle: "Every service begins with a personal consultation and color analysis",
+      precisionCut: {
+        name: "Precision Cut",
+        blurb: "Sculptural cutting with clean lines and a tailored finish. Each cut is designed to complement your natural features and lifestyle.",
+      },
+      coutureColor: {
+        name: "Couture Colour",
+        blurb: "Multi-dimensional tones with depth and shine. Using premium color techniques for results that speak sophistication.",
+      },
+      blowDry: {
+        name: "Red-Carpet Blow-Dry",
+        blurb: "Polished, photo-ready styling for special occasions. Immaculate finish with long-lasting hold and radiant shine.",
+      },
+      note: "Prices are indicative. Final price is confirmed after consultation.",
+    },
+    gallery: {
+      eyebrow: "Portfolio",
+      title: "Gallery",
+      subtitle: "A showcase of our work — precision, artistry, and uncompromising finish",
+    },
+    philosophy: {
+      eyebrow: "Our Approach",
+      title: "Philosophy",
+      body1: "We combine modern technique with classic taste. Each session is calm, focused and uncompromising—for a result that speaks softly and carries far.",
+      body2: "At Hair by Gashi, luxury is not about excess. It's about precision, attention to detail, and a deep understanding of how hair should move, shine, and complement your natural beauty.",
+      body3: "Every appointment is private, unhurried, and tailored to you. We work with the finest products and techniques, creating results that are both contemporary and timeless.",
+      strip: {
+        heading: "Private appointments",
+        text: "Experience discreet luxury in our serene Copenhagen setting. By appointment only.",
+      },
+      values: {
+        precision: {
+          title: "Precision",
+          description: "Every cut, every color, executed with meticulous attention to detail and technical excellence.",
+        },
+        discretion: {
+          title: "Discretion",
+          description: "Private appointments in a calm environment where you can relax and trust the process completely.",
+        },
+        excellence: {
+          title: "Excellence",
+          description: "Uncompromising standards in products, technique, and service. Luxury that speaks for itself.",
+        },
+      },
+    },
+    contact: {
+      eyebrow: "Get in Touch",
+      title: "Contact",
+      subtitle: "We'd love to hear from you",
+      form: {
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        messagePlaceholder: "Tell us about your hair goals...",
+        submit: "Send Message",
+        sending: "Sending...",
+        success: "Message sent",
+        successDescription: "Thank you for contacting us. We'll respond within 24 hours.",
+      },
+      location: "Location",
+      area: "Copenhagen, Denmark",
+      byAppointment: "By appointment only",
+      hours: {
+        title: "Hours",
+        text: "We operate by appointment only to ensure a private, unhurried experience.",
+        note: "Book your consultation to discuss availability",
+      },
+    },
+    booking: {
+      eyebrow: "Schedule",
+      title: "Book Your Appointment",
+      subtitle: "Experience exclusive luxury haircare in Copenhagen",
+      ctaSubtext: "Click the button above to access our booking system",
+      policies: {
+        appointment: {
+          title: "Appointment Policy",
+          description: "Please note our booking guidelines",
+          points: [
+            "By appointment only — We operate on a private appointment basis to ensure your complete comfort and privacy.",
+            "Consultation included — Every service begins with a personal consultation and color analysis.",
+            "Premium time blocks — We allocate sufficient time for each appointment to guarantee an unhurried, exceptional experience.",
+          ],
+        },
+        cancellation: {
+          title: "Cancellation Policy",
+          description: "We kindly ask for your consideration",
+          points: [
+            "48-hour notice required — Please provide at least 48 hours' notice for cancellations or rescheduling.",
+            "Late cancellations — Cancellations with less than 48 hours' notice may incur a fee of 50% of the service price.",
+            "No-show policy — Missed appointments without notice will be charged at 100% of the service price.",
+          ],
+        },
+      },
+      contactNote: "For any questions regarding booking or our policies, please",
+      contactLink: "contact us",
+    },
+    prices: {
+      eyebrow: "Investment",
+      title: "Prices",
+      subtitle: "Every service begins with a personal consultation and color analysis",
+      categories: {
+        cuts: "Cuts",
+        colour: "Colour",
+        styling: "Styling",
+        treatments: "Treatments",
+      },
+      startingPrices: "Starting prices",
+      note: {
+        title: "Important Information",
+        points: [
+          "All prices are indicative and subject to confirmation after consultation",
+          "Final pricing depends on hair length, density, and condition",
+          "We use only premium products and advanced techniques",
+          "Complimentary consultation included with all color services",
+          "Deposit required for bookings over 2,000 DKK",
+        ],
+      },
+    },
+    team: {
+      eyebrow: "Meet Our Team",
+      title: "Team",
+      subtitle: "Dedicated professionals committed to excellence in every detail",
+      specialties: "Specialties:",
+      joinTeam: {
+        heading: "Join Our Team",
+        text: "We're always looking for talented professionals who share our passion for excellence and luxury haircare.",
+        link: "Contact us about opportunities",
+      },
+    },
+    footer: {
+      summary: "Pure, understated luxury haircare in Copenhagen. Tailor-made treatments, couture color and precision cuts in serene surroundings.",
+      navigation: "Navigation",
+      bookSection: {
+        title: "Book Your Appointment",
+        text: "Experience exclusive luxury haircare. By appointment only.",
+        cta: "Book Now",
+      },
+      copyright: "All rights reserved.",
+    },
+  },
+};
+
+export type Dictionary = typeof dictionaries.da;
+export type DictionaryKey = keyof Dictionary;

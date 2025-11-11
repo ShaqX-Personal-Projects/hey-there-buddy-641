@@ -5,14 +5,24 @@ import TrustChip from "@/components/TrustChip";
 import { Sparkles, Lock, Image, Award } from "lucide-react";
 import { homePageData } from "@/data/home";
 import { globalSettings } from "@/data/globals";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { dict } = useLanguage();
+  
   const iconMap: Record<string, any> = {
     Sparkles,
     Lock,
     Image,
     Award,
   };
+  
+  const trustChipsWithIcons = [
+    { text: dict.home.trustChips.handpicked, icon: "Sparkles" },
+    { text: dict.home.trustChips.luxury, icon: "Lock" },
+    { text: dict.home.trustChips.aesthetic, icon: "Image" },
+    { text: dict.home.trustChips.best, icon: "Award" },
+  ];
 
   return (
     <div>
@@ -20,16 +30,16 @@ const Index = () => {
       <section className="min-h-[90vh] flex items-center justify-center px-4 py-20">
         <div className="container mx-auto text-center max-w-4xl">
           <p className="eyebrow-text mb-6">
-            {homePageData.eyebrow}
+            {dict.home.eyebrow}
           </p>
           <h1 className="font-playfair font-semibold mb-6 text-foreground hero-title">
-            {homePageData.h1}
+            {dict.home.h1}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground font-inter mb-10 max-w-3xl mx-auto leading-relaxed">
-            {homePageData.subtext}
+            {dict.home.subtext}
           </p>
           <CTAButton href={globalSettings.primaryCTA.url}>
-            {globalSettings.primaryCTA.label}
+            {dict.cta.bookAppointment}
           </CTAButton>
         </div>
       </section>
@@ -38,7 +48,7 @@ const Index = () => {
       <section className="py-16 px-4" style={{ borderTop: '1px solid hsl(var(--gold) / 0.12)', borderBottom: '1px solid hsl(var(--gold) / 0.12)' }}>
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-            {homePageData.trustChips.map((chip, index) => {
+            {trustChipsWithIcons.map((chip, index) => {
               const IconComponent = chip.icon ? iconMap[chip.icon] : undefined;
               return (
                 <TrustChip
@@ -56,8 +66,8 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Featured Work"
-            subtitle="A selection of our recent creations, showcasing precision and artistry"
+            title={dict.home.featuredWork.title}
+            subtitle={dict.home.featuredWork.subtitle}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {homePageData.featuredWork.map((item, index) => (
@@ -72,7 +82,7 @@ const Index = () => {
           </div>
           <div className="text-center mt-12">
             <CTAButton href="/gallery" variant="secondary">
-              View Full Gallery
+              {dict.cta.viewGallery}
             </CTAButton>
           </div>
         </div>
@@ -82,13 +92,13 @@ const Index = () => {
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-6 text-foreground section-title">
-            {homePageData.ctaSection.heading}
+            {dict.home.ctaSection.heading}
           </h2>
           <p className="text-muted-foreground font-inter mb-8">
-            {homePageData.ctaSection.subtext}
+            {dict.home.ctaSection.subtext}
           </p>
           <CTAButton href={globalSettings.primaryCTA.url}>
-            {globalSettings.primaryCTA.label}
+            {dict.cta.bookAppointment}
           </CTAButton>
         </div>
       </section>
