@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const LoadingScreen = () => {
   const { dict } = useLanguage();
+  const { resolvedTheme } = useTheme();
   const [text, setText] = useState("");
   const fullText = dict.loading.message;
 
@@ -44,7 +46,9 @@ const LoadingScreen = () => {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, hsl(var(--background)) 0%, hsl(0 0% 3%) 100%)",
+          background: resolvedTheme === "light" 
+            ? "hsl(0 0% 100%)" 
+            : "linear-gradient(135deg, hsl(var(--background)) 0%, hsl(0 0% 3%) 100%)",
         }}
       >
         {/* Subtle texture overlay */}

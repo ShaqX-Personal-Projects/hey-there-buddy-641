@@ -1,4 +1,4 @@
-import { Moon, Sun, Monitor } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
@@ -18,13 +18,11 @@ export function ThemeToggle() {
       ariaLabel: "Skift tema",
       light: "Lys",
       dark: "Mørk",
-      system: "System",
     },
     en: {
       ariaLabel: "Change theme",
       light: "Light",
       dark: "Dark",
-      system: "System",
     },
   };
 
@@ -57,13 +55,6 @@ export function ThemeToggle() {
         >
           <Moon className="mr-2 h-4 w-4" />
           <span>{t.dark}</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => setTheme("system")}
-          className={theme === "system" ? "bg-muted" : ""}
-        >
-          <Monitor className="mr-2 h-4 w-4" />
-          <span>{t.system}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
