@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
+import { globalSettings } from "@/data/globals";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/treatments", label: "Treatments" },
-    { to: "/gallery", label: "Gallery" },
-    { to: "/philosophy", label: "Philosophy" },
-    { to: "/booking", label: "Booking" },
-    { to: "/contact", label: "Contact" },
-  ];
+  const { siteTitle, footerLinks, primaryCTA } = globalSettings;
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -19,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Summary */}
           <div>
-            <h3 className="text-2xl font-playfair font-semibold mb-4">Hair by Gashi</h3>
+            <h3 className="text-2xl font-playfair font-semibold mb-4">{siteTitle}</h3>
             <p className="text-primary-foreground/80 font-inter text-sm leading-relaxed">
               Pure, understated luxury haircare in Copenhagen. Tailor-made treatments, couture color 
               and precision cuts in serene surroundings.
@@ -30,7 +23,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-playfair font-semibold mb-4">Navigation</h4>
             <nav className="flex flex-col gap-3">
-              {navLinks.map((link) => (
+              {footerLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -53,8 +46,8 @@ const Footer = () => {
               variant="outline"
               className="border-gold text-primary-foreground hover:bg-gold hover:text-gold-foreground font-inter font-medium"
             >
-              <a href="https://www.hairbygashi.dk/" target="_blank" rel="noopener noreferrer">
-                Book Now
+              <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
+                {primaryCTA.label}
               </a>
             </Button>
           </div>
@@ -63,7 +56,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-primary-foreground/20 pt-8">
           <p className="text-center text-primary-foreground/60 font-inter text-sm">
-            © {currentYear} Hair by Gashi. All rights reserved.
+            © {currentYear} {siteTitle}. All rights reserved.
           </p>
         </div>
       </div>

@@ -3,20 +3,11 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { NavLink } from "./NavLink";
+import { globalSettings } from "@/data/globals";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/treatments", label: "Treatments" },
-    { to: "/gallery", label: "Gallery" },
-    { to: "/philosophy", label: "Philosophy" },
-    { to: "/team", label: "Team" },
-    { to: "/prices", label: "Prices" },
-    { to: "/booking", label: "Booking" },
-    { to: "/contact", label: "Contact" },
-  ];
+  const { logo, navLinks, primaryCTA } = globalSettings;
 
   return (
     <header className="sticky top-0 z-50 glass-effect border-b border-gold/20">
@@ -24,7 +15,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="text-2xl font-playfair font-semibold tracking-tight">
-            Hair by Gashi
+            {logo}
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,8 +38,8 @@ const Header = () => {
               asChild
               className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
             >
-              <a href="https://www.hairbygashi.dk/" target="_blank" rel="noopener noreferrer">
-                Book Appointment
+              <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
+                {primaryCTA.label}
               </a>
             </Button>
           </div>
@@ -83,8 +74,8 @@ const Header = () => {
               asChild
               className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium mt-2"
             >
-              <a href="https://www.hairbygashi.dk/" target="_blank" rel="noopener noreferrer">
-                Book Appointment
+              <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
+                {primaryCTA.label}
               </a>
             </Button>
           </nav>

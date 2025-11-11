@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import SectionHeading from "@/components/SectionHeading";
 import { MapPin, Mail } from "lucide-react";
+import { contactPageData } from "@/data/contact";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required").max(100),
@@ -54,7 +55,7 @@ const Contact = () => {
         <SectionHeading
           eyebrow="Get in Touch"
           title="Contact"
-          subtitle="We'd love to hear from you"
+          subtitle={contactPageData.introText}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -135,8 +136,12 @@ const Contact = () => {
                 <MapPin className="text-gold mt-1" size={24} />
                 <div>
                   <h3 className="text-xl font-playfair font-semibold mb-2">Location</h3>
-                  <p className="text-muted-foreground font-inter">Copenhagen, Denmark</p>
-                  <p className="text-sm text-gold font-inter mt-2">By appointment only</p>
+                  <p className="text-muted-foreground font-inter">
+                    {contactPageData.address.area}, {contactPageData.address.country}
+                  </p>
+                  {contactPageData.byAppointmentOnly && (
+                    <p className="text-sm text-gold font-inter mt-2">By appointment only</p>
+                  )}
                 </div>
               </div>
 
@@ -145,10 +150,10 @@ const Contact = () => {
                 <div>
                   <h3 className="text-xl font-playfair font-semibold mb-2">Email</h3>
                   <a
-                    href="mailto:info@hairbygashi.dk"
+                    href={`mailto:${contactPageData.email}`}
                     className="text-muted-foreground hover:text-gold font-inter transition-colors"
                   >
-                    info@hairbygashi.dk
+                    {contactPageData.email}
                   </a>
                 </div>
               </div>
@@ -157,10 +162,10 @@ const Contact = () => {
             <div className="bg-muted/30 rounded-2xl p-8">
               <h3 className="text-xl font-playfair font-semibold mb-4">Hours</h3>
               <p className="text-muted-foreground font-inter mb-2">
-                We operate by appointment only to ensure a private, unhurried experience.
+                {contactPageData.hours.text}
               </p>
               <p className="text-sm text-gold font-inter">
-                Book your consultation to discuss availability
+                {contactPageData.hours.note}
               </p>
             </div>
           </div>
