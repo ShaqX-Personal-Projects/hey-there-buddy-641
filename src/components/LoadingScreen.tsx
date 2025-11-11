@@ -142,13 +142,6 @@ const LoadingScreen = () => {
           className="absolute bottom-8 left-8 text-xs font-inter text-muted-foreground tracking-widest uppercase"
         >
           {text}
-          <motion.span
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 0.8, repeat: Infinity }}
-            className="inline-block ml-1"
-          >
-            _
-          </motion.span>
         </motion.div>
 
         {/* Minimal corner accents */}
