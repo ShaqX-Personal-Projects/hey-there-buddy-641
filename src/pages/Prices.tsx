@@ -26,11 +26,25 @@ const Prices = () => {
               <CardContent>
                 <div className="space-y-4">
                   {category.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex justify-between items-baseline">
-                      <span className="font-inter text-foreground">{item.name}</span>
-                      <span className="font-inter text-sm text-gold font-medium ml-4 price-figure">
-                        From {item.fromPriceDKK.toLocaleString()} DKK
-                      </span>
+                    <div key={itemIndex} className="space-y-1">
+                      <div className="flex justify-between items-baseline gap-4">
+                        <div className="flex-1">
+                          <div className="flex items-baseline gap-2 flex-wrap">
+                            <span className="font-inter text-foreground font-medium">{item.name}</span>
+                            <span className="font-inter text-xs text-muted-foreground">
+                              {item.duration} min.
+                            </span>
+                          </div>
+                        </div>
+                        <span className="font-inter text-sm text-gold font-medium whitespace-nowrap price-figure">
+                          fra {item.fromPriceDKK.toLocaleString()} kr
+                        </span>
+                      </div>
+                      {item.description && (
+                        <p className="font-inter text-xs text-muted-foreground leading-relaxed">
+                          {item.description}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>

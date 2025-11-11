@@ -120,7 +120,9 @@ export interface PriceCategory {
 
 export interface PriceItem {
   name: string;
+  duration: number; // in minutes
   fromPriceDKK: number;
+  description?: string;
 }
 
 // Booking page
