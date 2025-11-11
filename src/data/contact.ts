@@ -3,9 +3,11 @@ import { ContactPageData } from "@/types/cms";
 export const contactPageData: ContactPageData = {
   introText: "We'd love to hear from you",
   address: {
-    area: "Copenhagen",
+    street: "Lille Kongensgade 6",
+    city: "9000 Aalborg",
     country: "Denmark",
   },
+  phone: "26 23 22 49",
   email: "info@hairbygashi.dk",
   byAppointmentOnly: true,
   mapEmbed: {
@@ -13,7 +15,16 @@ export const contactPageData: ContactPageData = {
     url: undefined,
   },
   hours: {
-    text: "We operate by appointment only to ensure a private, unhurried experience.",
-    note: "Book your consultation to discuss availability",
+    monday: "09:00-21:00",
+    tuesday: "09:00-21:00",
+    wednesday: "09:00-21:00",
+    thursday: "09:00-21:00",
+    friday: "09:00-21:00",
+    saturday: "09:00-19:00",
+    sunday: "Lukket",
+  },
+  social: {
+    instagram: "https://www.instagram.com/hairbygashi_/",
+    facebook: "https://www.facebook.com/hairbygashi",
   },
 };

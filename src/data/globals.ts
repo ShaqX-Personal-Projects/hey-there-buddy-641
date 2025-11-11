@@ -25,4 +25,9 @@ export const globalSettings: GlobalSettings = {
     label: "Book Appointment",
     url: "https://www.hairbygashi.dk/",
   },
+  businessInfo: {
+    cvr: "43421212",
+    owner: "Granit Gashi",
+    credit: "ShaqX",
+  },
 };

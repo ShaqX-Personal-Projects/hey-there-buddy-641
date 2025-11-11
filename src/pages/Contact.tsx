@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import SectionHeading from "@/components/SectionHeading";
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { contactPageData } from "@/data/contact";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -133,13 +133,19 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="border border-gold/20 rounded-2xl p-8">
-              <div className="flex items-start gap-4 mb-6">
-                <MapPin className="text-gold mt-1" size={24} />
+            <div className="border border-gold/20 rounded-2xl p-8 space-y-6">
+              <div className="flex items-start gap-4">
+                <MapPin className="text-gold mt-1 flex-shrink-0" size={24} />
                 <div>
                   <h3 className="text-xl font-playfair font-semibold mb-2">{dict.contact.location}</h3>
                   <p className="text-muted-foreground font-inter">
-                    {dict.contact.area}
+                    {contactPageData.address.street}
+                  </p>
+                  <p className="text-muted-foreground font-inter">
+                    {contactPageData.address.city}
+                  </p>
+                  <p className="text-muted-foreground font-inter">
+                    {contactPageData.address.country}
                   </p>
                   {contactPageData.byAppointmentOnly && (
                     <p className="text-sm text-gold font-inter mt-2">{dict.contact.byAppointment}</p>
@@ -148,7 +154,20 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <Mail className="text-gold mt-1" size={24} />
+                <Phone className="text-gold mt-1 flex-shrink-0" size={24} />
+                <div>
+                  <h3 className="text-xl font-playfair font-semibold mb-2">{dict.contact.phone}</h3>
+                  <a
+                    href={`tel:${contactPageData.phone.replace(/\s/g, '')}`}
+                    className="text-muted-foreground hover:text-gold font-inter transition-colors"
+                  >
+                    {contactPageData.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Mail className="text-gold mt-1 flex-shrink-0" size={24} />
                 <div>
                   <h3 className="text-xl font-playfair font-semibold mb-2">{dict.contact.form.email}</h3>
                   <a
@@ -162,13 +181,29 @@ const Contact = () => {
             </div>
 
             <div className="bg-muted/30 rounded-2xl p-8">
-              <h3 className="text-xl font-playfair font-semibold mb-4">{dict.contact.hours.title}</h3>
-              <p className="text-muted-foreground font-inter mb-2">
-                {dict.contact.hours.text}
-              </p>
-              <p className="text-sm text-gold font-inter">
-                {dict.contact.hours.note}
-              </p>
+              <div className="flex items-start gap-4 mb-4">
+                <Clock className="text-gold mt-1 flex-shrink-0" size={24} />
+                <h3 className="text-xl font-playfair font-semibold">{dict.contact.hours.title}</h3>
+              </div>
+              <div className="space-y-2 font-inter text-muted-foreground ml-10">
+                <div className="flex justify-between">
+                  <span>{dict.footer.monday} - {dict.footer.friday}:</span>
+                  <span>{contactPageData.hours.monday}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>{dict.footer.saturday}:</span>
+                  <span>{contactPageData.hours.saturday}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>{dict.footer.sunday}:</span>
+                  <span className="text-gold">{dict.footer.closed}</span>
+                </div>
+              </div>
+              {contactPageData.byAppointmentOnly && (
+                <p className="text-sm text-gold font-inter mt-4 ml-10">
+                  {dict.contact.byAppointment}
+                </p>
+              )}
             </div>
           </div>
         </div>

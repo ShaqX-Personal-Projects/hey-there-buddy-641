@@ -8,6 +8,11 @@ export interface GlobalSettings {
     label: string;
     url: string;
   };
+  businessInfo: {
+    cvr: string;
+    owner: string;
+    credit: string;
+  };
 }
 
 export interface NavLink {
@@ -138,9 +143,11 @@ export interface PolicySnippet {
 export interface ContactPageData {
   introText: string;
   address: {
-    area: string;
+    street: string;
+    city: string;
     country: string;
   };
+  phone: string;
   email: string;
   byAppointmentOnly: boolean;
   mapEmbed: {
@@ -148,8 +155,17 @@ export interface ContactPageData {
     url?: string;
   };
   hours: {
-    text: string;
-    note: string;
+    monday: string;
+    tuesday: string;
+    wednesday: string;
+    thursday: string;
+    friday: string;
+    saturday: string;
+    sunday: string;
+  };
+  social: {
+    instagram: string;
+    facebook: string;
   };
 }
 
