@@ -22,7 +22,7 @@ const Index = () => {
           <p className="eyebrow-text mb-6">
             {homePageData.eyebrow}
           </p>
-          <h1 className="text-5xl md:text-7xl font-playfair font-semibold mb-6 text-foreground hero-title">
+          <h1 className="font-playfair font-semibold mb-6 text-foreground hero-title">
             {homePageData.h1}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground font-inter mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -75,7 +75,7 @@ const Index = () => {
       {/* Call to Action */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-6 text-foreground" style={{ lineHeight: '1.2', letterSpacing: '-0.01em' }}>
+          <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-6 text-foreground section-title">
             {homePageData.ctaSection.heading}
           </h2>
           <p className="text-muted-foreground font-inter mb-8">

@@ -105,6 +105,22 @@ All colors MUST be HSL.
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair;
+    font-feature-settings: 'ss01' on, 'liga' on;
+  }
+  
+  h1 {
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    letter-spacing: -0.01em;
+    line-height: 1.3;
   }
 }
 
@@ -137,14 +153,31 @@ All colors MUST be HSL.
   }
   
   .eyebrow-text {
-    @apply text-gold text-[10px] uppercase tracking-[0.2em] font-inter font-semibold;
+    @apply text-gold font-inter font-semibold;
+    font-size: 0.625rem;
+    text-transform: uppercase;
     font-variant: small-caps;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
+    opacity: 0.95;
   }
   
   .hero-title {
-    line-height: 1.1;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-feature-settings: 'ss01' on, 'liga' on;
+  }
+  
+  .section-title {
     letter-spacing: -0.02em;
+    line-height: 1.15;
+    font-feature-settings: 'ss01' on;
+  }
+  
+  .price-figure {
+    font-feature-settings: 'tnum' on, 'lnum' on;
+    font-variant-numeric: tabular-nums lining-nums;
+    letter-spacing: -0.01em;
   }
   
   .card-shadow {

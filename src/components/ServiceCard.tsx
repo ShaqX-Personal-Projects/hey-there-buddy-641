@@ -13,7 +13,7 @@ const ServiceCard = ({ title, description, priceFrom }: ServiceCardProps) => {
       <p className="text-muted-foreground font-inter mb-6 leading-relaxed">
         {description}
       </p>
-      <p className="text-sm font-inter text-gold font-medium">
+      <p className="text-sm font-inter text-gold font-medium price-figure">
         {priceFrom}
       </p>
     </div>

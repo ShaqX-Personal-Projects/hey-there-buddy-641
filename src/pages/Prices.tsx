@@ -26,7 +26,7 @@ const Prices = () => {
                   {category.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex justify-between items-baseline">
                       <span className="font-inter text-foreground">{item.name}</span>
-                      <span className="font-inter text-sm text-gold font-medium ml-4">
+                      <span className="font-inter text-sm text-gold font-medium ml-4 price-figure">
                         From {item.fromPriceDKK.toLocaleString()} DKK
                       </span>
                     </div>

@@ -20,7 +20,7 @@ const SectionHeading = ({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-4xl md:text-5xl font-playfair font-semibold mb-4 text-foreground" style={{ lineHeight: '1.15', letterSpacing: '-0.01em' }}>
+      <h2 className="text-4xl md:text-5xl font-playfair font-semibold mb-4 text-foreground section-title">
         {title}
       </h2>
       {subtitle && (
