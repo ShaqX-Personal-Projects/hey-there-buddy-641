@@ -22,7 +22,8 @@ export const dictionaries = {
     home: {
       eyebrow: "Eksklusiv Frisør",
       h1: "Ren, diskret luksus til dit hår",
-      subtext: "Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser. Minimalistisk, kompromisløs med fokus på upåklagelig finish.",
+      subtext:
+        "Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser. Minimalistisk, kompromisløs med fokus på upåklagelig finish.",
       trustChips: {
         handpicked: "Håndplukkede produkter",
         luxury: "Diskret luksusindstilling",
@@ -44,15 +45,18 @@ export const dictionaries = {
       subtitle: "Hver service begynder med en personlig konsultation og farveanalyse",
       precisionCut: {
         name: "Præcisions Klipning",
-        blurb: "Skulpturel klipning med rene linjer og skræddersyet finish. Hver klipning er designet til at komplementere dine naturlige træk og livsstil.",
+        blurb:
+          "Skulpturel klipning med rene linjer og skræddersyet finish. Hver klipning er designet til at komplementere dine naturlige træk og livsstil.",
       },
       coutureColor: {
         name: "Couture Farve",
-        blurb: "Flerdimensionelle toner med dybde og glans. Bruger premium farveteknikker for resultater der udstråler sofistikation.",
+        blurb:
+          "Flerdimensionelle toner med dybde og glans. Bruger premium farveteknikker for resultater der udstråler sofistikation.",
       },
       blowDry: {
         name: "Røde Løber Føntørring",
-        blurb: "Poleret, fotoklar styling til særlige lejligheder. Upåklagelig finish med langtidsholdbar hold og strålende glans.",
+        blurb:
+          "Poleret, fotoklar styling til særlige lejligheder. Upåklagelig finish med langtidsholdbar hold og strålende glans.",
       },
       note: "Priserne er vejledende. Endelig pris bekræftes efter konsultation.",
     },
@@ -64,9 +68,12 @@ export const dictionaries = {
     philosophy: {
       eyebrow: "Vores Tilgang",
       title: "Filosofi",
-      body1: "Vi kombinerer moderne teknik med klassisk smag. Hver session er rolig, fokuseret og kompromisløs—for et resultat der taler stille og rækker langt.",
-      body2: "Hos Hair by Gashi handler luksus ikke om overdrivelse. Det handler om præcision, opmærksomhed på detaljer og en dyb forståelse for hvordan hår skal bevæge sig, skinne og komplementere din naturlige skønhed.",
-      body3: "Hver aftale er privat, uskyndet og skræddersyet til dig. Vi arbejder med de fineste produkter og teknikker og skaber resultater der er både moderne og tidløse.",
+      body1:
+        "Vi kombinerer moderne teknik med klassisk smag. Hver session er rolig, fokuseret og kompromisløs—for et resultat der taler stille og rækker langt.",
+      body2:
+        "Hos Hair by Gashi handler luksus ikke om overdrivelse. Det handler om præcision, opmærksomhed på detaljer og en dyb forståelse for hvordan hår skal bevæge sig, skinne og komplementere din naturlige skønhed.",
+      body3:
+        "Hver aftale er privat, uskyndet og skræddersyet til dig. Vi arbejder med de fineste produkter og teknikker og skaber resultater der er både moderne og tidløse.",
       strip: {
         heading: "Private aftaler",
         text: "Oplev diskret luksus i vores rolige københavnske setting. Kun efter aftale.",
@@ -74,7 +81,8 @@ export const dictionaries = {
       values: {
         precision: {
           title: "Præcision",
-          description: "Hver klipning, hver farve, udført med omhyggelig opmærksomhed på detaljer og teknisk ekspertise.",
+          description:
+            "Hver klipning, hver farve, udført med omhyggelig opmærksomhed på detaljer og teknisk ekspertise.",
         },
         discretion: {
           title: "Diskretion",
@@ -126,7 +134,7 @@ export const dictionaries = {
           ],
         },
         cancellation: {
-          title: "Aflysnin gspolitik",
+          title: "Aflysningspolitik",
           description: "Vi beder venligst om din hensynsfuldhed",
           points: [
             "48 timers varsel påkrævet — Giv venligst mindst 48 timers varsel ved aflysninger eller ændringer.",
@@ -161,16 +169,30 @@ export const dictionaries = {
               { name: "Herreklip", description: 'En "All Around" klipning' },
               { name: "Skinfade", description: "Her fokuser vi kun på skinfade" },
               { name: "Skæg Barbering + Line Up", description: "Stand Alone Skæg barbering og trimning" },
-              { name: "Den Fulde Pakke", description: "Her får du den fulde oplevelse over 1,5 time. Inkludere: Skinfade, Herreklip, Skæg, Vask og Føn, Styling, Ret Bryn, Hårfjerning med voks" },
-              { name: "Hold Bookning for Den Fulde Pakke", description: "Gælder for 4 personer. Uden skinfade koster det 400,- kr mindre. 400,- kr + 1 Time ekstra pr person" },
-              { name: "Permanent Krøller", description: "Inklusiv Styling. Prisen varier efter hårets længde (650 - 1250 kr)" },
+              {
+                name: "Den Fulde Pakke",
+                description:
+                  "Her får du den fulde oplevelse over 1,5 time. Inkludere: Skinfade, Herreklip, Skæg, Vask og Føn, Styling, Ret Bryn, Hårfjerning med voks",
+              },
+              {
+                name: "Hold Bookning for Den Fulde Pakke",
+                description:
+                  "Gælder for 4 personer. Uden skinfade koster det 400,- kr mindre. 400,- kr + 1 Time ekstra pr person",
+              },
+              {
+                name: "Permanent Krøller",
+                description: "Inklusiv Styling. Prisen varier efter hårets længde (650 - 1250 kr)",
+              },
             ],
           },
           {
             category: "Dame Klip",
             items: [
               { name: "Dame Klip", description: "" },
-              { name: "Permanent Krøller + Klipning & Styling", description: "Prisen er mellem 1225 - 1725,- kr efter hårets længde" },
+              {
+                name: "Permanent Krøller + Klipning & Styling",
+                description: "Prisen er mellem 1225 - 1725,- kr efter hårets længde",
+              },
             ],
           },
           {
@@ -183,11 +205,20 @@ export const dictionaries = {
               { name: "Striber Touch-up + Let føn", description: "" },
               { name: "Striber + Styling", description: "Prisen er mellem 650 - 1550,- kr efter hårets længde" },
               { name: "Babylights Touch-up + Let Føn", description: "" },
-              { name: "Balayage Touch-up + Gloss & Styling", description: "Prisen er mellem 1150 - 1450,- kr efter hårets længde" },
-              { name: "Ombre Colormelting + Styling", description: "Prisen er mellem 1150 - 1550,- kr efter hårets længde" },
+              {
+                name: "Balayage Touch-up + Gloss & Styling",
+                description: "Prisen er mellem 1150 - 1450,- kr efter hårets længde",
+              },
+              {
+                name: "Ombre Colormelting + Styling",
+                description: "Prisen er mellem 1150 - 1550,- kr efter hårets længde",
+              },
               { name: "Babylights + Styling", description: "Prisen er mellem 1250 - 1550,- kr efter hårets længde" },
               { name: "Striber i hele bunden + Styling", description: "" },
-              { name: "Balayage + Gloss & Styling", description: "Prisen er mellem 1450 - 1950,- kr efter hårets længde" },
+              {
+                name: "Balayage + Gloss & Styling",
+                description: "Prisen er mellem 1450 - 1950,- kr efter hårets længde",
+              },
             ],
           },
           {
@@ -221,7 +252,8 @@ export const dictionaries = {
       },
     },
     footer: {
-      summary: "Ren, diskret luksushårpleje i København. Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser.",
+      summary:
+        "Ren, diskret luksushårpleje i København. Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser.",
       navigation: "Navigation",
       hoursTitle: "Åbningstider",
       contactTitle: "Kontakt",
@@ -267,7 +299,8 @@ export const dictionaries = {
     home: {
       eyebrow: "Exclusive Hairdresser",
       h1: "Pure, understated luxury for your hair",
-      subtext: "Tailor-made treatments, couture color and precision cuts in serene surroundings. Minimal, uncompromising, with a focus on immaculate finish.",
+      subtext:
+        "Tailor-made treatments, couture color and precision cuts in serene surroundings. Minimal, uncompromising, with a focus on immaculate finish.",
       trustChips: {
         handpicked: "Hand-picked products",
         luxury: "Discreet luxury setting",
@@ -289,15 +322,18 @@ export const dictionaries = {
       subtitle: "Every service begins with a personal consultation and color analysis",
       precisionCut: {
         name: "Precision Cut",
-        blurb: "Sculptural cutting with clean lines and a tailored finish. Each cut is designed to complement your natural features and lifestyle.",
+        blurb:
+          "Sculptural cutting with clean lines and a tailored finish. Each cut is designed to complement your natural features and lifestyle.",
       },
       coutureColor: {
         name: "Couture Colour",
-        blurb: "Multi-dimensional tones with depth and shine. Using premium color techniques for results that speak sophistication.",
+        blurb:
+          "Multi-dimensional tones with depth and shine. Using premium color techniques for results that speak sophistication.",
       },
       blowDry: {
         name: "Red-Carpet Blow-Dry",
-        blurb: "Polished, photo-ready styling for special occasions. Immaculate finish with long-lasting hold and radiant shine.",
+        blurb:
+          "Polished, photo-ready styling for special occasions. Immaculate finish with long-lasting hold and radiant shine.",
       },
       note: "Prices are indicative. Final price is confirmed after consultation.",
     },
@@ -309,9 +345,12 @@ export const dictionaries = {
     philosophy: {
       eyebrow: "Our Approach",
       title: "Philosophy",
-      body1: "We combine modern technique with classic taste. Each session is calm, focused and uncompromising—for a result that speaks softly and carries far.",
-      body2: "At Hair by Gashi, luxury is not about excess. It's about precision, attention to detail, and a deep understanding of how hair should move, shine, and complement your natural beauty.",
-      body3: "Every appointment is private, unhurried, and tailored to you. We work with the finest products and techniques, creating results that are both contemporary and timeless.",
+      body1:
+        "We combine modern technique with classic taste. Each session is calm, focused and uncompromising—for a result that speaks softly and carries far.",
+      body2:
+        "At Hair by Gashi, luxury is not about excess. It's about precision, attention to detail, and a deep understanding of how hair should move, shine, and complement your natural beauty.",
+      body3:
+        "Every appointment is private, unhurried, and tailored to you. We work with the finest products and techniques, creating results that are both contemporary and timeless.",
       strip: {
         heading: "Private appointments",
         text: "Experience discreet luxury in our serene Copenhagen setting. By appointment only.",
@@ -323,7 +362,8 @@ export const dictionaries = {
         },
         discretion: {
           title: "Discretion",
-          description: "Private appointments in a calm environment where you can relax and trust the process completely.",
+          description:
+            "Private appointments in a calm environment where you can relax and trust the process completely.",
         },
         excellence: {
           title: "Excellence",
@@ -406,33 +446,68 @@ export const dictionaries = {
               { name: "Men's Haircut", description: 'An "All Around" haircut' },
               { name: "Skin Fade", description: "We focus exclusively on skin fade" },
               { name: "Beard Grooming + Line Up", description: "Stand-alone beard grooming and trimming" },
-              { name: "The Full Package", description: "Get the complete experience over 1.5 hours. Includes: Skin Fade, Men's Haircut, Beard, Wash & Blow-dry, Styling, Eyebrow Shaping, Hair Removal with Wax" },
-              { name: "Group Booking for The Full Package", description: "Valid for 4 people. Without skin fade it costs 400 DKK less. 400 DKK + 1 hour extra per person" },
-              { name: "Permanent Curls", description: "Including Styling. Price varies depending on hair length (650 - 1250 DKK)" },
+              {
+                name: "The Full Package",
+                description:
+                  "Get the complete experience over 1.5 hours. Includes: Skin Fade, Men's Haircut, Beard, Wash & Blow-dry, Styling, Eyebrow Shaping, Hair Removal with Wax",
+              },
+              {
+                name: "Group Booking for The Full Package",
+                description:
+                  "Valid for 4 people. Without skin fade it costs 400 DKK less. 400 DKK + 1 hour extra per person",
+              },
+              {
+                name: "Permanent Curls",
+                description: "Including Styling. Price varies depending on hair length (650 - 1250 DKK)",
+              },
             ],
           },
           {
             category: "Women's Haircut",
             items: [
               { name: "Women's Haircut", description: "" },
-              { name: "Permanent Curls + Cut & Styling", description: "Price ranges from 1225 - 1725 DKK depending on hair length" },
+              {
+                name: "Permanent Curls + Cut & Styling",
+                description: "Price ranges from 1225 - 1725 DKK depending on hair length",
+              },
             ],
           },
           {
             category: "Women's Coloring",
             items: [
               { name: "Root Touch-up + Light Blow-dry", description: "" },
-              { name: "Full Color + Styling", description: "Price ranges from 650 - 1150 DKK depending on hair length" },
+              {
+                name: "Full Color + Styling",
+                description: "Price ranges from 650 - 1150 DKK depending on hair length",
+              },
               { name: "Root Color + Light Blow-dry", description: "" },
-              { name: "Gloss + Light Blow-dry", description: "Price ranges from 550 - 950 DKK depending on hair length" },
+              {
+                name: "Gloss + Light Blow-dry",
+                description: "Price ranges from 550 - 950 DKK depending on hair length",
+              },
               { name: "Highlights Touch-up + Light Blow-dry", description: "" },
-              { name: "Highlights + Styling", description: "Price ranges from 650 - 1550 DKK depending on hair length" },
+              {
+                name: "Highlights + Styling",
+                description: "Price ranges from 650 - 1550 DKK depending on hair length",
+              },
               { name: "Babylights Touch-up + Light Blow-dry", description: "" },
-              { name: "Balayage Touch-up + Gloss & Styling", description: "Price ranges from 1150 - 1450 DKK depending on hair length" },
-              { name: "Ombre Color Melting + Styling", description: "Price ranges from 1150 - 1550 DKK depending on hair length" },
-              { name: "Babylights + Styling", description: "Price ranges from 1250 - 1550 DKK depending on hair length" },
+              {
+                name: "Balayage Touch-up + Gloss & Styling",
+                description: "Price ranges from 1150 - 1450 DKK depending on hair length",
+              },
+              {
+                name: "Ombre Color Melting + Styling",
+                description: "Price ranges from 1150 - 1550 DKK depending on hair length",
+              },
+              {
+                name: "Babylights + Styling",
+                description: "Price ranges from 1250 - 1550 DKK depending on hair length",
+              },
               { name: "Full Base Highlights + Styling", description: "" },
-              { name: "Balayage + Gloss & Styling", description: "Price ranges from 1450 - 1950 DKK depending on hair length" },
+              {
+                name: "Balayage + Gloss & Styling",
+                description: "Price ranges from 1450 - 1950 DKK depending on hair length",
+              },
             ],
           },
           {
@@ -466,7 +541,8 @@ export const dictionaries = {
       },
     },
     footer: {
-      summary: "Pure, understated luxury haircare in Copenhagen. Tailor-made treatments, couture color and precision cuts in serene surroundings.",
+      summary:
+        "Pure, understated luxury haircare in Copenhagen. Tailor-made treatments, couture color and precision cuts in serene surroundings.",
       navigation: "Navigation",
       hoursTitle: "Opening Hours",
       contactTitle: "Contact",
