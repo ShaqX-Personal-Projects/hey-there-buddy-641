@@ -1,0 +1,173 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import SectionHeading from "@/components/SectionHeading";
+import { MapPin, Mail } from "lucide-react";
+
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required").max(100),
+  email: z.string().email("Invalid email address").max(255),
+  message: z.string().min(1, "Message is required").max(1000),
+});
+
+type ContactFormValues = z.infer<typeof contactSchema>;
+
+const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: ContactFormValues) => {
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    console.log("Form submitted:", data);
+    
+    toast({
+      title: "Message sent",
+      description: "Thank you for contacting us. We'll respond within 24 hours.",
+    });
+    
+    form.reset();
+    setIsSubmitting(false);
+  };
+
+  return (
+    <div className="py-20 px-4">
+      <div className="container mx-auto max-w-6xl">
+        <SectionHeading
+          eyebrow="Get in Touch"
+          title="Contact"
+          subtitle="We'd love to hear from you"
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <div>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-inter">Name</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Your name"
+                          className="border-gold/20 focus:border-gold font-inter"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-inter">Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="your@email.com"
+                          className="border-gold/20 focus:border-gold font-inter"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-inter">Message</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Tell us about your hair goals..."
+                          className="border-gold/20 focus:border-gold font-inter min-h-[150px]"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            </Form>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-8">
+            <div className="border border-gold/20 rounded-2xl p-8">
+              <div className="flex items-start gap-4 mb-6">
+                <MapPin className="text-gold mt-1" size={24} />
+                <div>
+                  <h3 className="text-xl font-playfair font-semibold mb-2">Location</h3>
+                  <p className="text-muted-foreground font-inter">Copenhagen, Denmark</p>
+                  <p className="text-sm text-gold font-inter mt-2">By appointment only</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Mail className="text-gold mt-1" size={24} />
+                <div>
+                  <h3 className="text-xl font-playfair font-semibold mb-2">Email</h3>
+                  <a
+                    href="mailto:info@hairbygashi.dk"
+                    className="text-muted-foreground hover:text-gold font-inter transition-colors"
+                  >
+                    info@hairbygashi.dk
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-muted/30 rounded-2xl p-8">
+              <h3 className="text-xl font-playfair font-semibold mb-4">Hours</h3>
+              <p className="text-muted-foreground font-inter mb-2">
+                We operate by appointment only to ensure a private, unhurried experience.
+              </p>
+              <p className="text-sm text-gold font-inter">
+                Book your consultation to discuss availability
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;
