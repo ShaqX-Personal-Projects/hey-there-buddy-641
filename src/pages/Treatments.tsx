@@ -2,38 +2,47 @@ import CTAButton from "@/components/CTAButton";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import { treatmentsPageData } from "@/data/treatments";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Treatments = () => {
+  const { dict } = useLanguage();
 
   return (
     <div className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Services"
-          title="Treatments"
-          subtitle={treatmentsPageData.introText}
+          eyebrow={dict.treatments.eyebrow}
+          title={dict.treatments.title}
+          subtitle={dict.treatments.subtitle}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {treatmentsPageData.services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.name}
-              description={service.blurb}
-              priceFrom={`From ${service.fromPriceDKK.toLocaleString()} DKK`}
-            />
-          ))}
+          <ServiceCard
+            title={dict.treatments.precisionCut.name}
+            description={dict.treatments.precisionCut.blurb}
+            priceFrom="From 1.200 DKK"
+          />
+          <ServiceCard
+            title={dict.treatments.coutureColor.name}
+            description={dict.treatments.coutureColor.blurb}
+            priceFrom="From 2.400 DKK"
+          />
+          <ServiceCard
+            title={dict.treatments.blowDry.name}
+            description={dict.treatments.blowDry.blurb}
+            priceFrom="From 900 DKK"
+          />
         </div>
 
         <div className="text-center mb-12">
           <p className="text-sm text-muted-foreground font-inter italic">
-            {treatmentsPageData.note}
+            {dict.treatments.note}
           </p>
         </div>
 
         <div className="text-center">
           <CTAButton href={treatmentsPageData.cta.url}>
-            {treatmentsPageData.cta.label}
+            {dict.cta.bookConsultation}
           </CTAButton>
         </div>
       </div>

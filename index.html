@@ -45,7 +45,7 @@
     <script>
       (function() {
         try {
-          const storedTheme = localStorage.getItem('theme') || 'system';
+          const storedTheme = localStorage.getItem('theme') || 'dark';
           let effectiveTheme = storedTheme;
           if (storedTheme === 'system') {
             effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -55,7 +55,7 @@
           document.documentElement.lang = storedLang;
         } catch (e) {
           // Fallback: just set defaults
-          document.documentElement.classList.add('light');
+          document.documentElement.classList.add('dark');
           document.documentElement.lang = 'da';
         }
       })();

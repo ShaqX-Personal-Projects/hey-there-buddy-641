@@ -1,16 +1,18 @@
 import GalleryItem from "@/components/GalleryItem";
 import SectionHeading from "@/components/SectionHeading";
 import { galleryPageData } from "@/data/gallery";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Gallery = () => {
+  const { dict } = useLanguage();
 
   return (
     <div className="py-20 px-4">
       <div className="container mx-auto">
         <SectionHeading
-          eyebrow="Portfolio"
-          title="Gallery"
-          subtitle="A showcase of our work — precision, artistry, and uncompromising finish"
+          eyebrow={dict.gallery.eyebrow}
+          title={dict.gallery.title}
+          subtitle={dict.gallery.subtitle}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

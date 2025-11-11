@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import SectionHeading from "@/components/SectionHeading";
 import { MapPin, Mail } from "lucide-react";
 import { contactPageData } from "@/data/contact";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required").max(100),
@@ -22,6 +23,7 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { dict } = useLanguage();
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -41,8 +43,8 @@ const Contact = () => {
     console.log("Form submitted:", data);
     
     toast({
-      title: "Message sent",
-      description: "Thank you for contacting us. We'll respond within 24 hours.",
+      title: dict.contact.form.success,
+      description: dict.contact.form.successDescription,
     });
     
     form.reset();
@@ -53,9 +55,9 @@ const Contact = () => {
     <div className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Get in Touch"
-          title="Contact"
-          subtitle={contactPageData.introText}
+          eyebrow={dict.contact.eyebrow}
+          title={dict.contact.title}
+          subtitle={dict.contact.subtitle}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -68,10 +70,10 @@ const Contact = () => {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-inter">Name</FormLabel>
+                      <FormLabel className="font-inter">{dict.contact.form.name}</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Your name"
+                          placeholder={dict.contact.form.name}
                           className="border-gold/20 focus:border-gold font-inter"
                           {...field}
                         />
@@ -86,11 +88,11 @@ const Contact = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-inter">Email</FormLabel>
+                      <FormLabel className="font-inter">{dict.contact.form.email}</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="your@email.com"
+                          placeholder={dict.contact.form.email}
                           className="border-gold/20 focus:border-gold font-inter"
                           {...field}
                         />
@@ -105,10 +107,10 @@ const Contact = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-inter">Message</FormLabel>
+                      <FormLabel className="font-inter">{dict.contact.form.message}</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us about your hair goals..."
+                          placeholder={dict.contact.form.messagePlaceholder}
                           className="border-gold/20 focus:border-gold font-inter min-h-[150px]"
                           {...field}
                         />
@@ -123,7 +125,7 @@ const Contact = () => {
                   disabled={isSubmitting}
                   className="w-full bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? dict.contact.form.sending : dict.contact.form.submit}
                 </Button>
               </form>
             </Form>
@@ -135,12 +137,12 @@ const Contact = () => {
               <div className="flex items-start gap-4 mb-6">
                 <MapPin className="text-gold mt-1" size={24} />
                 <div>
-                  <h3 className="text-xl font-playfair font-semibold mb-2">Location</h3>
+                  <h3 className="text-xl font-playfair font-semibold mb-2">{dict.contact.location}</h3>
                   <p className="text-muted-foreground font-inter">
-                    {contactPageData.address.area}, {contactPageData.address.country}
+                    {dict.contact.area}
                   </p>
                   {contactPageData.byAppointmentOnly && (
-                    <p className="text-sm text-gold font-inter mt-2">By appointment only</p>
+                    <p className="text-sm text-gold font-inter mt-2">{dict.contact.byAppointment}</p>
                   )}
                 </div>
               </div>
@@ -148,7 +150,7 @@ const Contact = () => {
               <div className="flex items-start gap-4">
                 <Mail className="text-gold mt-1" size={24} />
                 <div>
-                  <h3 className="text-xl font-playfair font-semibold mb-2">Email</h3>
+                  <h3 className="text-xl font-playfair font-semibold mb-2">{dict.contact.form.email}</h3>
                   <a
                     href={`mailto:${contactPageData.email}`}
                     className="text-muted-foreground hover:text-gold font-inter transition-colors"
@@ -160,12 +162,12 @@ const Contact = () => {
             </div>
 
             <div className="bg-muted/30 rounded-2xl p-8">
-              <h3 className="text-xl font-playfair font-semibold mb-4">Hours</h3>
+              <h3 className="text-xl font-playfair font-semibold mb-4">{dict.contact.hours.title}</h3>
               <p className="text-muted-foreground font-inter mb-2">
-                {contactPageData.hours.text}
+                {dict.contact.hours.text}
               </p>
               <p className="text-sm text-gold font-inter">
-                {contactPageData.hours.note}
+                {dict.contact.hours.note}
               </p>
             </div>
           </div>
