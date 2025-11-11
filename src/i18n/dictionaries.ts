@@ -142,12 +142,6 @@ export const dictionaries = {
       eyebrow: "Investering",
       title: "Priser",
       subtitle: "Hver service begynder med en personlig konsultation og farveanalyse",
-      categories: {
-        cuts: "Klipninger",
-        colour: "Farve",
-        styling: "Styling",
-        treatments: "Behandlinger",
-      },
       startingPrices: "Startpriser",
       note: {
         title: "Vigtig Information",
@@ -157,6 +151,61 @@ export const dictionaries = {
           "Vi bruger kun premium produkter og avancerede teknikker",
           "Gratis konsultation inkluderet i alle farveservices",
           "Depositum påkrævet for bookinger over 2.000 DKK",
+        ],
+      },
+      priceData: {
+        categories: [
+          {
+            category: "Herre Klip",
+            items: [
+              { name: "Herreklip", description: 'En "All Around" klipning' },
+              { name: "Skinfade", description: "Her fokuser vi kun på skinfade" },
+              { name: "Skæg Barbering + Line Up", description: "Stand Alone Skæg barbering og trimning" },
+              { name: "Den Fulde Pakke", description: "Her får du den fulde oplevelse over 1,5 time. Inkludere: Skinfade, Herreklip, Skæg, Vask og Føn, Styling, Ret Bryn, Hårfjerning med voks" },
+              { name: "Hold Bookning for Den Fulde Pakke", description: "Gælder for 4 personer. Uden skinfade koster det 400,- kr mindre. 400,- kr + 1 Time ekstra pr person" },
+              { name: "Permanent Krøller", description: "Inklusiv Styling. Prisen varier efter hårets længde (650 - 1250 kr)" },
+            ],
+          },
+          {
+            category: "Dame Klip",
+            items: [
+              { name: "Dame Klip", description: "" },
+              { name: "Permanent Krøller + Klipning & Styling", description: "Prisen er mellem 1225 - 1725,- kr efter hårets længde" },
+            ],
+          },
+          {
+            category: "Dame Farvning",
+            items: [
+              { name: "Bundfarve Touch-up + Let Føn", description: "" },
+              { name: "Helfarve + Styling", description: "Prisen er mellem 650 - 1150,- kr efter hårets længde" },
+              { name: "Bundfarve + Let føn", description: "" },
+              { name: "Gloss + Let Føn", description: "Prisen er mellem 550 - 950,- kr efter hårets længde" },
+              { name: "Striber Touch-up + Let føn", description: "" },
+              { name: "Striber + Styling", description: "Prisen er mellem 650 - 1550,- kr efter hårets længde" },
+              { name: "Babylights Touch-up + Let Føn", description: "" },
+              { name: "Balayage Touch-up + Gloss & Styling", description: "Prisen er mellem 1150 - 1450,- kr efter hårets længde" },
+              { name: "Ombre Colormelting + Styling", description: "Prisen er mellem 1150 - 1550,- kr efter hårets længde" },
+              { name: "Babylights + Styling", description: "Prisen er mellem 1250 - 1550,- kr efter hårets længde" },
+              { name: "Striber i hele bunden + Styling", description: "" },
+              { name: "Balayage + Gloss & Styling", description: "Prisen er mellem 1450 - 1950,- kr efter hårets længde" },
+            ],
+          },
+          {
+            category: "Behandlinger",
+            items: [
+              { name: "Farve, Protein, Hår kur + Styling", description: "" },
+              { name: "Olaplex Stand Alone + Let Føn", description: "" },
+            ],
+          },
+          {
+            category: "Ansigt",
+            items: [
+              { name: "Vippe- og brynfarve + Retning", description: "" },
+              { name: "Vippefarve", description: "" },
+              { name: "Ansigtsmaske", description: "" },
+              { name: "Brynfarve + Retning", description: "" },
+            ],
+          },
         ],
       },
     },
@@ -338,12 +387,6 @@ export const dictionaries = {
       eyebrow: "Investment",
       title: "Prices",
       subtitle: "Every service begins with a personal consultation and color analysis",
-      categories: {
-        cuts: "Cuts",
-        colour: "Colour",
-        styling: "Styling",
-        treatments: "Treatments",
-      },
       startingPrices: "Starting prices",
       note: {
         title: "Important Information",
@@ -353,6 +396,61 @@ export const dictionaries = {
           "We use only premium products and advanced techniques",
           "Complimentary consultation included with all color services",
           "Deposit required for bookings over 2,000 DKK",
+        ],
+      },
+      priceData: {
+        categories: [
+          {
+            category: "Men's Haircut",
+            items: [
+              { name: "Men's Haircut", description: 'An "All Around" haircut' },
+              { name: "Skin Fade", description: "We focus exclusively on skin fade" },
+              { name: "Beard Grooming + Line Up", description: "Stand-alone beard grooming and trimming" },
+              { name: "The Full Package", description: "Get the complete experience over 1.5 hours. Includes: Skin Fade, Men's Haircut, Beard, Wash & Blow-dry, Styling, Eyebrow Shaping, Hair Removal with Wax" },
+              { name: "Group Booking for The Full Package", description: "Valid for 4 people. Without skin fade it costs 400 DKK less. 400 DKK + 1 hour extra per person" },
+              { name: "Permanent Curls", description: "Including Styling. Price varies depending on hair length (650 - 1250 DKK)" },
+            ],
+          },
+          {
+            category: "Women's Haircut",
+            items: [
+              { name: "Women's Haircut", description: "" },
+              { name: "Permanent Curls + Cut & Styling", description: "Price ranges from 1225 - 1725 DKK depending on hair length" },
+            ],
+          },
+          {
+            category: "Women's Coloring",
+            items: [
+              { name: "Root Touch-up + Light Blow-dry", description: "" },
+              { name: "Full Color + Styling", description: "Price ranges from 650 - 1150 DKK depending on hair length" },
+              { name: "Root Color + Light Blow-dry", description: "" },
+              { name: "Gloss + Light Blow-dry", description: "Price ranges from 550 - 950 DKK depending on hair length" },
+              { name: "Highlights Touch-up + Light Blow-dry", description: "" },
+              { name: "Highlights + Styling", description: "Price ranges from 650 - 1550 DKK depending on hair length" },
+              { name: "Babylights Touch-up + Light Blow-dry", description: "" },
+              { name: "Balayage Touch-up + Gloss & Styling", description: "Price ranges from 1150 - 1450 DKK depending on hair length" },
+              { name: "Ombre Color Melting + Styling", description: "Price ranges from 1150 - 1550 DKK depending on hair length" },
+              { name: "Babylights + Styling", description: "Price ranges from 1250 - 1550 DKK depending on hair length" },
+              { name: "Full Base Highlights + Styling", description: "" },
+              { name: "Balayage + Gloss & Styling", description: "Price ranges from 1450 - 1950 DKK depending on hair length" },
+            ],
+          },
+          {
+            category: "Treatments",
+            items: [
+              { name: "Color, Protein, Hair Treatment + Styling", description: "" },
+              { name: "Olaplex Stand-Alone + Light Blow-dry", description: "" },
+            ],
+          },
+          {
+            category: "Face",
+            items: [
+              { name: "Lash & Brow Tint + Shaping", description: "" },
+              { name: "Lash Tint", description: "" },
+              { name: "Face Mask", description: "" },
+              { name: "Brow Tint + Shaping", description: "" },
+            ],
+          },
         ],
       },
     },
