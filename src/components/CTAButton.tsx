@@ -16,7 +16,7 @@ const CTAButton = ({ href, children, variant = "primary", className = "" }: CTAB
       <Button
         asChild
         variant="outline"
-        className={`border-gold text-foreground hover:bg-gold hover:text-gold-foreground font-inter font-medium hover-lift ${className}`}
+        className={`gold-hairline text-foreground hover:bg-gold hover:text-gold-foreground font-inter font-medium hover-lift-smooth ${className}`}
       >
         <a
           href={href}
@@ -31,7 +31,7 @@ const CTAButton = ({ href, children, variant = "primary", className = "" }: CTAB
   return (
     <Button
       asChild
-      className={`bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium hover-lift ${className}`}
+      className={`bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium hover-lift-smooth ${className}`}
     >
       <a
         href={href}

@@ -6,7 +6,7 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, description, priceFrom }: ServiceCardProps) => {
   return (
-    <div className="border border-gold/20 rounded-2xl p-8 hover-lift hover:shadow-lg transition-all duration-200">
+    <div className="gold-hairline rounded-2xl p-8 card-shadow hover-lift-smooth hover:card-shadow-hover hover:gold-hairline-hover">
       <h3 className="text-2xl font-playfair font-semibold mb-4 text-foreground">
         {title}
       </h3>

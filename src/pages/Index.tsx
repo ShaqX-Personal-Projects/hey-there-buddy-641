@@ -19,10 +19,10 @@ const Index = () => {
       {/* Hero Section */}
       <section className="min-h-[90vh] flex items-center justify-center px-4 py-20">
         <div className="container mx-auto text-center max-w-4xl">
-          <p className="text-gold text-xs uppercase tracking-widest font-inter font-medium mb-6">
+          <p className="eyebrow-text mb-6">
             {homePageData.eyebrow}
           </p>
-          <h1 className="text-5xl md:text-7xl font-playfair font-semibold mb-6 text-foreground leading-tight">
+          <h1 className="text-5xl md:text-7xl font-playfair font-semibold mb-6 text-foreground hero-title">
             {homePageData.h1}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground font-inter mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -35,7 +35,7 @@ const Index = () => {
       </section>
 
       {/* Trust Chips */}
-      <section className="py-16 px-4 border-y border-gold/20">
+      <section className="py-16 px-4" style={{ borderTop: '1px solid hsl(var(--gold) / 0.12)', borderBottom: '1px solid hsl(var(--gold) / 0.12)' }}>
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
             {homePageData.trustChips.map((chip, index) => {
@@ -75,7 +75,7 @@ const Index = () => {
       {/* Call to Action */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-6 text-foreground">
+          <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-6 text-foreground" style={{ lineHeight: '1.2', letterSpacing: '-0.01em' }}>
             {homePageData.ctaSection.heading}
           </h2>
           <p className="text-muted-foreground font-inter mb-8">

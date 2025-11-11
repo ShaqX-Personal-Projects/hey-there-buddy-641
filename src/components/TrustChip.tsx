@@ -7,7 +7,7 @@ interface TrustChipProps {
 
 const TrustChip = ({ text, icon }: TrustChipProps) => {
   return (
-    <div className="inline-flex items-center gap-2 px-6 py-3 border border-gold/30 rounded-full hover:border-gold/50 transition-colors">
+    <div className="inline-flex items-center gap-2 px-6 py-3 gold-hairline rounded-full hover:gold-hairline-hover" style={{ transition: 'all 150ms ease-out' }}>
       {icon && <span className="text-gold">{icon}</span>}
       <span className="text-sm font-inter text-foreground">{text}</span>
     </div>

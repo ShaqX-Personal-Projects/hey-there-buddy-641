@@ -10,7 +10,7 @@ const Header = () => {
   const { logo, navLinks, primaryCTA } = globalSettings;
 
   return (
-    <header className="sticky top-0 z-50 glass-effect border-b border-gold/20">
+    <header className="sticky top-0 z-50 glass-effect">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -57,7 +57,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden glass-effect border-t border-gold/20">
+        <div className="lg:hidden glass-effect">
           <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <NavLink
