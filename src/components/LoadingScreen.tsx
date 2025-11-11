@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const LoadingScreen = () => {
+  const { dict } = useLanguage();
   const [text, setText] = useState("");
-  const fullText = "Initializing Interface";
+  const fullText = dict.loading.message;
 
   useEffect(() => {
     let index = 0;

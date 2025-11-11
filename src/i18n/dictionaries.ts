@@ -1,5 +1,8 @@
 export const dictionaries = {
   da: {
+    loading: {
+      message: "Perfektionerer looket...",
+    },
     nav: {
       home: "Hjem",
       treatments: "Behandlinger",
@@ -179,6 +182,9 @@ export const dictionaries = {
     },
   },
   en: {
+    loading: {
+      message: "Perfecting the Look...",
+    },
     nav: {
       home: "Home",
       treatments: "Treatments",
