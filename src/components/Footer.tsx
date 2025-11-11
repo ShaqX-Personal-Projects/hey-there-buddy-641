@@ -121,7 +121,7 @@ const Footer = () => {
             <Button
               asChild
               variant="outline"
-              className="border-gold text-primary-foreground hover:bg-gold hover:text-gold-foreground font-inter font-medium"
+              className="gold-hairline bg-transparent text-primary-foreground border-gold hover:bg-gold hover:text-gold-foreground font-inter font-medium"
             >
               <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
                 {dict.footer.bookSection.cta}
