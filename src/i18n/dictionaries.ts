@@ -353,7 +353,7 @@ export const dictionaries = {
         "Every appointment is private, unhurried, and tailored to you. We work with the finest products and techniques, creating results that are both contemporary and timeless.",
       strip: {
         heading: "Private appointments",
-        text: "Experience discreet luxury in our serene Copenhagen setting. By appointment only.",
+        text: "Experience discreet luxury in our serene Aalborg setting. By appointment only.",
       },
       values: {
         precision: {
@@ -386,7 +386,7 @@ export const dictionaries = {
         successDescription: "Thank you for contacting us. We'll respond within 24 hours.",
       },
       location: "Location",
-      area: "Copenhagen, Denmark",
+      area: "Aalborg, Denmark",
       phone: "Phone",
       byAppointment: "By appointment only",
       hours: {
@@ -398,7 +398,7 @@ export const dictionaries = {
     booking: {
       eyebrow: "Schedule",
       title: "Book Your Appointment",
-      subtitle: "Experience exclusive luxury haircare in Copenhagen",
+      subtitle: "Experience exclusive luxury haircare in Aalborg",
       ctaSubtext: "Click the button above to access our booking system",
       policies: {
         appointment: {
@@ -542,7 +542,7 @@ export const dictionaries = {
     },
     footer: {
       summary:
-        "Pure, understated luxury haircare in Copenhagen. Tailor-made treatments, couture color and precision cuts in serene surroundings.",
+        "Pure, understated luxury haircare in Aalborg. Tailor-made treatments, couture color and precision cuts in serene surroundings.",
       navigation: "Navigation",
       hoursTitle: "Opening Hours",
       contactTitle: "Contact",

@@ -2,8 +2,8 @@ import { SEOData } from "@/types/cms";
 
 export const seoData: SEOData = {
   home: {
-    title: "Hair by Gashi — Exclusive Hairdresser Copenhagen",
-    metaDescription: "Pure, understated luxury haircare in Copenhagen. Tailor-made treatments, couture color and precision cuts in serene surroundings.",
+    title: "Hair by Gashi — Exclusive Hairdresser Aalborg",
+    metaDescription: "Pure, understated luxury haircare in Aalborg. Tailor-made treatments, couture color and precision cuts in serene surroundings.",
     openGraphImage: "https://lovable.dev/opengraph-image-p98pqg.png",
   },
   treatments: {
@@ -28,17 +28,17 @@ export const seoData: SEOData = {
   },
   prices: {
     title: "Prices — Hair by Gashi",
-    metaDescription: "Transparent pricing for precision cuts, couture color, styling, and luxury hair treatments in Copenhagen.",
+    metaDescription: "Transparent pricing for precision cuts, couture color, styling, and luxury hair treatments in Aalborg.",
     openGraphImage: "https://lovable.dev/opengraph-image-p98pqg.png",
   },
   booking: {
     title: "Booking — Hair by Gashi",
-    metaDescription: "Book your exclusive appointment at Hair by Gashi. Private, unhurried luxury haircare in Copenhagen.",
+    metaDescription: "Book your exclusive appointment at Hair by Gashi. Private, unhurried luxury haircare in Aalborg.",
     openGraphImage: "https://lovable.dev/opengraph-image-p98pqg.png",
   },
   contact: {
     title: "Contact — Hair by Gashi",
-    metaDescription: "Get in touch with Hair by Gashi. Located in Copenhagen, Denmark. By appointment only.",
+    metaDescription: "Get in touch with Hair by Gashi. Located in Aalborg, Denmark. By appointment only.",
     openGraphImage: "https://lovable.dev/opengraph-image-p98pqg.png",
   },
 };

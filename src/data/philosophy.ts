@@ -9,7 +9,7 @@ export const philosophyPageData: PhilosophyPageData = {
   ],
   privateAppointmentsStrip: {
     heading: "Private appointments",
-    text: "Experience discreet luxury in our serene Copenhagen setting. By appointment only.",
+    text: "Experience discreet luxury in our serene Aalborg setting. By appointment only.",
     cta: {
       label: "Book Consultation",
       url: "https://www.hairbygashi.dk/",
