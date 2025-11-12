@@ -253,7 +253,7 @@ export const dictionaries = {
     },
     footer: {
       summary:
-        "Ren, diskret luksushårpleje i København. Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser.",
+        "Ren, diskret luksushårpleje i Aalborg. Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser.",
       navigation: "Navigation",
       hoursTitle: "Åbningstider",
       contactTitle: "Kontakt",
