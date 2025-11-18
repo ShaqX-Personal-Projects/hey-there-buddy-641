@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import logoImage from "@/assets/logo.png";
 
 const LoadingScreen = () => {
   const { dict } = useLanguage();
@@ -81,11 +82,13 @@ const LoadingScreen = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.43, 0.13, 0.23, 0.96] }}
-            className="text-center"
+            className="text-center flex flex-col items-center"
           >
-            <h1 className="text-5xl md:text-7xl font-playfair text-foreground tracking-tight mb-4">
-              Hair by Gashi
-            </h1>
+            <img 
+              src={logoImage} 
+              alt="Hair by Gashi" 
+              className="h-16 md:h-24 w-auto dark:invert mb-6"
+            />
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
