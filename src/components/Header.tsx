@@ -7,6 +7,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { globalSettings } from "@/data/globals";
+import logoImage from "@/assets/logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,8 +30,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-playfair font-semibold tracking-tight">
-            {logo}
+          <Link to="/" className="block">
+            <img 
+              src={logoImage} 
+              alt="Hair by Gashi" 
+              className="h-8 md:h-10 w-auto dark:invert transition-all"
+            />
           </Link>
 
           {/* Desktop Navigation */}

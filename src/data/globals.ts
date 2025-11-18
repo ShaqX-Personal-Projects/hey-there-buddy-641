@@ -2,7 +2,7 @@ import { GlobalSettings } from "@/types/cms";
 
 export const globalSettings: GlobalSettings = {
   siteTitle: "Hair by Gashi",
-  logo: "Hair by Gashi", // Text logo for now
+  logo: "/src/assets/logo.png",
   navLinks: [
     { to: "/", label: "Home" },
     { to: "/treatments", label: "Treatments" },
