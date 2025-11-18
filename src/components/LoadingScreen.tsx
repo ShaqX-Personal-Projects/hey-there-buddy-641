@@ -87,7 +87,7 @@ const LoadingScreen = () => {
             <img 
               src={logoImage} 
               alt="Hair by Gashi" 
-              className="h-16 md:h-24 w-auto dark:invert mb-6"
+              className="h-32 md:h-48 w-auto dark:invert mb-6"
             />
             <motion.div
               initial={{ scaleX: 0 }}

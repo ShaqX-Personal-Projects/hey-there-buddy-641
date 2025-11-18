@@ -34,7 +34,7 @@ const Header = () => {
             <img 
               src={logoImage} 
               alt="Hair by Gashi" 
-              className="h-12 md:h-14 w-auto dark:invert transition-all"
+              className="h-14 md:h-16 w-auto dark:invert transition-all"
             />
           </Link>
 
