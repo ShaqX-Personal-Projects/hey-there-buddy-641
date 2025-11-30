@@ -8,6 +8,7 @@ export const dictionaries = {
       treatments: "Behandlinger",
       gallery: "Galleri",
       philosophy: "Filosofi",
+      about: "Om Os",
       team: "Team",
       prices: "Priser",
       booking: "Booking",
@@ -93,6 +94,65 @@ export const dictionaries = {
           description: "Kompromisløse standarder i produkter, teknik og service. Luksus der taler for sig selv.",
         },
       },
+    },
+    about: {
+      eyebrow: "Vores Historie",
+      title: "Rejsen til perfektion",
+      subtitle: "Fra en drøm til Aalborgs mest eksklusive frisørsalon",
+      closingStatement: "Hver dag skaber vi ikke bare frisurer – vi skaber oplevelser.",
+      closingText: "Hair By Gashi fortsætter rejsen mod endnu højere standarder for luksus, præcision og diskret elegance.",
+      timeline: [
+        {
+          date: "2019",
+          title: "Drømmen Tager Form",
+          description: "Granit Gashi åbner Hair By Gashi i hjertet af Aalborg med en vision om at skabe byens mest eksklusive og diskrete frisørsalon. Fra første dag var fokus klart: kvalitet over kvantitet, perfektion i hver detalje.",
+        },
+        {
+          date: "Forår 2020",
+          title: "Første Store Samarbejde",
+          description: "Invitation til at style til Aalborgs eksklusiveste modeshow. Hair By Gashi skaber ikoniske looks til catwalken og etablerer sig som go-to for high-end events i Nordjylland.",
+        },
+        {
+          date: "Efterår 2020",
+          title: "Uddannelse & Videndeling",
+          description: "Granit begynder at undervise unge frisører og elever i avancerede teknikker. Masterclasses i præcisionsklipning og couture-farvebehandling bliver hurtigt populære i branchen.",
+        },
+        {
+          date: "2021",
+          title: "Interiør Transformation",
+          description: "Salonen gennemgår en total renovation. Nyt minimalistisk interiør i sort, hvidt og guld. Hver kvadratmeter er designet til ro, privatliv og den ultimative luksusoplevelse.",
+        },
+        {
+          date: "Sommer 2022",
+          title: "Instagram-Fænomen",
+          description: "Hair By Gashis før/efter-transformationer går viralt. Kunder rejser fra hele Danmark for at opleve den perfekte balance mellem dramatik og naturlig elegance.",
+        },
+        {
+          date: "Vinter 2022",
+          title: "Eksklusivt Produktsortiment",
+          description: "Hair By Gashi introducerer håndplukkede luksusprodukter til salonen. Kun de fineste brands – valgt personligt af Granit efter måneder med research og testning.",
+        },
+        {
+          date: "2023",
+          title: "International Anerkendelse",
+          description: "Granit inviteres til internationale hair shows i Paris og Milano. Hair By Gashi bliver anerkendt som et af Skandinaviens førende luxury hair studios.",
+        },
+        {
+          date: "Forår 2024",
+          title: "Signature Treatments",
+          description: "Lancering af tre eksklusive behandlinger: Precision Cut, Couture Colour og Red-Carpet Blow-Dry. Hver service er en koreograferet oplevelse fra konsultation til finish.",
+        },
+        {
+          date: "Efterår 2024",
+          title: "Private Suite Opening",
+          description: "En dedikeret private suite åbnes for kunder, der søger maksimal diskretion. Særligt populær blandt profiler og kunder med behov for total privatliv.",
+        },
+        {
+          date: "2025",
+          title: "Fremtiden Er Her",
+          description: "Hair By Gashi fortsætter med at sætte standarden for luksus og perfektion. Nye samarbejder, flere masterclasses og konstant udvikling – rejsen er langt fra slut.",
+        },
+      ],
     },
     contact: {
       eyebrow: "Kom i Kontakt",
@@ -311,6 +371,7 @@ export const dictionaries = {
       treatments: "Treatments",
       gallery: "Gallery",
       philosophy: "Philosophy",
+      about: "About Us",
       team: "Team",
       prices: "Prices",
       booking: "Booking",
@@ -396,6 +457,65 @@ export const dictionaries = {
           description: "Uncompromising standards in products, technique, and service. Luxury that speaks for itself.",
         },
       },
+    },
+    about: {
+      eyebrow: "Our Story",
+      title: "Journey to Perfection",
+      subtitle: "From a dream to Aalborg's most exclusive hair salon",
+      closingStatement: "Every day we don't just create hairstyles – we create experiences.",
+      closingText: "Hair By Gashi continues the journey toward even higher standards of luxury, precision, and discreet elegance.",
+      timeline: [
+        {
+          date: "2019",
+          title: "The Dream Takes Shape",
+          description: "Granit Gashi opens Hair By Gashi in the heart of Aalborg with a vision to create the city's most exclusive and discreet hair salon. From day one, the focus was clear: quality over quantity, perfection in every detail.",
+        },
+        {
+          date: "Spring 2020",
+          title: "First Major Collaboration",
+          description: "Invitation to style for Aalborg's most exclusive fashion show. Hair By Gashi creates iconic looks for the catwalk and establishes itself as the go-to for high-end events in Northern Jutland.",
+        },
+        {
+          date: "Fall 2020",
+          title: "Education & Knowledge Sharing",
+          description: "Granit begins teaching young hairdressers and apprentices in advanced techniques. Masterclasses in precision cutting and couture color treatment quickly become popular in the industry.",
+        },
+        {
+          date: "2021",
+          title: "Interior Transformation",
+          description: "The salon undergoes a total renovation. New minimalist interior in black, white, and gold. Every square meter is designed for tranquility, privacy, and the ultimate luxury experience.",
+        },
+        {
+          date: "Summer 2022",
+          title: "Instagram Phenomenon",
+          description: "Hair By Gashi's before/after transformations go viral. Clients travel from all over Denmark to experience the perfect balance between drama and natural elegance.",
+        },
+        {
+          date: "Winter 2022",
+          title: "Exclusive Product Range",
+          description: "Hair By Gashi introduces hand-picked luxury products to the salon. Only the finest brands – personally selected by Granit after months of research and testing.",
+        },
+        {
+          date: "2023",
+          title: "International Recognition",
+          description: "Granit is invited to international hair shows in Paris and Milan. Hair By Gashi is recognized as one of Scandinavia's leading luxury hair studios.",
+        },
+        {
+          date: "Spring 2024",
+          title: "Signature Treatments",
+          description: "Launch of three exclusive treatments: Precision Cut, Couture Colour, and Red-Carpet Blow-Dry. Each service is a choreographed experience from consultation to finish.",
+        },
+        {
+          date: "Fall 2024",
+          title: "Private Suite Opening",
+          description: "A dedicated private suite opens for clients seeking maximum discretion. Particularly popular among profiles and clients with needs for total privacy.",
+        },
+        {
+          date: "2025",
+          title: "The Future Is Here",
+          description: "Hair By Gashi continues to set the standard for luxury and perfection. New collaborations, more masterclasses, and constant development – the journey is far from over.",
+        },
+      ],
     },
     contact: {
       eyebrow: "Get in Touch",

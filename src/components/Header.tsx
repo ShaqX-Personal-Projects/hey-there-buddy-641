@@ -19,6 +19,7 @@ const Header = () => {
     { to: "/treatments", label: dict.nav.treatments },
     { to: "/gallery", label: dict.nav.gallery },
     { to: "/philosophy", label: dict.nav.philosophy },
+    { to: "/about", label: dict.nav.about },
     { to: "/team", label: dict.nav.team },
     { to: "/prices", label: dict.nav.prices },
     { to: "/booking", label: dict.nav.booking },

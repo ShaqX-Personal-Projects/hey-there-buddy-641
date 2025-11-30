@@ -21,6 +21,11 @@ export const seoData: SEOData = {
     metaDescription: "Modern technique meets classic taste. Calm, focused, uncompromising—for results that speak softly and carry far.",
     openGraphImage: "https://lovable.dev/opengraph-image-p98pqg.png",
   },
+  about: {
+    title: "About Us — Hair by Gashi",
+    metaDescription: "Follow Hair By Gashi's journey from dream to Aalborg's most exclusive hair salon. Discover our passion for perfectionism and luxury.",
+    openGraphImage: "https://lovable.dev/opengraph-image-p98pqg.png",
+  },
   team: {
     title: "Team — Hair by Gashi",
     metaDescription: "Meet the dedicated professionals committed to excellence in every detail at Hair by Gashi.",
