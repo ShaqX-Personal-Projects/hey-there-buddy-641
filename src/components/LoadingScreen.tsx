@@ -323,16 +323,6 @@ const LoadingScreen = () => {
           </motion.div>
         </div>
 
-        {/* Refined status text with typewriter */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2, ease: [0.65, 0, 0.35, 1] }}
-          className="absolute bottom-8 left-8 text-xs font-inter text-muted-foreground/80 tracking-[0.2em] uppercase"
-        >
-          {text}
-        </motion.div>
-
         {/* Refined corner accents */}
         {["top-left", "top-right", "bottom-left", "bottom-right"].map((corner, idx) => (
           <motion.div
