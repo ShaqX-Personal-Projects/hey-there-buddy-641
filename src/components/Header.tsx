@@ -72,22 +72,22 @@ const Header = () => {
                 <NavigationMenuContent>
                   <div className="container mx-auto px-4 py-8">
                     <ul className="flex gap-6 justify-center">
-                      <li className="animate-in fade-in slide-in-from-top-2 duration-300" style={{ animationDelay: "50ms" }}>
+                      <li>
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/treatments"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.treatments}
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
-                      <li className="animate-in fade-in slide-in-from-top-2 duration-300" style={{ animationDelay: "100ms" }}>
+                      <li>
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/prices"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.prices}
@@ -125,33 +125,33 @@ const Header = () => {
                 <NavigationMenuContent>
                   <div className="container mx-auto px-4 py-8">
                     <ul className="flex gap-6 justify-center">
-                      <li className="animate-in fade-in slide-in-from-top-2 duration-300" style={{ animationDelay: "50ms" }}>
+                      <li>
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/about"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.about}
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
-                      <li className="animate-in fade-in slide-in-from-top-2 duration-300" style={{ animationDelay: "100ms" }}>
+                      <li>
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/philosophy"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.philosophy}
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
-                      <li className="animate-in fade-in slide-in-from-top-2 duration-300" style={{ animationDelay: "150ms" }}>
+                      <li>
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/team"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.team}
