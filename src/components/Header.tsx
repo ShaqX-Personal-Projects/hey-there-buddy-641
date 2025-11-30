@@ -43,8 +43,9 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="flex items-center gap-1">
+          <div className="hidden lg:flex flex-1 justify-center">
+            <NavigationMenu>
+              <NavigationMenuList className="flex items-center gap-1">
               {/* Hjem */}
               <NavigationMenuItem>
                 <NavLink
@@ -172,8 +173,9 @@ const Header = () => {
                   {dict.nav.contact}
                 </NavLink>
               </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
           {/* Desktop Controls */}
           <div className="absolute right-0 hidden lg:flex items-center gap-2">
