@@ -192,10 +192,10 @@ All colors MUST be HSL.
   }
   
   .gold-hairline {
-    border: 1px solid hsl(var(--gold) / 0.15);
+    border: 1px solid hsl(var(--gold) / 0.3);
   }
   
   .gold-hairline-hover {
-    border: 1px solid hsl(var(--gold) / 0.2);
+    border: 1px solid hsl(var(--gold) / 0.45);
   }
 }
