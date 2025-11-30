@@ -28,9 +28,9 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 glass-effect">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="relative flex items-center justify-center h-20">
           {/* Logo */}
-          <Link to="/" className="block">
+          <Link to="/" className="absolute left-0 block">
             <img 
               src={logoImage} 
               alt="Hair by Gashi" 
@@ -38,7 +38,7 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Centered */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <NavLink
@@ -53,7 +53,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop Controls */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="absolute right-0 hidden lg:flex items-center gap-2">
             <ThemeToggle />
             <LanguageSwitcher />
             <Button
