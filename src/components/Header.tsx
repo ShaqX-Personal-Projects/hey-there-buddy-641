@@ -68,31 +68,33 @@ const Header = () => {
                 >
                   {dict.nav.treatments}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="!bg-background/95 backdrop-blur-xl border border-gold/30 rounded-xl shadow-2xl p-2 min-w-[220px] mt-2">
-                  <ul className="flex flex-col gap-1">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <NavLink
-                          to="/treatments"
-                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
-                          activeClassName="text-foreground bg-accent/20 font-medium"
-                        >
-                          {dict.nav.treatments}
-                        </NavLink>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <NavLink
-                          to="/prices"
-                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
-                          activeClassName="text-foreground bg-accent/20 font-medium"
-                        >
-                          {dict.nav.prices}
-                        </NavLink>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
+                <NavigationMenuContent>
+                  <div className="container mx-auto px-4 py-6">
+                    <ul className="flex gap-8 justify-center">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <NavLink
+                            to="/treatments"
+                            className="block px-6 py-3 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                            activeClassName="text-foreground bg-accent/20 font-medium"
+                          >
+                            {dict.nav.treatments}
+                          </NavLink>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <NavLink
+                            to="/prices"
+                            className="block px-6 py-3 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                            activeClassName="text-foreground bg-accent/20 font-medium"
+                          >
+                            {dict.nav.prices}
+                          </NavLink>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
@@ -119,42 +121,44 @@ const Header = () => {
                 >
                   {dict.nav.aboutSalon}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="!bg-background/95 backdrop-blur-xl border border-gold/30 rounded-xl shadow-2xl p-2 min-w-[220px] mt-2">
-                  <ul className="flex flex-col gap-1">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <NavLink
-                          to="/about"
-                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
-                          activeClassName="text-foreground bg-accent/20 font-medium"
-                        >
-                          {dict.nav.about}
-                        </NavLink>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <NavLink
-                          to="/philosophy"
-                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
-                          activeClassName="text-foreground bg-accent/20 font-medium"
-                        >
-                          {dict.nav.philosophy}
-                        </NavLink>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <NavLink
-                          to="/team"
-                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
-                          activeClassName="text-foreground bg-accent/20 font-medium"
-                        >
-                          {dict.nav.team}
-                        </NavLink>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
+                <NavigationMenuContent>
+                  <div className="container mx-auto px-4 py-6">
+                    <ul className="flex gap-8 justify-center">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <NavLink
+                            to="/about"
+                            className="block px-6 py-3 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                            activeClassName="text-foreground bg-accent/20 font-medium"
+                          >
+                            {dict.nav.about}
+                          </NavLink>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <NavLink
+                            to="/philosophy"
+                            className="block px-6 py-3 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                            activeClassName="text-foreground bg-accent/20 font-medium"
+                          >
+                            {dict.nav.philosophy}
+                          </NavLink>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <NavLink
+                            to="/team"
+                            className="block px-6 py-3 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                            activeClassName="text-foreground bg-accent/20 font-medium"
+                          >
+                            {dict.nav.team}
+                          </NavLink>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
