@@ -60,7 +60,7 @@ const Index = () => {
       </section>
 
       {/* Trust Chips */}
-      <section className="py-16 px-4" style={{ borderTop: '1px solid hsl(var(--gold) / 0.12)', borderBottom: '1px solid hsl(var(--gold) / 0.12)' }}>
+      <section className="py-16 px-4 bg-black dark:bg-white" style={{ borderTop: '1px solid hsl(var(--gold) / 0.12)', borderBottom: '1px solid hsl(var(--gold) / 0.12)' }}>
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
             {trustChipsWithIcons.map((chip, index) => {
