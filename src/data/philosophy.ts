@@ -12,7 +12,7 @@ export const philosophyPageData: PhilosophyPageData = {
     text: "Experience discreet luxury in our serene Aalborg setting. By appointment only.",
     cta: {
       label: "Book Consultation",
-      url: "https://www.hairbygashi.dk/",
+      url: "https://hair-by-gashi.planway.com/",
     },
   },
   values: [
