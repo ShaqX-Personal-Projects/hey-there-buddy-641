@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Layout from "./components/Layout";
 import AnimatedLayout from "./components/AnimatedLayout";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Treatments from "./pages/Treatments";
 import Gallery from "./pages/Gallery";
@@ -25,6 +26,7 @@ const App = () => (
       <LanguageProvider>
         <TooltipProvider>
           <BrowserRouter>
+            <ScrollToTop />
             <AnimatedLayout>
               <Toaster />
               <Sonner />
