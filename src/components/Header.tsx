@@ -183,7 +183,7 @@ const Header = () => {
             <LanguageSwitcher />
             <Button
               asChild
-              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium ml-2"
+              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium min-h-[44px] text-sm sm:text-base"
             >
               <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
                 {dict.nav.booking}
@@ -323,7 +323,7 @@ const Header = () => {
             {/* Book Tid CTA */}
             <Button
               asChild
-              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium mt-2"
+              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium mt-2 min-h-[44px] text-sm sm:text-base"
             >
               <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
                 {dict.nav.booking}

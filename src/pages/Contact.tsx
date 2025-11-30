@@ -123,7 +123,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
+                  className="w-full bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium min-h-[44px] text-sm sm:text-base"
                 >
                   {isSubmitting ? dict.contact.form.sending : dict.contact.form.submit}
                 </Button>
@@ -180,23 +180,23 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-muted/30 rounded-2xl p-8">
+            <div className="bg-muted/30 rounded-2xl p-6 sm:p-8">
               <div className="flex items-start gap-4 mb-4">
                 <Clock className="text-gold mt-1 flex-shrink-0" size={24} />
-                <h3 className="text-xl font-playfair font-semibold">{dict.contact.hours.title}</h3>
+                <h3 className="text-lg sm:text-xl font-playfair font-semibold">{dict.contact.hours.title}</h3>
               </div>
-              <div className="space-y-2 font-inter text-muted-foreground ml-10">
-                <div className="flex justify-between">
-                  <span>{dict.footer.monday} - {dict.footer.friday}:</span>
-                  <span>{contactPageData.hours.monday}</span>
+              <div className="space-y-2 font-inter text-sm sm:text-base text-muted-foreground ml-0 sm:ml-10">
+                <div className="flex justify-between gap-4">
+                  <span className="flex-shrink-0">{dict.footer.monday} - {dict.footer.friday}:</span>
+                  <span className="text-right">{contactPageData.hours.monday}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>{dict.footer.saturday}:</span>
-                  <span>{contactPageData.hours.saturday}</span>
+                <div className="flex justify-between gap-4">
+                  <span className="flex-shrink-0">{dict.footer.saturday}:</span>
+                  <span className="text-right">{contactPageData.hours.saturday}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>{dict.footer.sunday}:</span>
-                  <span className="text-gold">{dict.footer.closed}</span>
+                <div className="flex justify-between gap-4">
+                  <span className="flex-shrink-0">{dict.footer.sunday}:</span>
+                  <span className="text-gold text-right">{dict.footer.closed}</span>
                 </div>
               </div>
               {contactPageData.byAppointmentOnly && (

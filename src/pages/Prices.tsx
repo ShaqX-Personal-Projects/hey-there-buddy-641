@@ -49,26 +49,26 @@ const Prices = () => {
                 value={`item-${index}`}
                 className="border border-gold/20 rounded-2xl overflow-hidden bg-card"
               >
-                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-muted/30 transition-colors">
+                <AccordionTrigger className="px-4 sm:px-6 py-4 sm:py-5 hover:no-underline hover:bg-muted/30 transition-colors">
                   <div className="text-left">
-                    <h3 className="font-playfair text-2xl font-semibold">
+                    <h3 className="font-playfair text-lg sm:text-xl md:text-2xl font-semibold">
                       {translatedCategory?.category || category.category}
                     </h3>
-                    <p className="font-inter text-sm text-muted-foreground mt-1">
+                    <p className="font-inter text-xs sm:text-sm text-muted-foreground mt-1">
                       {dict.prices.startingPrices}
                     </p>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
-                  <div className="space-y-4 pt-2">
+                <AccordionContent className="px-4 sm:px-6 pb-4 sm:pb-6">
+                  <div className="space-y-3 sm:space-y-4 pt-2">
                     {category.items.map((item, itemIndex) => {
                       const translatedItem = translatedCategory?.items[itemIndex];
                       return (
                         <div key={itemIndex} className="space-y-1">
-                          <div className="flex justify-between items-baseline gap-4">
+                          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4">
                             <div className="flex-1">
                               <div className="flex items-baseline gap-2 flex-wrap">
-                                <span className="font-inter text-foreground font-medium">
+                                <span className="font-inter text-sm sm:text-base text-foreground font-medium">
                                   {translatedItem?.name || item.name}
                                 </span>
                                 <span className="font-inter text-xs text-muted-foreground">
