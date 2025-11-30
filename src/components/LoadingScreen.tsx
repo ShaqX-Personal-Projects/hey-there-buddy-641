@@ -336,7 +336,7 @@ const LoadingScreen = () => {
               corner.includes("top") ? "top-8" : "bottom-8"
             }`}
             style={{
-              borderColor: resolvedTheme === "light" ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0.6)",
+              borderColor: resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)",
             }}
           />
         ))}
