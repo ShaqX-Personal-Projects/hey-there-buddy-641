@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import { NavLink } from "./NavLink";
@@ -23,6 +23,11 @@ const Header = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const { dict } = useLanguage();
   const { primaryCTA } = globalSettings;
+  const location = useLocation();
+
+  const isActiveRoute = (paths: string[]) => {
+    return paths.some(path => location.pathname === path);
+  };
 
   return (
     <header className="sticky top-0 z-50 glass-effect">
@@ -39,12 +44,12 @@ const Header = () => {
 
           {/* Desktop Navigation - Centered */}
           <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="flex items-center gap-6">
+            <NavigationMenuList className="flex items-center gap-1">
               {/* Hjem */}
               <NavigationMenuItem>
                 <NavLink
                   to="/"
-                  className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors px-3 py-2"
+                  className="text-sm font-inter font-medium text-foreground/70 hover:text-foreground transition-all px-4 py-2 rounded-lg hover:bg-accent/10"
                   activeClassName="text-foreground"
                 >
                   {dict.nav.home}
@@ -53,17 +58,24 @@ const Header = () => {
 
               {/* Behandlinger Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuTrigger 
+                  className={`text-sm font-inter font-medium transition-all px-4 py-2 h-auto rounded-lg
+                    ${isActiveRoute(['/treatments', '/prices']) 
+                      ? 'text-foreground bg-accent/10' 
+                      : 'text-foreground/70 hover:text-foreground bg-transparent hover:bg-accent/10'
+                    }
+                    data-[state=open]:bg-accent/10 data-[state=open]:text-foreground`}
+                >
                   {dict.nav.treatments}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-background border border-gold/20 rounded-lg shadow-lg p-4 min-w-[200px]">
-                  <ul className="flex flex-col gap-2">
+                <NavigationMenuContent className="!bg-background/95 backdrop-blur-xl border border-gold/30 rounded-xl shadow-2xl p-2 min-w-[220px] mt-2">
+                  <ul className="flex flex-col gap-1">
                     <li>
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/treatments"
-                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
-                          activeClassName="text-foreground bg-muted"
+                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                          activeClassName="text-foreground bg-accent/20 font-medium"
                         >
                           {dict.nav.treatments}
                         </NavLink>
@@ -73,8 +85,8 @@ const Header = () => {
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/prices"
-                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
-                          activeClassName="text-foreground bg-muted"
+                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                          activeClassName="text-foreground bg-accent/20 font-medium"
                         >
                           {dict.nav.prices}
                         </NavLink>
@@ -88,8 +100,8 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavLink
                   to="/gallery"
-                  className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors px-3 py-2"
-                  activeClassName="text-foreground"
+                  className="text-sm font-inter font-medium text-foreground/70 hover:text-foreground transition-all px-4 py-2 rounded-lg hover:bg-accent/10"
+                  activeClassName="text-foreground bg-accent/10"
                 >
                   {dict.nav.gallery}
                 </NavLink>
@@ -97,17 +109,24 @@ const Header = () => {
 
               {/* Om salonen Dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                <NavigationMenuTrigger 
+                  className={`text-sm font-inter font-medium transition-all px-4 py-2 h-auto rounded-lg
+                    ${isActiveRoute(['/about', '/philosophy', '/team']) 
+                      ? 'text-foreground bg-accent/10' 
+                      : 'text-foreground/70 hover:text-foreground bg-transparent hover:bg-accent/10'
+                    }
+                    data-[state=open]:bg-accent/10 data-[state=open]:text-foreground`}
+                >
                   {dict.nav.aboutSalon}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-background border border-gold/20 rounded-lg shadow-lg p-4 min-w-[200px]">
-                  <ul className="flex flex-col gap-2">
+                <NavigationMenuContent className="!bg-background/95 backdrop-blur-xl border border-gold/30 rounded-xl shadow-2xl p-2 min-w-[220px] mt-2">
+                  <ul className="flex flex-col gap-1">
                     <li>
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/about"
-                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
-                          activeClassName="text-foreground bg-muted"
+                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                          activeClassName="text-foreground bg-accent/20 font-medium"
                         >
                           {dict.nav.about}
                         </NavLink>
@@ -117,8 +136,8 @@ const Header = () => {
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/philosophy"
-                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
-                          activeClassName="text-foreground bg-muted"
+                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                          activeClassName="text-foreground bg-accent/20 font-medium"
                         >
                           {dict.nav.philosophy}
                         </NavLink>
@@ -128,8 +147,8 @@ const Header = () => {
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/team"
-                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
-                          activeClassName="text-foreground bg-muted"
+                          className="block px-4 py-3 text-sm font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-lg transition-all"
+                          activeClassName="text-foreground bg-accent/20 font-medium"
                         >
                           {dict.nav.team}
                         </NavLink>
@@ -143,8 +162,8 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavLink
                   to="/contact"
-                  className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors px-3 py-2"
-                  activeClassName="text-foreground"
+                  className="text-sm font-inter font-medium text-foreground/70 hover:text-foreground transition-all px-4 py-2 rounded-lg hover:bg-accent/10"
+                  activeClassName="text-foreground bg-accent/10"
                 >
                   {dict.nav.contact}
                 </NavLink>
