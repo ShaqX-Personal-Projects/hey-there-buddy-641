@@ -34,7 +34,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center h-20">
           {/* Logo */}
-          <Link to="/" className="absolute left-0 block">
+          <Link to="/" className="absolute left-0 block z-50">
             <img 
               src={logoImage} 
               alt="Hair by Gashi" 
@@ -178,7 +178,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Controls */}
-          <div className="absolute right-0 hidden lg:flex items-center gap-2">
+          <div className="absolute right-0 hidden lg:flex items-center gap-2 z-50">
             <ThemeToggle />
             <LanguageSwitcher />
             <Button
