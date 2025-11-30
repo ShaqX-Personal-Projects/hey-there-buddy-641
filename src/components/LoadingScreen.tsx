@@ -73,7 +73,7 @@ const LoadingScreen = () => {
           }}
           className="absolute inset-0 w-1/3"
           style={{
-            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.05)" : "rgba(212, 175, 55, 0.08)"} 50%, transparent 100%)`,
+            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.2)" : "rgba(255, 255, 255, 0.15)"} 50%, transparent 100%)`,
           }}
         />
         <motion.div
@@ -88,7 +88,7 @@ const LoadingScreen = () => {
           }}
           className="absolute inset-0 w-1/4"
           style={{
-            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.03)" : "rgba(212, 175, 55, 0.05)"} 50%, transparent 100%)`,
+            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.1)"} 50%, transparent 100%)`,
           }}
         />
         
@@ -105,7 +105,7 @@ const LoadingScreen = () => {
           }}
           className="absolute inset-0"
           style={{
-            background: `radial-gradient(ellipse at center, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.08)" : "rgba(212, 175, 55, 0.12)"} 0%, transparent 60%)`,
+            background: `radial-gradient(ellipse at center, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.25)" : "rgba(255, 255, 255, 0.2)"} 0%, transparent 60%)`,
           }}
         />
         
@@ -120,7 +120,7 @@ const LoadingScreen = () => {
             }}
             animate={{
               y: [null, Math.random() * -200 - 100],
-              opacity: [0, 0.6, 0],
+              opacity: [0, 0.8, 0],
             }}
             transition={{
               duration: 3 + Math.random() * 2,
@@ -128,9 +128,9 @@ const LoadingScreen = () => {
               delay: i * 0.4,
               ease: "easeOut",
             }}
-            className="absolute w-1 h-1 bg-gold/40 rounded-full"
+            className="absolute w-1 h-1 bg-white rounded-full"
             style={{
-              boxShadow: `0 0 8px 2px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.3)" : "rgba(212, 175, 55, 0.5)"}`,
+              boxShadow: `0 0 12px 3px ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0.7)"}`,
             }}
           />
         ))}
@@ -142,8 +142,8 @@ const LoadingScreen = () => {
           transition={{ duration: 1.6, delay: 0.2, ease: [0.65, 0, 0.35, 1] }}
           className="absolute top-0 left-0 right-0 h-px overflow-hidden"
           style={{
-            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)"} 50%, transparent 100%)`,
-            boxShadow: `0 0 8px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.3)" : "rgba(212, 175, 55, 0.4)"}`,
+            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.6)" : "rgba(255, 255, 255, 0.5)"} 50%, transparent 100%)`,
+            boxShadow: `0 0 8px ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.4)" : "rgba(255, 255, 255, 0.5)"}`,
           }}
         >
           <motion.div
@@ -151,8 +151,8 @@ const LoadingScreen = () => {
             transition={{ duration: 2.5, repeat: Infinity, ease: [0.65, 0, 0.35, 1], repeatDelay: 0.5 }}
             className="h-full w-1/4"
             style={{
-              background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.8)" : "rgba(212, 175, 55, 1)"} 50%, transparent 100%)`,
-              boxShadow: `0 0 16px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.6)" : "rgba(212, 175, 55, 0.8)"}`,
+              background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 1)"} 50%, transparent 100%)`,
+              boxShadow: `0 0 20px 6px ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.9)"}`,
             }}
           />
         </motion.div>
@@ -162,8 +162,8 @@ const LoadingScreen = () => {
           transition={{ duration: 1.6, delay: 0.2, ease: [0.65, 0, 0.35, 1] }}
           className="absolute bottom-0 left-0 right-0 h-px overflow-hidden"
           style={{
-            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)"} 50%, transparent 100%)`,
-            boxShadow: `0 0 8px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.3)" : "rgba(212, 175, 55, 0.4)"}`,
+            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.6)" : "rgba(255, 255, 255, 0.5)"} 50%, transparent 100%)`,
+            boxShadow: `0 0 8px ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.4)" : "rgba(255, 255, 255, 0.5)"}`,
           }}
         >
           <motion.div
@@ -171,8 +171,8 @@ const LoadingScreen = () => {
             transition={{ duration: 2.5, repeat: Infinity, ease: [0.65, 0, 0.35, 1], repeatDelay: 0.5 }}
             className="h-full w-1/4"
             style={{
-              background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.8)" : "rgba(212, 175, 55, 1)"} 50%, transparent 100%)`,
-              boxShadow: `0 0 16px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.6)" : "rgba(212, 175, 55, 0.8)"}`,
+              background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 1)"} 50%, transparent 100%)`,
+              boxShadow: `0 0 20px 6px ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.9)"}`,
             }}
           />
         </motion.div>
@@ -205,7 +205,7 @@ const LoadingScreen = () => {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute inset-0 blur-3xl rounded-full"
                 style={{
-                  background: `radial-gradient(circle, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.2)" : "rgba(212, 175, 55, 0.3)"} 0%, transparent 70%)`,
+                  background: `radial-gradient(circle, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.4)" : "rgba(255, 255, 255, 0.5)"} 0%, transparent 70%)`,
                 }}
               />
               
@@ -230,8 +230,8 @@ const LoadingScreen = () => {
               transition={{ duration: 1.4, delay: 0.9, ease: [0.65, 0, 0.35, 1] }}
               className="h-px w-64 mx-auto mt-8 relative overflow-hidden"
               style={{
-                background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.6)" : "rgba(212, 175, 55, 0.8)"} 50%, transparent 100%)`,
-                boxShadow: `0 0 12px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.6)"}`,
+                background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.8)"} 50%, transparent 100%)`,
+                boxShadow: `0 0 12px ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0.7)"}`,
               }}
             >
               <motion.div
@@ -239,8 +239,8 @@ const LoadingScreen = () => {
                 transition={{ duration: 2, repeat: Infinity, ease: [0.65, 0, 0.35, 1], repeatDelay: 0.5 }}
                 className="absolute inset-0 w-1/3"
                 style={{
-                  background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 1)" : "rgba(212, 175, 55, 1)"} 50%, transparent 100%)`,
-                  boxShadow: `0 0 20px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.8)" : "rgba(212, 175, 55, 1)"}`,
+                  background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 1)"} 50%, transparent 100%)`,
+                  boxShadow: `0 0 24px 6px ${resolvedTheme === "light" ? "rgba(255, 255, 255, 0.9)" : "rgba(255, 255, 255, 1)"}`,
                 }}
               />
             </motion.div>
@@ -336,7 +336,7 @@ const LoadingScreen = () => {
               corner.includes("top") ? "top-8" : "bottom-8"
             }`}
             style={{
-              borderColor: resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)",
+              borderColor: resolvedTheme === "light" ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 0.6)",
             }}
           />
         ))}
