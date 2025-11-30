@@ -333,38 +333,22 @@ const LoadingScreen = () => {
           {text}
         </motion.div>
 
-        {/* Refined corner accents with staggered animation */}
+        {/* Refined corner accents */}
         {["top-left", "top-right", "bottom-left", "bottom-right"].map((corner, idx) => (
           <motion.div
             key={corner}
-            initial={{ opacity: 0, scale: 0.7 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.5 + idx * 0.15, ease: [0.65, 0, 0.35, 1] }}
-            className={`absolute w-20 h-20 ${
-              corner.includes("top") ? "border-t-2" : "border-b-2"
-            } ${corner.includes("left") ? "border-l-2 left-6" : "border-r-2 right-6"} ${
-              corner.includes("top") ? "top-6" : "bottom-6"
+            transition={{ duration: 1.2, delay: 0.5 + idx * 0.1, ease: [0.65, 0, 0.35, 1] }}
+            className={`absolute w-16 h-16 ${
+              corner.includes("top") ? "border-t" : "border-b"
+            } ${corner.includes("left") ? "border-l left-8" : "border-r right-8"} ${
+              corner.includes("top") ? "top-8" : "bottom-8"
             }`}
             style={{
-              borderColor: resolvedTheme === "light" ? "rgba(212, 175, 55, 0.35)" : "rgba(212, 175, 55, 0.4)",
-              boxShadow: `0 0 16px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.2)" : "rgba(212, 175, 55, 0.3)"}`,
+              borderColor: resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)",
             }}
-          >
-            {/* Corner glow accent */}
-            <motion.div
-              animate={{ opacity: [0.3, 0.7, 0.3] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: idx * 0.3 }}
-              className={`absolute w-3 h-3 rounded-full bg-gold/40 ${
-                corner.includes("top") && corner.includes("left") ? "-top-1.5 -left-1.5" :
-                corner.includes("top") && corner.includes("right") ? "-top-1.5 -right-1.5" :
-                corner.includes("bottom") && corner.includes("left") ? "-bottom-1.5 -left-1.5" :
-                "-bottom-1.5 -right-1.5"
-              }`}
-              style={{
-                boxShadow: `0 0 12px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.6)"}`,
-              }}
-            />
-          </motion.div>
+          />
         ))}
       </motion.div>
     </>
