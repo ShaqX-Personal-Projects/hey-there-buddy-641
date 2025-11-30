@@ -44,13 +44,13 @@ const Index = () => {
         
         {/* Content */}
         <div className="relative z-10 container mx-auto text-center max-w-4xl">
-          <p className="eyebrow-text mb-4 sm:mb-6 text-xs sm:text-sm">
+          <p className="eyebrow-text mb-4 sm:mb-6 text-xs sm:text-sm text-white/90">
             {dict.home.eyebrow}
           </p>
-          <h1 className="font-playfair font-semibold mb-4 sm:mb-6 text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
+          <h1 className="font-playfair font-semibold mb-4 sm:mb-6 text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
             {dict.home.h1}
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-inter mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/80 font-inter mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
             {dict.home.subtext}
           </p>
           <CTAButton href={globalSettings.primaryCTA.url}>
