@@ -76,7 +76,7 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/treatments"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.treatments}
@@ -87,7 +87,7 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/prices"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.prices}
@@ -129,7 +129,7 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/about"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.about}
@@ -140,7 +140,7 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/philosophy"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.philosophy}
@@ -151,7 +151,7 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/team"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md border border-transparent hover:border-gold/20"
+                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-all duration-200 will-change-transform hover:-translate-y-0.5 hover:shadow-md border border-transparent hover:border-gold/20"
                             activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
                           >
                             {dict.nav.team}
