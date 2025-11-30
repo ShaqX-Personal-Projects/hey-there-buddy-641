@@ -5,7 +5,7 @@ export const teamPageData: TeamPageData = {
     {
       name: "Gashi",
       role: "Founder & Master Stylist",
-      portrait: "/placeholder.svg",
+      portrait: "/src/assets/philosophy-hero.png",
       bio: "With over 15 years of experience in luxury haircare, Gashi has perfected the art of combining modern techniques with timeless elegance.",
       specialties: ["Precision Cutting", "Couture Colour", "Bridal Styling"],
       certifications: [],
