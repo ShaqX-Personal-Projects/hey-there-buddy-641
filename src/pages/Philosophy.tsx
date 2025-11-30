@@ -2,6 +2,7 @@ import CTAButton from "@/components/CTAButton";
 import SectionHeading from "@/components/SectionHeading";
 import { philosophyPageData } from "@/data/philosophy";
 import { useLanguage } from "@/contexts/LanguageContext";
+import philosophyHero from "@/assets/philosophy-hero.png";
 
 const Philosophy = () => {
   const { dict } = useLanguage();
@@ -10,22 +11,35 @@ const Philosophy = () => {
     <div>
       {/* Main Philosophy Section */}
       <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <SectionHeading
-            eyebrow={dict.philosophy.eyebrow}
-            title={dict.philosophy.title}
-          />
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeading
+                eyebrow={dict.philosophy.eyebrow}
+                title={dict.philosophy.title}
+                align="left"
+              />
 
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg md:text-xl font-inter leading-relaxed mb-8 text-foreground">
-              {dict.philosophy.body1}
-            </p>
-            <p className="text-lg font-inter leading-relaxed mb-8 text-muted-foreground">
-              {dict.philosophy.body2}
-            </p>
-            <p className="text-lg font-inter leading-relaxed mb-8 text-muted-foreground">
-              {dict.philosophy.body3}
-            </p>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg md:text-xl font-inter leading-relaxed mb-8 text-foreground">
+                  {dict.philosophy.body1}
+                </p>
+                <p className="text-lg font-inter leading-relaxed mb-8 text-muted-foreground">
+                  {dict.philosophy.body2}
+                </p>
+                <p className="text-lg font-inter leading-relaxed mb-8 text-muted-foreground">
+                  {dict.philosophy.body3}
+                </p>
+              </div>
+            </div>
+
+            <div className="relative">
+              <img
+                src={philosophyHero}
+                alt="Hair by Gashi - Professional hairdressing"
+                className="w-full h-auto rounded-2xl bw-image card-shadow hover-lift-smooth"
+              />
+            </div>
           </div>
         </div>
       </section>
