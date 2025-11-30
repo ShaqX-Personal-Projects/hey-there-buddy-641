@@ -23,7 +23,7 @@ export const bookingPageData: BookingPageData = {
   ],
   primaryCTA: {
     label: "Book Appointment",
-    url: "https://www.hairbygashi.dk/",
+    url: "https://hair-by-gashi.planway.com/",
   },
   ctaSubtext: "Click the button above to access our booking system",
 };
