@@ -136,8 +136,8 @@ const Contact = () => {
             <div className="border border-gold/20 rounded-2xl p-8 space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin className="text-gold mt-1 flex-shrink-0" size={24} />
-                <div>
-                  <h3 className="text-xl font-playfair font-semibold mb-2">{dict.contact.location}</h3>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg sm:text-xl font-playfair font-semibold mb-2">{dict.contact.location}</h3>
                   <p className="text-muted-foreground font-inter">
                     {contactPageData.address.street}
                   </p>
@@ -155,11 +155,11 @@ const Contact = () => {
 
               <div className="flex items-start gap-4">
                 <Phone className="text-gold mt-1 flex-shrink-0" size={24} />
-                <div>
-                  <h3 className="text-xl font-playfair font-semibold mb-2">{dict.contact.phone}</h3>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg sm:text-xl font-playfair font-semibold mb-2">{dict.contact.phone}</h3>
                   <a
                     href={`tel:${contactPageData.phone.replace(/\s/g, '')}`}
-                    className="text-muted-foreground hover:text-gold font-inter transition-colors"
+                    className="text-muted-foreground hover:text-gold font-inter transition-colors text-sm sm:text-base"
                   >
                     {contactPageData.phone}
                   </a>
@@ -168,11 +168,11 @@ const Contact = () => {
 
               <div className="flex items-start gap-4">
                 <Mail className="text-gold mt-1 flex-shrink-0" size={24} />
-                <div>
-                  <h3 className="text-xl font-playfair font-semibold mb-2">{dict.contact.form.email}</h3>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg sm:text-xl font-playfair font-semibold mb-2">{dict.contact.form.email}</h3>
                   <a
                     href={`mailto:${contactPageData.email}`}
-                    className="text-muted-foreground hover:text-gold font-inter transition-colors"
+                    className="text-muted-foreground hover:text-gold font-inter transition-colors break-all text-sm sm:text-base"
                   >
                     {contactPageData.email}
                   </a>
