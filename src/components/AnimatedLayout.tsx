@@ -13,7 +13,7 @@ const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
     // Simulate minimum loading time for smooth experience
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1800);
+    }, 2800);
 
     return () => clearTimeout(timer);
   }, []);
