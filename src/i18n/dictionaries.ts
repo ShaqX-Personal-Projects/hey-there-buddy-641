@@ -111,6 +111,7 @@ export const dictionaries = {
       location: "Beliggenhed",
       area: "Aalborg, Danmark",
       phone: "Telefon",
+      country: "Danmark",
       byAppointment: "Kun efter aftale",
       hours: {
         title: "Åbningstider",
@@ -413,6 +414,7 @@ export const dictionaries = {
       location: "Location",
       area: "Aalborg, Denmark",
       phone: "Phone",
+      country: "Denmark",
       byAppointment: "By appointment only",
       hours: {
         title: "Hours",

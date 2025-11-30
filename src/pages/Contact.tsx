@@ -145,7 +145,7 @@ const Contact = () => {
                     {contactPageData.address.city}
                   </p>
                   <p className="text-muted-foreground font-inter">
-                    {contactPageData.address.country}
+                    {dict.contact.country}
                   </p>
                   {contactPageData.byAppointmentOnly && (
                     <p className="text-sm text-gold font-inter mt-2">{dict.contact.byAppointment}</p>
