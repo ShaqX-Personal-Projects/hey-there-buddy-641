@@ -27,8 +27,23 @@ const Index = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-16 sm:py-20">
-        <div className="container mx-auto text-center max-w-4xl">
+      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-16 sm:py-20 overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover grayscale"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto text-center max-w-4xl">
           <p className="eyebrow-text mb-4 sm:mb-6 text-xs sm:text-sm">
             {dict.home.eyebrow}
           </p>
