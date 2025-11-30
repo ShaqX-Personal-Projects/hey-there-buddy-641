@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import { NavLink } from "./NavLink";
 import { ThemeToggle } from "./ThemeToggle";
@@ -8,23 +8,21 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { globalSettings } from "@/data/globals";
 import logoImage from "@/assets/logo.png";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [treatmentsOpen, setTreatmentsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const { dict } = useLanguage();
-  const { logo, primaryCTA } = globalSettings;
-
-  const navLinks = [
-    { to: "/", label: dict.nav.home },
-    { to: "/treatments", label: dict.nav.treatments },
-    { to: "/gallery", label: dict.nav.gallery },
-    { to: "/philosophy", label: dict.nav.philosophy },
-    { to: "/about", label: dict.nav.about },
-    { to: "/team", label: dict.nav.team },
-    { to: "/prices", label: dict.nav.prices },
-    { to: "/booking", label: dict.nav.booking },
-    { to: "/contact", label: dict.nav.contact },
-  ];
+  const { primaryCTA } = globalSettings;
 
   return (
     <header className="sticky top-0 z-50 glass-effect">
@@ -40,18 +38,119 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors"
-                activeClassName="text-foreground"
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </nav>
+          <NavigationMenu className="hidden lg:flex">
+            <NavigationMenuList className="flex items-center gap-6">
+              {/* Hjem */}
+              <NavigationMenuItem>
+                <NavLink
+                  to="/"
+                  className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors px-3 py-2"
+                  activeClassName="text-foreground"
+                >
+                  {dict.nav.home}
+                </NavLink>
+              </NavigationMenuItem>
+
+              {/* Behandlinger Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                  {dict.nav.treatments}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-background border border-gold/20 rounded-lg shadow-lg p-4 min-w-[200px]">
+                  <ul className="flex flex-col gap-2">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <NavLink
+                          to="/treatments"
+                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                          activeClassName="text-foreground bg-muted"
+                        >
+                          {dict.nav.treatments}
+                        </NavLink>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <NavLink
+                          to="/prices"
+                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                          activeClassName="text-foreground bg-muted"
+                        >
+                          {dict.nav.prices}
+                        </NavLink>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Galleri */}
+              <NavigationMenuItem>
+                <NavLink
+                  to="/gallery"
+                  className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors px-3 py-2"
+                  activeClassName="text-foreground"
+                >
+                  {dict.nav.gallery}
+                </NavLink>
+              </NavigationMenuItem>
+
+              {/* Om salonen Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                  {dict.nav.aboutSalon}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-background border border-gold/20 rounded-lg shadow-lg p-4 min-w-[200px]">
+                  <ul className="flex flex-col gap-2">
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <NavLink
+                          to="/about"
+                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                          activeClassName="text-foreground bg-muted"
+                        >
+                          {dict.nav.about}
+                        </NavLink>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <NavLink
+                          to="/philosophy"
+                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                          activeClassName="text-foreground bg-muted"
+                        >
+                          {dict.nav.philosophy}
+                        </NavLink>
+                      </NavigationMenuLink>
+                    </li>
+                    <li>
+                      <NavigationMenuLink asChild>
+                        <NavLink
+                          to="/team"
+                          className="block px-4 py-2 text-sm font-inter text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                          activeClassName="text-foreground bg-muted"
+                        >
+                          {dict.nav.team}
+                        </NavLink>
+                      </NavigationMenuLink>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Kontakt */}
+              <NavigationMenuItem>
+                <NavLink
+                  to="/contact"
+                  className="text-sm font-inter font-medium text-foreground/80 hover:text-foreground transition-colors px-3 py-2"
+                  activeClassName="text-foreground"
+                >
+                  {dict.nav.contact}
+                </NavLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {/* Desktop Controls */}
           <div className="absolute right-0 hidden lg:flex items-center gap-2">
@@ -62,14 +161,14 @@ const Header = () => {
               className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium ml-2"
             >
               <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
-                {dict.cta.bookAppointment}
+                {dict.nav.booking}
               </a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 absolute right-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -80,29 +179,129 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden glass-effect">
-          <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className="text-base font-inter font-medium text-foreground/80 hover:text-foreground transition-colors py-2"
-                activeClassName="text-foreground"
-                onClick={() => setMobileMenuOpen(false)}
+        <div className="lg:hidden glass-effect border-t border-gold/20">
+          <nav className="container mx-auto px-4 py-6 flex flex-col gap-2">
+            {/* Hjem */}
+            <NavLink
+              to="/"
+              className="text-base font-inter font-medium text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+              activeClassName="text-foreground bg-muted"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {dict.nav.home}
+            </NavLink>
+
+            {/* Behandlinger Dropdown */}
+            <div>
+              <button
+                onClick={() => setTreatmentsOpen(!treatmentsOpen)}
+                className="w-full flex items-center justify-between text-base font-inter font-medium text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
               >
-                {link.label}
-              </NavLink>
-            ))}
-            <div className="flex items-center gap-2 mt-2 pb-2 border-b border-gold/20">
+                {dict.nav.treatments}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    treatmentsOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {treatmentsOpen && (
+                <div className="ml-4 mt-1 flex flex-col gap-1">
+                  <NavLink
+                    to="/treatments"
+                    className="text-sm font-inter text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+                    activeClassName="text-foreground bg-muted"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {dict.nav.treatments}
+                  </NavLink>
+                  <NavLink
+                    to="/prices"
+                    className="text-sm font-inter text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+                    activeClassName="text-foreground bg-muted"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {dict.nav.prices}
+                  </NavLink>
+                </div>
+              )}
+            </div>
+
+            {/* Galleri */}
+            <NavLink
+              to="/gallery"
+              className="text-base font-inter font-medium text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+              activeClassName="text-foreground bg-muted"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {dict.nav.gallery}
+            </NavLink>
+
+            {/* Om salonen Dropdown */}
+            <div>
+              <button
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className="w-full flex items-center justify-between text-base font-inter font-medium text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+              >
+                {dict.nav.aboutSalon}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    aboutOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {aboutOpen && (
+                <div className="ml-4 mt-1 flex flex-col gap-1">
+                  <NavLink
+                    to="/about"
+                    className="text-sm font-inter text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+                    activeClassName="text-foreground bg-muted"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {dict.nav.about}
+                  </NavLink>
+                  <NavLink
+                    to="/philosophy"
+                    className="text-sm font-inter text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+                    activeClassName="text-foreground bg-muted"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {dict.nav.philosophy}
+                  </NavLink>
+                  <NavLink
+                    to="/team"
+                    className="text-sm font-inter text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+                    activeClassName="text-foreground bg-muted"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {dict.nav.team}
+                  </NavLink>
+                </div>
+              )}
+            </div>
+
+            {/* Kontakt */}
+            <NavLink
+              to="/contact"
+              className="text-base font-inter font-medium text-foreground/80 hover:text-foreground transition-colors py-2 px-3 rounded-lg hover:bg-muted/50"
+              activeClassName="text-foreground bg-muted"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {dict.nav.contact}
+            </NavLink>
+
+            {/* Mobile Controls */}
+            <div className="flex items-center gap-2 mt-4 pt-4 border-t border-gold/20">
               <ThemeToggle />
               <LanguageSwitcher />
             </div>
+
+            {/* Book Tid CTA */}
             <Button
               asChild
-              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
+              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium mt-2"
             >
               <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
-                {dict.cta.bookAppointment}
+                {dict.nav.booking}
               </a>
             </Button>
           </nav>
