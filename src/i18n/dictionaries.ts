@@ -247,9 +247,9 @@ export const dictionaries = {
       specialties: "Specialer:",
       members: {
         gashi: {
-          name: "Gashi",
+          name: "Granit Gashi",
           role: "Grundlægger & Mester Stylist",
-          bio: "Med over 15 års erfaring inden for luksushårpleje har Gashi perfektioneret kunsten at kombinere moderne teknikker med tidløs elegance.",
+          bio: "Med over 15 års erfaring inden for luksushårpleje har Granit Gashi perfektioneret kunsten at kombinere moderne teknikker med tidløs elegance.",
           specialties: [
             "Præcisions Klipning",
             "Couture Farve",
@@ -261,8 +261,6 @@ export const dictionaries = {
             "Babylights",
             "Ombre",
             "Permanent Krøller",
-            "Keratin Behandling",
-            "Olaplex Specialist",
           ],
         },
         comingSoon: {
@@ -563,9 +561,9 @@ export const dictionaries = {
       specialties: "Specialties:",
       members: {
         gashi: {
-          name: "Gashi",
+          name: "Granit Gashi",
           role: "Founder & Master Stylist",
-          bio: "With over 15 years of experience in luxury haircare, Gashi has perfected the art of combining modern techniques with timeless elegance.",
+          bio: "With over 15 years of experience in luxury haircare, Granit Gashi has perfected the art of combining modern techniques with timeless elegance.",
           specialties: [
             "Precision Cutting",
             "Couture Colour",
@@ -577,8 +575,6 @@ export const dictionaries = {
             "Babylights",
             "Ombre",
             "Permanent Curls",
-            "Keratin Treatment",
-            "Olaplex Specialist",
           ],
         },
         comingSoon: {
