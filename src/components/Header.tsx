@@ -181,14 +181,15 @@ const Header = () => {
           <div className="absolute right-0 hidden lg:flex items-center gap-2 z-50">
             <ThemeToggle />
             <LanguageSwitcher />
-            <Button
-              asChild
-              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium min-h-[44px] text-sm sm:text-base"
-            >
-              <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
-                {dict.nav.booking}
-              </a>
-            </Button>
+          <Button
+            asChild
+            size="sm"
+            className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
+          >
+            <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
+              {dict.nav.booking}
+            </a>
+          </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -321,14 +322,15 @@ const Header = () => {
             </div>
 
             {/* Book Tid CTA */}
-            <Button
-              asChild
-              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium mt-2 min-h-[44px] text-sm sm:text-base"
-            >
-              <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
-                {dict.nav.booking}
-              </a>
-            </Button>
+          <Button
+            asChild
+            size="sm"
+            className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium mt-2"
+          >
+            <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
+              {dict.nav.booking}
+            </a>
+          </Button>
           </nav>
         </div>
       )}
