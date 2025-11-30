@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
-import { LockKeyhole } from "lucide-react";
 import logoImage from "@/assets/logo.png";
 
 const LoadingScreen = () => {
@@ -33,60 +32,13 @@ const LoadingScreen = () => {
         exit={{ x: "-100%" }}
         transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
         className="fixed inset-y-0 left-0 w-1/2 z-50 bg-background border-r border-gold/20"
-      >
-        {/* Left lock bolt */}
-        <motion.div
-          initial={{ x: 0, opacity: 1 }}
-          exit={{ x: -80, opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-20 h-2 bg-gold/40"
-        >
-          <div className="absolute right-0 w-6 h-6 bg-gold/60 rounded-full -translate-y-1/2 top-1/2" />
-        </motion.div>
-      </motion.div>
-      
+      />
       <motion.div
         initial={{ x: 0 }}
         exit={{ x: "100%" }}
         transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
         className="fixed inset-y-0 right-0 w-1/2 z-50 bg-background border-l border-gold/20"
-      >
-        {/* Right lock bolt */}
-        <motion.div
-          initial={{ x: 0, opacity: 1 }}
-          exit={{ x: 80, opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-20 h-2 bg-gold/40"
-        >
-          <div className="absolute left-0 w-6 h-6 bg-gold/60 rounded-full -translate-y-1/2 top-1/2" />
-        </motion.div>
-      </motion.div>
-
-      {/* Central lock mechanism */}
-      <motion.div
-        initial={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
-        transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[51]"
-      >
-        <motion.div
-          initial={{ rotate: 0 }}
-          animate={{ rotate: [0, -15, 15, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="relative"
-        >
-          <LockKeyhole 
-            className="w-12 h-12 text-gold/80" 
-            strokeWidth={1.5}
-          />
-          {/* Lock glow */}
-          <motion.div
-            animate={{ opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-0 blur-xl bg-gold/30 rounded-full"
-          />
-        </motion.div>
-      </motion.div>
+      />
 
       {/* Main loading content */}
       <motion.div
