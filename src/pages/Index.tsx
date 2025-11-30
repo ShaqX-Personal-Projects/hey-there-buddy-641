@@ -27,15 +27,15 @@ const Index = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center px-4 py-20">
+      <section className="min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-16 sm:py-20">
         <div className="container mx-auto text-center max-w-4xl">
-          <p className="eyebrow-text mb-6">
+          <p className="eyebrow-text mb-4 sm:mb-6 text-xs sm:text-sm">
             {dict.home.eyebrow}
           </p>
-          <h1 className="font-playfair font-semibold mb-6 text-foreground hero-title">
+          <h1 className="font-playfair font-semibold mb-4 sm:mb-6 text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
             {dict.home.h1}
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground font-inter mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-inter mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed">
             {dict.home.subtext}
           </p>
           <CTAButton href={globalSettings.primaryCTA.url}>
@@ -89,12 +89,12 @@ const Index = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section className="py-16 sm:py-20 px-4 bg-muted/30">
         <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-playfair font-semibold mb-6 text-foreground section-title">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-semibold mb-4 sm:mb-6 text-foreground">
             {dict.home.ctaSection.heading}
           </h2>
-          <p className="text-muted-foreground font-inter mb-8">
+          <p className="text-muted-foreground font-inter text-sm sm:text-base mb-6 sm:mb-8">
             {dict.home.ctaSection.subtext}
           </p>
           <CTAButton href={globalSettings.primaryCTA.url}>

@@ -71,17 +71,17 @@ const Footer = () => {
               <div className="mt-3">
                 <h5 className="font-playfair font-semibold mb-2 text-primary-foreground">{dict.footer.hoursTitle}</h5>
                 <div className="space-y-1">
-                  <div className="flex justify-between">
-                    <span>{dict.footer.monday} - {dict.footer.friday}:</span>
-                    <span>{hours.monday}</span>
+                  <div className="flex justify-between gap-4">
+                    <span className="flex-shrink-0">{dict.footer.monday} - {dict.footer.friday}:</span>
+                    <span className="text-right">{hours.monday}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>{dict.footer.saturday}:</span>
-                    <span>{hours.saturday}</span>
+                  <div className="flex justify-between gap-4">
+                    <span className="flex-shrink-0">{dict.footer.saturday}:</span>
+                    <span className="text-right">{hours.saturday}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>{dict.footer.sunday}:</span>
-                    <span>{dict.footer.closed}</span>
+                  <div className="flex justify-between gap-4">
+                    <span className="flex-shrink-0">{dict.footer.sunday}:</span>
+                    <span className="text-right">{dict.footer.closed}</span>
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ const Footer = () => {
             </p>
             <Button
               asChild
-              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
+              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium min-h-[44px] text-sm sm:text-base"
             >
               <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
                 {dict.footer.bookSection.cta}
