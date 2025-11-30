@@ -8,7 +8,7 @@ export const contactPageData: ContactPageData = {
     country: "Denmark",
   },
   phone: "26 23 22 49",
-  email: "info@hairbygashi.dk",
+  email: "Hairbygranit@hotmail.com",
   byAppointmentOnly: true,
   mapEmbed: {
     enabled: false,
