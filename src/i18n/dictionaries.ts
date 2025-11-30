@@ -76,7 +76,7 @@ export const dictionaries = {
         "Hver aftale er privat, uskyndet og skræddersyet til dig. Vi arbejder med de fineste produkter og teknikker og skaber resultater der er både moderne og tidløse.",
       strip: {
         heading: "Private aftaler",
-        text: "Oplev diskret luksus i vores rolige københavnske setting. Kun efter aftale.",
+        text: "Oplev diskret luksus i vores rolige aalborgske setting. Kun efter aftale.",
       },
       values: {
         precision: {
@@ -109,7 +109,7 @@ export const dictionaries = {
         successDescription: "Tak fordi du kontaktede os. Vi svarer inden for 24 timer.",
       },
       location: "Beliggenhed",
-      area: "København, Danmark",
+      area: "Aalborg, Danmark",
       phone: "Telefon",
       byAppointment: "Kun efter aftale",
       hours: {
@@ -121,7 +121,7 @@ export const dictionaries = {
     booking: {
       eyebrow: "Planlæg",
       title: "Book Din Tid",
-      subtitle: "Oplev eksklusiv luksushårpleje i København",
+      subtitle: "Oplev eksklusiv luksushårpleje i Aalborg",
       ctaSubtext: "Klik på knappen ovenfor for at få adgang til vores bookingsystem",
       policies: {
         appointment: {
