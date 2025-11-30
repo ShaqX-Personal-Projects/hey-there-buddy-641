@@ -48,58 +48,132 @@ const LoadingScreen = () => {
         className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
         style={{
           background: resolvedTheme === "light" 
-            ? "radial-gradient(ellipse at center, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%)" 
-            : "radial-gradient(ellipse at center, hsl(0 0% 5%) 0%, hsl(0 0% 2%) 100%)",
+            ? "radial-gradient(ellipse at center, hsl(0 0% 100%) 0%, hsl(45 15% 97%) 50%, hsl(0 0% 96%) 100%)" 
+            : "radial-gradient(ellipse at center, hsl(0 0% 6%) 0%, hsl(0 0% 3%) 50%, hsl(0 0% 1%) 100%)",
         }}
       >
         {/* Refined texture overlay */}
         <div 
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, ${resolvedTheme === "light" ? "rgba(0,0,0,0.02)" : "rgba(255,255,255,0.02)"} 2px, ${resolvedTheme === "light" ? "rgba(0,0,0,0.02)" : "rgba(255,255,255,0.02)"} 4px)`,
           }}
         />
         
-        {/* Subtle shimmer sweep */}
+        {/* Multiple shimmer sweeps for depth */}
         <motion.div
           animate={{
             x: ["-200%", "200%"],
           }}
           transition={{
-            duration: 3,
+            duration: 3.5,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.65, 0, 0.35, 1],
             repeatDelay: 1,
           }}
           className="absolute inset-0 w-1/3"
           style={{
+            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.05)" : "rgba(212, 175, 55, 0.08)"} 50%, transparent 100%)`,
+          }}
+        />
+        <motion.div
+          animate={{
+            x: ["200%", "-200%"],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: [0.65, 0, 0.35, 1],
+            repeatDelay: 0.5,
+          }}
+          className="absolute inset-0 w-1/4"
+          style={{
             background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.03)" : "rgba(212, 175, 55, 0.05)"} 50%, transparent 100%)`,
           }}
         />
+        
+        {/* Elegant light beams from center */}
+        <motion.div
+          animate={{
+            opacity: [0.1, 0.3, 0.1],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute inset-0"
+          style={{
+            background: `radial-gradient(ellipse at center, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.08)" : "rgba(212, 175, 55, 0.12)"} 0%, transparent 60%)`,
+          }}
+        />
+        
+        {/* Floating particles */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            initial={{ 
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              opacity: 0 
+            }}
+            animate={{
+              y: [null, Math.random() * -200 - 100],
+              opacity: [0, 0.6, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: i * 0.4,
+              ease: "easeOut",
+            }}
+            className="absolute w-1 h-1 bg-gold/40 rounded-full"
+            style={{
+              boxShadow: `0 0 8px 2px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.3)" : "rgba(212, 175, 55, 0.5)"}`,
+            }}
+          />
+        ))}
 
-        {/* Elegant geometric accent lines with shimmer */}
+        {/* Elegant geometric accent lines with enhanced shimmer */}
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
-          transition={{ duration: 1.4, delay: 0.2, ease: [0.65, 0, 0.35, 1] }}
-          className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"
+          transition={{ duration: 1.6, delay: 0.2, ease: [0.65, 0, 0.35, 1] }}
+          className="absolute top-0 left-0 right-0 h-px overflow-hidden"
+          style={{
+            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)"} 50%, transparent 100%)`,
+            boxShadow: `0 0 8px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.3)" : "rgba(212, 175, 55, 0.4)"}`,
+          }}
         >
           <motion.div
             animate={{ x: ["-100%", "100%"] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.5 }}
-            className="h-full w-1/4 bg-gradient-to-r from-transparent via-gold/60 to-transparent"
+            transition={{ duration: 2.5, repeat: Infinity, ease: [0.65, 0, 0.35, 1], repeatDelay: 0.5 }}
+            className="h-full w-1/4"
+            style={{
+              background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.8)" : "rgba(212, 175, 55, 1)"} 50%, transparent 100%)`,
+              boxShadow: `0 0 16px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.6)" : "rgba(212, 175, 55, 0.8)"}`,
+            }}
           />
         </motion.div>
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
-          transition={{ duration: 1.4, delay: 0.2, ease: [0.65, 0, 0.35, 1] }}
-          className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"
+          transition={{ duration: 1.6, delay: 0.2, ease: [0.65, 0, 0.35, 1] }}
+          className="absolute bottom-0 left-0 right-0 h-px overflow-hidden"
+          style={{
+            background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)"} 50%, transparent 100%)`,
+            boxShadow: `0 0 8px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.3)" : "rgba(212, 175, 55, 0.4)"}`,
+          }}
         >
           <motion.div
             animate={{ x: ["100%", "-100%"] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.5 }}
-            className="h-full w-1/4 bg-gradient-to-r from-transparent via-gold/60 to-transparent"
+            transition={{ duration: 2.5, repeat: Infinity, ease: [0.65, 0, 0.35, 1], repeatDelay: 0.5 }}
+            className="h-full w-1/4"
+            style={{
+              background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.8)" : "rgba(212, 175, 55, 1)"} 50%, transparent 100%)`,
+              boxShadow: `0 0 16px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.6)" : "rgba(212, 175, 55, 0.8)"}`,
+            }}
           />
         </motion.div>
 
@@ -110,7 +184,7 @@ const LoadingScreen = () => {
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ 
-              duration: 1.2, 
+              duration: 1.4, 
               delay: 0.3, 
               ease: [0.65, 0, 0.35, 1],
             }}
@@ -119,87 +193,130 @@ const LoadingScreen = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 1, delay: 0.6 }}
               className="relative"
             >
+              {/* Logo glow aura */}
+              <motion.div
+                animate={{ 
+                  opacity: [0.3, 0.6, 0.3],
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 blur-3xl rounded-full"
+                style={{
+                  background: `radial-gradient(circle, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.2)" : "rgba(212, 175, 55, 0.3)"} 0%, transparent 70%)`,
+                }}
+              />
+              
               <img 
                 src={logoImage} 
                 alt="Hair by Gashi" 
-                className="h-32 md:h-48 w-auto dark:invert"
+                className="h-32 md:h-48 w-auto dark:invert relative z-10"
               />
-              {/* Subtle reflection effect */}
+              
+              {/* Enhanced reflection effect */}
               <motion.div
                 animate={{ x: ["-200%", "200%"] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent dark:via-white/5"
+                transition={{ duration: 3, repeat: Infinity, ease: [0.65, 0, 0.35, 1], repeatDelay: 1.5 }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-white/10 z-20"
                 style={{ transform: "skewX(-20deg)" }}
               />
             </motion.div>
+            
             <motion.div
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 1.2, delay: 0.8, ease: [0.65, 0, 0.35, 1] }}
-              className="h-px w-64 mx-auto bg-gradient-to-r from-transparent via-gold to-transparent mt-8 relative overflow-hidden"
+              transition={{ duration: 1.4, delay: 0.9, ease: [0.65, 0, 0.35, 1] }}
+              className="h-px w-64 mx-auto mt-8 relative overflow-hidden"
+              style={{
+                background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.6)" : "rgba(212, 175, 55, 0.8)"} 50%, transparent 100%)`,
+                boxShadow: `0 0 12px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.6)"}`,
+              }}
             >
               <motion.div
                 animate={{ x: ["-100%", "100%"] }}
-                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.3 }}
-                className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-gold/80 to-transparent"
+                transition={{ duration: 2, repeat: Infinity, ease: [0.65, 0, 0.35, 1], repeatDelay: 0.5 }}
+                className="absolute inset-0 w-1/3"
+                style={{
+                  background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 1)" : "rgba(212, 175, 55, 1)"} 50%, transparent 100%)`,
+                  boxShadow: `0 0 20px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.8)" : "rgba(212, 175, 55, 1)"}`,
+                }}
               />
             </motion.div>
           </motion.div>
 
-          {/* Refined progress indicator */}
+          {/* Ultra-refined progress indicator */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            transition={{ duration: 1, delay: 1.1 }}
             className="flex flex-col items-center gap-6"
           >
-            {/* Elegant animated line with dual sweep */}
-            <div className="relative w-64 h-px bg-border/30 overflow-hidden rounded-full">
+            {/* Elegant animated line with multiple sweeps and glow */}
+            <div className="relative w-72 h-0.5 bg-border/20 overflow-hidden rounded-full">
+              {/* Base glow */}
               <motion.div
-                animate={{
-                  x: ["-100%", "100%"],
+                animate={{ opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 blur-sm"
+                style={{
+                  background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.3)" : "rgba(212, 175, 55, 0.4)"} 50%, transparent 100%)`,
                 }}
-                transition={{
-                  duration: 1.8,
-                  repeat: Infinity,
-                  ease: [0.65, 0, 0.35, 1],
-                }}
-                className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-gold/80 to-transparent"
               />
+              
+              {/* Primary sweep */}
               <motion.div
-                animate={{
-                  x: ["100%", "-100%"],
-                }}
+                animate={{ x: ["-100%", "100%"] }}
                 transition={{
-                  duration: 1.8,
+                  duration: 2,
                   repeat: Infinity,
                   ease: [0.65, 0, 0.35, 1],
-                  delay: 0.9,
                 }}
-                className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-gold/40 to-transparent"
+                className="absolute inset-y-0 w-1/2"
+                style={{
+                  background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.8)" : "rgba(212, 175, 55, 1)"} 50%, transparent 100%)`,
+                  boxShadow: `0 0 16px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.6)" : "rgba(212, 175, 55, 0.8)"}`,
+                }}
+              />
+              
+              {/* Secondary sweep */}
+              <motion.div
+                animate={{ x: ["100%", "-100%"] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: [0.65, 0, 0.35, 1],
+                  delay: 1,
+                }}
+                className="absolute inset-y-0 w-1/3"
+                style={{
+                  background: `linear-gradient(90deg, transparent 0%, ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.5)" : "rgba(212, 175, 55, 0.6)"} 50%, transparent 100%)`,
+                  boxShadow: `0 0 12px 2px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)"}`,
+                }}
               />
             </div>
 
-            {/* Sophisticated dot sequence */}
-            <div className="flex gap-3">
-              {[0, 1, 2, 3].map((index) => (
+            {/* Enhanced dot sequence with glow */}
+            <div className="flex gap-4">
+              {[0, 1, 2, 3, 4].map((index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0.15, scale: 0.8 }}
+                  initial={{ opacity: 0.1, scale: 0.7 }}
                   animate={{
-                    opacity: [0.15, 1, 0.15],
-                    scale: [0.8, 1, 0.8],
+                    opacity: [0.1, 1, 0.1],
+                    scale: [0.7, 1.2, 0.7],
                   }}
                   transition={{
-                    duration: 1.6,
+                    duration: 2,
                     repeat: Infinity,
                     delay: index * 0.2,
                     ease: [0.65, 0, 0.35, 1],
                   }}
-                  className="w-1.5 h-1.5 rounded-full bg-gold"
+                  className="relative w-1.5 h-1.5 rounded-full bg-gold"
+                  style={{
+                    boxShadow: `0 0 12px 3px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.5)" : "rgba(212, 175, 55, 0.7)"}`,
+                  }}
                 />
               ))}
             </div>
@@ -216,19 +333,38 @@ const LoadingScreen = () => {
           {text}
         </motion.div>
 
-        {/* Refined corner accents with subtle animation */}
+        {/* Refined corner accents with staggered animation */}
         {["top-left", "top-right", "bottom-left", "bottom-right"].map((corner, idx) => (
           <motion.div
             key={corner}
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 + idx * 0.1, ease: [0.65, 0, 0.35, 1] }}
-            className={`absolute w-16 h-16 border-gold/30 ${
-              corner.includes("top") ? "border-t" : "border-b"
-            } ${corner.includes("left") ? "border-l left-6" : "border-r right-6"} ${
+            transition={{ duration: 1.2, delay: 0.5 + idx * 0.15, ease: [0.65, 0, 0.35, 1] }}
+            className={`absolute w-20 h-20 ${
+              corner.includes("top") ? "border-t-2" : "border-b-2"
+            } ${corner.includes("left") ? "border-l-2 left-6" : "border-r-2 right-6"} ${
               corner.includes("top") ? "top-6" : "bottom-6"
             }`}
-          />
+            style={{
+              borderColor: resolvedTheme === "light" ? "rgba(212, 175, 55, 0.35)" : "rgba(212, 175, 55, 0.4)",
+              boxShadow: `0 0 16px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.2)" : "rgba(212, 175, 55, 0.3)"}`,
+            }}
+          >
+            {/* Corner glow accent */}
+            <motion.div
+              animate={{ opacity: [0.3, 0.7, 0.3] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: idx * 0.3 }}
+              className={`absolute w-3 h-3 rounded-full bg-gold/40 ${
+                corner.includes("top") && corner.includes("left") ? "-top-1.5 -left-1.5" :
+                corner.includes("top") && corner.includes("right") ? "-top-1.5 -right-1.5" :
+                corner.includes("bottom") && corner.includes("left") ? "-bottom-1.5 -left-1.5" :
+                "-bottom-1.5 -right-1.5"
+              }`}
+              style={{
+                boxShadow: `0 0 12px 4px ${resolvedTheme === "light" ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.6)"}`,
+              }}
+            />
+          </motion.div>
         ))}
       </motion.div>
     </>
