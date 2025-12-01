@@ -21,7 +21,7 @@ const Index = () => {
     { text: dict.home.trustChips.handpicked, icon: "Sparkles", size: "sm" as const },
     { text: dict.home.trustChips.luxury, icon: "Lock", size: "sm" as const },
     { text: dict.home.trustChips.aesthetic, icon: "Image", size: "sm" as const },
-    { text: dict.home.trustChips.best, icon: "Award", size: "xs" as const },
+    { text: dict.home.trustChips.best, icon: "Award", size: "sm" as const },
   ];
 
   return (
