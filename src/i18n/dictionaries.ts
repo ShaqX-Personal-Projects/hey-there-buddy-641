@@ -30,7 +30,7 @@ export const dictionaries = {
         handpicked: "Håndplukkede produkter",
         luxury: "Diskret luksusindstilling",
         aesthetic: "Sort/hvid æstetik",
-        best: "For dem der vil have det bedste",
+        best: "For de bedste",
       },
       featuredWork: {
         title: "Udvalgt Arbejde",
@@ -404,7 +404,7 @@ export const dictionaries = {
         handpicked: "Hand-picked products",
         luxury: "Discreet luxury setting",
         aesthetic: "Black/white aesthetic",
-        best: "For those who want the best",
+        best: "For the best",
       },
       featuredWork: {
         title: "Featured Work",
