@@ -70,16 +70,17 @@ const Header = () => {
                   {dict.nav.treatments}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="container mx-auto px-4 py-8">
-                    <ul className="flex gap-6 justify-center">
+                  <div className="container mx-auto px-4 py-10">
+                    <ul className="flex gap-8 justify-center">
                       <li>
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/treatments"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
-                            activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
+                            className="group block relative px-10 py-5 text-base font-inter text-foreground/80 hover:text-foreground rounded-2xl transition-all duration-200 border border-gold/20 hover:border-gold/40 bg-background/40 hover:bg-background/60 backdrop-blur-sm hover-lift-smooth shadow-sm hover:shadow-md"
+                            activeClassName="text-foreground bg-accent/30 font-medium border-gold/50 shadow-md"
                           >
-                            {dict.nav.treatments}
+                            <span className="relative z-10">{dict.nav.treatments}</span>
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
@@ -87,10 +88,11 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/prices"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
-                            activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
+                            className="group block relative px-10 py-5 text-base font-inter text-foreground/80 hover:text-foreground rounded-2xl transition-all duration-200 border border-gold/20 hover:border-gold/40 bg-background/40 hover:bg-background/60 backdrop-blur-sm hover-lift-smooth shadow-sm hover:shadow-md"
+                            activeClassName="text-foreground bg-accent/30 font-medium border-gold/50 shadow-md"
                           >
-                            {dict.nav.prices}
+                            <span className="relative z-10">{dict.nav.prices}</span>
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
@@ -123,16 +125,17 @@ const Header = () => {
                   {dict.nav.aboutSalon}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="container mx-auto px-4 py-8">
-                    <ul className="flex gap-6 justify-center">
+                  <div className="container mx-auto px-4 py-10">
+                    <ul className="flex gap-8 justify-center">
                       <li>
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/about"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
-                            activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
+                            className="group block relative px-10 py-5 text-base font-inter text-foreground/80 hover:text-foreground rounded-2xl transition-all duration-200 border border-gold/20 hover:border-gold/40 bg-background/40 hover:bg-background/60 backdrop-blur-sm hover-lift-smooth shadow-sm hover:shadow-md"
+                            activeClassName="text-foreground bg-accent/30 font-medium border-gold/50 shadow-md"
                           >
-                            {dict.nav.about}
+                            <span className="relative z-10">{dict.nav.about}</span>
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
@@ -140,10 +143,11 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/philosophy"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
-                            activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
+                            className="group block relative px-10 py-5 text-base font-inter text-foreground/80 hover:text-foreground rounded-2xl transition-all duration-200 border border-gold/20 hover:border-gold/40 bg-background/40 hover:bg-background/60 backdrop-blur-sm hover-lift-smooth shadow-sm hover:shadow-md"
+                            activeClassName="text-foreground bg-accent/30 font-medium border-gold/50 shadow-md"
                           >
-                            {dict.nav.philosophy}
+                            <span className="relative z-10">{dict.nav.philosophy}</span>
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
@@ -151,10 +155,11 @@ const Header = () => {
                         <NavigationMenuLink asChild>
                           <NavLink
                             to="/team"
-                            className="block px-8 py-4 text-base font-inter text-foreground/70 hover:text-foreground hover:bg-accent/10 rounded-xl transition-colors duration-150 border border-transparent hover:border-gold/20"
-                            activeClassName="text-foreground bg-accent/20 font-medium border-gold/30"
+                            className="group block relative px-10 py-5 text-base font-inter text-foreground/80 hover:text-foreground rounded-2xl transition-all duration-200 border border-gold/20 hover:border-gold/40 bg-background/40 hover:bg-background/60 backdrop-blur-sm hover-lift-smooth shadow-sm hover:shadow-md"
+                            activeClassName="text-foreground bg-accent/30 font-medium border-gold/50 shadow-md"
                           >
-                            {dict.nav.team}
+                            <span className="relative z-10">{dict.nav.team}</span>
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                           </NavLink>
                         </NavigationMenuLink>
                       </li>
