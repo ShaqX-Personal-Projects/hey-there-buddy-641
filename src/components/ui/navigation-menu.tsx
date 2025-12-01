@@ -77,17 +77,18 @@ const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
 >(({ className, ...props }, ref) => (
-  <div className={cn("fixed left-0 right-0 top-20 w-full z-50")}>
+  <div className={cn("absolute left-0 top-full flex justify-center w-full")}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top-center relative h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden",
-        "backdrop-blur-2xl bg-background/98 border-b-2 border-gold/40",
-        "shadow-[0_8px_32px_rgba(0,0,0,0.12),0_2px_8px_rgba(212,175,55,0.08)]",
+        "origin-top relative mt-2 h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden rounded-xl",
+        "backdrop-blur-2xl bg-background/98 border border-gold/30",
+        "shadow-[0_8px_24px_rgba(0,0,0,0.12),0_2px_8px_rgba(212,175,55,0.08)]",
         "text-foreground",
         "data-[state=open]:animate-in data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+        "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
         "data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2",
-        "transition-all duration-300 ease-out",
+        "transition-all duration-200 ease-out",
         className,
       )}
       ref={ref}
