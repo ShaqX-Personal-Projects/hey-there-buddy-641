@@ -18,10 +18,10 @@ const Index = () => {
   };
   
   const trustChipsWithIcons = [
-    { text: dict.home.trustChips.handpicked, icon: "Sparkles" },
-    { text: dict.home.trustChips.luxury, icon: "Lock" },
-    { text: dict.home.trustChips.aesthetic, icon: "Image" },
-    { text: dict.home.trustChips.best, icon: "Award" },
+    { text: dict.home.trustChips.handpicked, icon: "Sparkles", size: "sm" as const },
+    { text: dict.home.trustChips.luxury, icon: "Lock", size: "sm" as const },
+    { text: dict.home.trustChips.aesthetic, icon: "Image", size: "sm" as const },
+    { text: dict.home.trustChips.best, icon: "Award", size: "xs" as const },
   ];
 
   return (
@@ -71,6 +71,7 @@ const Index = () => {
                   key={index}
                   text={chip.text}
                   icon={IconComponent ? <IconComponent size={18} /> : undefined}
+                  size={chip.size}
                 />
               );
             })}
