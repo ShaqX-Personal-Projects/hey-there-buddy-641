@@ -131,9 +131,17 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-primary-foreground/20 pt-8">
-          <p className="text-center text-primary-foreground/60 font-inter text-sm">
-            © {currentYear} {dict.footer.creditPrefix} {businessInfo.credit}. {siteTitle} CVR: {businessInfo.cvr}. {dict.footer.ownedBy} {businessInfo.owner}. {dict.footer.copyright}
-          </p>
+          <div className="text-center text-primary-foreground/60 font-inter text-sm space-y-2">
+            <p>© {currentYear} {dict.footer.creditPrefix} {businessInfo.credit}</p>
+            <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+              <span>{siteTitle}</span>
+              <span className="text-primary-foreground/40">•</span>
+              <span>CVR: {businessInfo.cvr}</span>
+              <span className="text-primary-foreground/40">•</span>
+              <span>{dict.footer.ownedBy} {businessInfo.owner}</span>
+            </p>
+            <p>{dict.footer.copyright}</p>
+          </div>
         </div>
       </div>
     </footer>
