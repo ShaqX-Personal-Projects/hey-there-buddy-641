@@ -72,10 +72,7 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "absolute left-0 top-full w-48 z-50",
-      "backdrop-blur-[24px] bg-background/85 border-b border-x border-gold/12",
-      "shadow-[0_1px_2px_0_rgb(0_0_0_/_0.05)]",
-      "text-foreground rounded-b-xl",
+      "absolute left-0 top-full z-50 pt-2",
       "data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out",
       "data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out",
       "data-[motion=from-start]:slide-in-from-left-2 data-[motion=from-end]:slide-in-from-right-2",

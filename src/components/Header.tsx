@@ -70,13 +70,13 @@ const Header = () => {
                   {dict.nav.treatments}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="flex flex-col gap-1 p-2 w-48">
+                  <ul className="flex flex-col gap-0.5 py-1">
                     <li>
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/treatments"
-                          className="block px-4 py-2.5 text-sm font-inter font-medium text-foreground/70 hover:text-foreground transition-all rounded-lg hover:bg-accent/10"
-                          activeClassName="text-foreground bg-accent/10"
+                          className="relative inline-block px-4 py-1.5 text-sm font-inter font-medium text-foreground/60 hover:text-foreground transition-colors after:content-[''] after:absolute after:w-[calc(100%-2rem)] after:scale-x-0 after:h-[1px] after:bottom-1 after:left-4 after:bg-gold after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                          activeClassName="text-foreground after:scale-x-100"
                         >
                           {dict.nav.treatments}
                         </NavLink>
@@ -86,8 +86,8 @@ const Header = () => {
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/prices"
-                          className="block px-4 py-2.5 text-sm font-inter font-medium text-foreground/70 hover:text-foreground transition-all rounded-lg hover:bg-accent/10"
-                          activeClassName="text-foreground bg-accent/10"
+                          className="relative inline-block px-4 py-1.5 text-sm font-inter font-medium text-foreground/60 hover:text-foreground transition-colors after:content-[''] after:absolute after:w-[calc(100%-2rem)] after:scale-x-0 after:h-[1px] after:bottom-1 after:left-4 after:bg-gold after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                          activeClassName="text-foreground after:scale-x-100"
                         >
                           {dict.nav.prices}
                         </NavLink>
@@ -121,13 +121,13 @@ const Header = () => {
                   {dict.nav.aboutSalon}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="flex flex-col gap-1 p-2 w-48">
+                  <ul className="flex flex-col gap-0.5 py-1">
                     <li>
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/about"
-                          className="block px-4 py-2.5 text-sm font-inter font-medium text-foreground/70 hover:text-foreground transition-all rounded-lg hover:bg-accent/10"
-                          activeClassName="text-foreground bg-accent/10"
+                          className="relative inline-block px-4 py-1.5 text-sm font-inter font-medium text-foreground/60 hover:text-foreground transition-colors after:content-[''] after:absolute after:w-[calc(100%-2rem)] after:scale-x-0 after:h-[1px] after:bottom-1 after:left-4 after:bg-gold after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                          activeClassName="text-foreground after:scale-x-100"
                         >
                           {dict.nav.about}
                         </NavLink>
@@ -137,8 +137,8 @@ const Header = () => {
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/philosophy"
-                          className="block px-4 py-2.5 text-sm font-inter font-medium text-foreground/70 hover:text-foreground transition-all rounded-lg hover:bg-accent/10"
-                          activeClassName="text-foreground bg-accent/10"
+                          className="relative inline-block px-4 py-1.5 text-sm font-inter font-medium text-foreground/60 hover:text-foreground transition-colors after:content-[''] after:absolute after:w-[calc(100%-2rem)] after:scale-x-0 after:h-[1px] after:bottom-1 after:left-4 after:bg-gold after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                          activeClassName="text-foreground after:scale-x-100"
                         >
                           {dict.nav.philosophy}
                         </NavLink>
@@ -148,8 +148,8 @@ const Header = () => {
                       <NavigationMenuLink asChild>
                         <NavLink
                           to="/team"
-                          className="block px-4 py-2.5 text-sm font-inter font-medium text-foreground/70 hover:text-foreground transition-all rounded-lg hover:bg-accent/10"
-                          activeClassName="text-foreground bg-accent/10"
+                          className="relative inline-block px-4 py-1.5 text-sm font-inter font-medium text-foreground/60 hover:text-foreground transition-colors after:content-[''] after:absolute after:w-[calc(100%-2rem)] after:scale-x-0 after:h-[1px] after:bottom-1 after:left-4 after:bg-gold after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                          activeClassName="text-foreground after:scale-x-100"
                         >
                           {dict.nav.team}
                         </NavLink>
