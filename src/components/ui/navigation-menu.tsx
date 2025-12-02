@@ -15,7 +15,6 @@ const NavigationMenu = React.forwardRef<
     {...props}
   >
     {children}
-    <NavigationMenuViewport />
   </NavigationMenuPrimitive.Root>
 ));
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
@@ -32,7 +31,17 @@ const NavigationMenuList = React.forwardRef<
 ));
 NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 
-const NavigationMenuItem = NavigationMenuPrimitive.Item;
+const NavigationMenuItem = React.forwardRef<
+  React.ElementRef<typeof NavigationMenuPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Item>
+>(({ className, ...props }, ref) => (
+  <NavigationMenuPrimitive.Item
+    ref={ref}
+    className={cn("relative", className)}
+    {...props}
+  />
+));
+NavigationMenuItem.displayName = NavigationMenuPrimitive.Item.displayName;
 
 const navigationMenuTriggerStyle = cva(
   "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
@@ -63,7 +72,14 @@ const NavigationMenuContent = React.forwardRef<
   <NavigationMenuPrimitive.Content
     ref={ref}
     className={cn(
-      "left-0 top-0 w-full data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out",
+      "absolute left-0 top-full w-48 z-50",
+      "backdrop-blur-[24px] bg-background/85 border-b border-x border-gold/12",
+      "shadow-[0_1px_2px_0_rgb(0_0_0_/_0.05)]",
+      "text-foreground rounded-b-xl",
+      "data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out",
+      "data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out",
+      "data-[motion=from-start]:slide-in-from-left-2 data-[motion=from-end]:slide-in-from-right-2",
+      "data-[motion=to-start]:slide-out-to-left-2 data-[motion=to-end]:slide-out-to-right-2",
       className,
     )}
     {...props}
@@ -77,10 +93,10 @@ const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
 >(({ className, ...props }, ref) => (
-  <div className={cn("absolute left-0 top-full flex justify-center w-full")}>
+  <div className={cn("absolute top-full left-0 w-full flex")}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
-        "origin-top relative h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden",
+        "origin-top-center relative h-[var(--radix-navigation-menu-viewport-height)] overflow-hidden",
         "backdrop-blur-[24px] bg-background/85 border-b border-x border-gold/12",
         "shadow-[0_1px_2px_0_rgb(0_0_0_/_0.05)]",
         "text-foreground rounded-b-xl",
@@ -90,6 +106,9 @@ const NavigationMenuViewport = React.forwardRef<
         "transition-all duration-200 ease-out",
         className,
       )}
+      style={{
+        left: 'var(--radix-navigation-menu-viewport-offset)',
+      }}
       ref={ref}
       {...props}
     />
