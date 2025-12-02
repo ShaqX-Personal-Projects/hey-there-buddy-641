@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 glass-effect">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-effect">
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center h-20">
           {/* Logo */}
