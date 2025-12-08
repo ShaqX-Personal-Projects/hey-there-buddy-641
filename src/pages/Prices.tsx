@@ -3,6 +3,7 @@ import CTAButton from "@/components/CTAButton";
 import SectionHeading from "@/components/SectionHeading";
 import { pricesPageData } from "@/data/prices";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 import {
   Accordion,
   AccordionContent,
@@ -12,6 +13,7 @@ import {
 
 const Prices = () => {
   const { dict } = useLanguage();
+  useSEO("prices");
   const [openSection, setOpenSection] = useState<string>(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("prices-open-section") || "item-0";
