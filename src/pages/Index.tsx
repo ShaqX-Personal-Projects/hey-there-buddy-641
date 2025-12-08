@@ -28,14 +28,25 @@ const Index = () => {
     <div>
       {/* Hero Section */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-16 sm:py-20 overflow-hidden">
-        {/* Video Background */}
+        {/* Video Background - Mobile */}
         <video
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover grayscale"
+          className="absolute inset-0 w-full h-full object-cover grayscale md:hidden"
+        >
+          <source src="/hero-video-mobile.mp4" type="video/mp4" />
+        </video>
+        {/* Video Background - Desktop */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover grayscale hidden md:block"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
