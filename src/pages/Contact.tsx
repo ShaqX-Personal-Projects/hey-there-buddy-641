@@ -59,15 +59,44 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const formData = new URLSearchParams();
+      formData.append("form-name", "contact");
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("message", data.message);
+
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData.toString(),
+      });
+
+      if (response.ok) {
+        toast({
+          title: dict.contact.form.success,
+          description: dict.contact.form.successDescription,
+        });
+        form.reset();
+      } else {
+        toast({
+          title: language === "da" ? "Fejl" : "Error",
+          description: language === "da" 
+            ? "Der opstod en fejl. Prøv venligst igen." 
+            : "An error occurred. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: language === "da" ? "Fejl" : "Error",
+        description: language === "da" 
+          ? "Der opstod en fejl. Prøv venligst igen." 
+          : "An error occurred. Please try again.",
+        variant: "destructive",
+      });
+    }
     
-    toast({
-      title: dict.contact.form.success,
-      description: dict.contact.form.successDescription,
-    });
-    
-    form.reset();
     setIsSubmitting(false);
   };
 
@@ -84,7 +113,13 @@ const Contact = () => {
           {/* Contact Form */}
           <div>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" data-netlify="true" name="contact">
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                  <label>
+                    Don't fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 <FormField
                   control={form.control}
                   name="name"
