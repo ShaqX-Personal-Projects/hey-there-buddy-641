@@ -11,11 +11,13 @@
     <meta property="og:title" content="Hair by Gashi — Exclusive Hairdresser Aalborg" />
     <meta property="og:description" content="Pure, understated luxury haircare in Aalborg. Tailor-made treatments, couture color and precision cuts." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/favicon.png" />
+    <meta property="og:image" content="https://hairbygashi.dk/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@HairbyGashi" />
-    <meta name="twitter:image" content="/favicon.png" />
+    <meta name="twitter:image" content="https://hairbygashi.dk/og-image.png" />
     
     <!-- DNS prefetch for external domains -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -53,7 +55,7 @@
       },
       "telephone": "+45 26 23 22 49",
       "priceRange": "$$$$",
-      "image": "/favicon.png"
+      "image": "https://hairbygashi.dk/og-image.png"
     }
     </script>
   </head>
@@ -76,6 +78,12 @@
         }
       })();
     </script>
+    <!-- Hidden Netlify form for form detection at build time -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
