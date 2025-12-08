@@ -61,10 +61,10 @@ const Contact = () => {
     
     try {
       const formData = new URLSearchParams();
-      formData.append("form-name", "contact");
-      formData.append("name", data.name);
+      formData.append("form-name", "kontakt");
+      formData.append("navn", data.name);
       formData.append("email", data.email);
-      formData.append("message", data.message);
+      formData.append("besked", data.message);
 
       const response = await fetch("/", {
         method: "POST",
@@ -113,8 +113,8 @@ const Contact = () => {
           {/* Contact Form */}
           <div>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" data-netlify="true" name="contact">
-                <input type="hidden" name="form-name" value="contact" />
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" method="POST" data-netlify="true" name="kontakt">
+                <input type="hidden" name="form-name" value="kontakt" />
                 <p hidden>
                   <label>
                     Don't fill this out: <input name="bot-field" />

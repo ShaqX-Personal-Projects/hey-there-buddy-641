@@ -79,10 +79,10 @@
       })();
     </script>
     <!-- Hidden Netlify form for form detection at build time -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
+    <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="navn" />
       <input type="email" name="email" />
-      <textarea name="message"></textarea>
+      <textarea name="besked"></textarea>
     </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
