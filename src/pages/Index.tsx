@@ -6,9 +6,11 @@ import { Sparkles, Lock, Image, Award } from "lucide-react";
 import { homePageData } from "@/data/home";
 import { globalSettings } from "@/data/globals";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   const { dict } = useLanguage();
+  const isMobile = useIsMobile();
   
   const iconMap: Record<string, any> = {
     Sparkles,
@@ -28,27 +30,17 @@ const Index = () => {
     <div>
       {/* Hero Section */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-16 sm:py-20 overflow-hidden">
-        {/* Video Background - Mobile */}
+        {/* Video Background - Smart lazy loading */}
         <video
+          key={isMobile ? 'mobile' : 'desktop'}
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover grayscale md:hidden"
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover grayscale"
         >
-          <source src="/hero-video-mobile.mp4" type="video/mp4" />
-        </video>
-        {/* Video Background - Desktop */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover grayscale hidden md:block"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src={isMobile ? "/hero-video-mobile.mp4" : "/hero-video.mp4"} type="video/mp4" />
         </video>
         
         {/* Dark Overlay */}
