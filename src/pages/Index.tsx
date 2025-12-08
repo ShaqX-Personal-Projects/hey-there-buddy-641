@@ -11,31 +11,22 @@ import { useSEO } from "@/hooks/useSEO";
 // Localized featured work captions
 const featuredWorkCaptions = {
   da: [
-    "Skarp bob med glans forsegling",
-    "Bløde bølger — rødløber finish",
-    "Herreklip — ren minimalisme",
+    "Præcisions fade — skarp geometri",
     "Balayage — multidimensionel dybde",
-    "Klassisk chignon — tidløs elegance",
-    "Teksturerede lag — moderne sofistikering",
+    "Platin blond — iskold perfektion",
   ],
   en: [
-    "Sharp bob with gloss seal",
-    "Soft waves — red-carpet finish",
-    "Men's cut — pure minimalism",
+    "Precision fade — sharp geometry",
     "Balayage — multi-dimensional depth",
-    "Classic chignon — timeless elegance",
-    "Textured layers — modern sophistication",
+    "Platinum blonde — icy perfection",
   ],
 };
 
-// Featured work images (placeholder - replace with actual images)
+// Featured work images
 const featuredWorkImages = [
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
+  "/gallery/gallery-1.png",
+  "/gallery/gallery-2.png",
+  "/gallery/gallery-7.png",
 ];
 
 const Index = () => {
