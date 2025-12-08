@@ -3,12 +3,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Layout from "./components/Layout";
 import AnimatedLayout from "./components/AnimatedLayout";
 import ScrollToTop from "./components/ScrollToTop";
+import PageTransition from "./components/PageTransition";
+import { AnimatePresence } from "framer-motion";
 
 // Lazy load all pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -31,6 +33,29 @@ const PageLoader = () => (
   </div>
 );
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Suspense fallback={<PageLoader />} key={location.pathname}>
+        <Routes location={location}>
+          <Route path="/" element={<PageTransition><Index /></PageTransition>} />
+          <Route path="/treatments" element={<PageTransition><Treatments /></PageTransition>} />
+          <Route path="/gallery" element={<PageTransition><Gallery /></PageTransition>} />
+          <Route path="/philosophy" element={<PageTransition><Philosophy /></PageTransition>} />
+          <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+          <Route path="/team" element={<PageTransition><Team /></PageTransition>} />
+          <Route path="/prices" element={<PageTransition><Prices /></PageTransition>} />
+          <Route path="/booking" element={<PageTransition><Booking /></PageTransition>} />
+          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+        </Routes>
+      </Suspense>
+    </AnimatePresence>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
@@ -42,20 +67,7 @@ const App = () => (
               <Toaster />
               <Sonner />
               <Layout>
-                <Suspense fallback={<PageLoader />}>
-                  <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/treatments" element={<Treatments />} />
-                    <Route path="/gallery" element={<Gallery />} />
-                    <Route path="/philosophy" element={<Philosophy />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/prices" element={<Prices />} />
-                    <Route path="/booking" element={<Booking />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </Suspense>
+                <AnimatedRoutes />
               </Layout>
             </AnimatedLayout>
           </BrowserRouter>
