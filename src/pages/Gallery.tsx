@@ -90,7 +90,7 @@ const Gallery = () => {
 
         <div className="mt-12 flex justify-center">
           <a
-            href="https://instagram.com/hairbygashi_"
+            href="https://www.instagram.com/hairbygashi_/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-muted text-foreground rounded-xl gold-hairline hover:bg-gold hover:text-gold-foreground transition-colors font-inter font-medium"

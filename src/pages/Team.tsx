@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { teamPageData } from "@/data/team";
@@ -101,12 +102,12 @@ const Team = () => {
             <p className="text-muted-foreground font-inter mb-6">
               {dict.team.joinTeam.text}
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="text-gold hover:underline font-inter font-medium"
             >
               {dict.team.joinTeam.link}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

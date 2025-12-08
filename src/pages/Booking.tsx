@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CTAButton from "@/components/CTAButton";
 import SectionHeading from "@/components/SectionHeading";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -55,9 +56,9 @@ const Booking = () => {
         <div className="mt-12 text-center">
           <p className="text-muted-foreground font-inter text-sm">
             {dict.booking.contactNote}{" "}
-            <a href="/contact" className="text-gold hover:underline">
+            <Link to="/contact" className="text-gold hover:underline">
               {dict.booking.contactLink}
-            </a>
+            </Link>
             .
           </p>
         </div>
