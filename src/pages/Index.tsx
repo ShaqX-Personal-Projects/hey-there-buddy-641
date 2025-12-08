@@ -13,12 +13,12 @@ const featuredWorkCaptions = {
   da: [
     "Præcisions fade — skarp geometri",
     "Balayage — multidimensionel dybde",
-    "Platin blond — iskold perfektion",
+    "Gyldne bølger — varm glans",
   ],
   en: [
     "Precision fade — sharp geometry",
     "Balayage — multi-dimensional depth",
-    "Platinum blonde — icy perfection",
+    "Golden waves — warm shine",
   ],
 };
 
@@ -26,7 +26,7 @@ const featuredWorkCaptions = {
 const featuredWorkImages = [
   "/gallery/gallery-1.png",
   "/gallery/gallery-2.png",
-  "/gallery/gallery-7.png",
+  "/gallery/gallery-8.png",
 ];
 
 const Index = () => {
