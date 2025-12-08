@@ -32,6 +32,7 @@ const Index = () => {
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-16 sm:py-20 overflow-hidden">
         {/* Video Background - Optimized */}
         <video
+          key={isMobile ? "mobile" : "desktop"}
           autoPlay
           loop
           muted
