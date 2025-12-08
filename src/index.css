@@ -97,13 +97,17 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 200ms;
   }
 
   body {
     @apply bg-background text-foreground font-inter antialiased overflow-x-hidden;
+  }
+  
+  /* Selective transitions only where needed */
+  a, button, .transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
   
   html {

@@ -30,17 +30,20 @@ const Index = () => {
     <div>
       {/* Hero Section */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-16 sm:py-20 overflow-hidden">
-        {/* Video Background - Smart lazy loading */}
+        {/* Video Background - Optimized */}
         <video
-          key={isMobile ? 'mobile' : 'desktop'}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover grayscale"
+          poster="/favicon.png"
         >
-          <source src={isMobile ? "/hero-video-mobile.mp4" : "/hero-video.mp4"} type="video/mp4" />
+          <source 
+            src={isMobile ? "/hero-video-mobile.mp4" : "/hero-video.mp4"} 
+            type="video/mp4" 
+          />
         </video>
         
         {/* Dark Overlay */}
