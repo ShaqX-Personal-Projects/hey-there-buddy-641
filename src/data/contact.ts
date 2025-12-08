@@ -3,7 +3,7 @@ import { ContactPageData } from "@/types/cms";
 export const contactPageData: ContactPageData = {
   introText: "We'd love to hear from you",
   address: {
-    street: "Lille Kongensgade 6",
+    street: "Boulevarden 22",
     city: "9000 Aalborg",
     country: "Denmark",
   },
