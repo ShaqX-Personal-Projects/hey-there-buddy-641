@@ -11,19 +11,41 @@ import SectionHeading from "@/components/SectionHeading";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { contactPageData } from "@/data/contact";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 
-const contactSchema = z.object({
-  name: z.string().min(1, "Name is required").max(100),
-  email: z.string().email("Invalid email address").max(255),
-  message: z.string().min(1, "Message is required").max(1000),
-});
+// Localized validation messages
+const getContactSchema = (language: "da" | "en") => {
+  const messages = {
+    da: {
+      nameRequired: "Navn er påkrævet",
+      emailInvalid: "Ugyldig e-mailadresse",
+      messageRequired: "Besked er påkrævet",
+    },
+    en: {
+      nameRequired: "Name is required",
+      emailInvalid: "Invalid email address",
+      messageRequired: "Message is required",
+    },
+  };
 
-type ContactFormValues = z.infer<typeof contactSchema>;
+  const m = messages[language];
+
+  return z.object({
+    name: z.string().min(1, m.nameRequired).max(100),
+    email: z.string().email(m.emailInvalid).max(255),
+    message: z.string().min(1, m.messageRequired).max(1000),
+  });
+};
+
+type ContactFormValues = z.infer<ReturnType<typeof getContactSchema>>;
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const { dict } = useLanguage();
+  const { dict, language } = useLanguage();
+  useSEO("contact");
+
+  const contactSchema = getContactSchema(language);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
@@ -39,8 +61,6 @@ const Contact = () => {
     
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    console.log("Form submitted:", data);
     
     toast({
       title: dict.contact.form.success,

@@ -3,14 +3,45 @@ import GalleryItem from "@/components/GalleryItem";
 import SectionHeading from "@/components/SectionHeading";
 import TrustChip from "@/components/TrustChip";
 import { Sparkles, Lock, Image, Award } from "lucide-react";
-import { homePageData } from "@/data/home";
 import { globalSettings } from "@/data/globals";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useSEO } from "@/hooks/useSEO";
+
+// Localized featured work captions
+const featuredWorkCaptions = {
+  da: [
+    "Skarp bob med glans forsegling",
+    "Bløde bølger — rødløber finish",
+    "Herreklip — ren minimalisme",
+    "Balayage — multidimensionel dybde",
+    "Klassisk chignon — tidløs elegance",
+    "Teksturerede lag — moderne sofistikering",
+  ],
+  en: [
+    "Sharp bob with gloss seal",
+    "Soft waves — red-carpet finish",
+    "Men's cut — pure minimalism",
+    "Balayage — multi-dimensional depth",
+    "Classic chignon — timeless elegance",
+    "Textured layers — modern sophistication",
+  ],
+};
+
+// Featured work images (placeholder - replace with actual images)
+const featuredWorkImages = [
+  "/placeholder.svg",
+  "/placeholder.svg",
+  "/placeholder.svg",
+  "/placeholder.svg",
+  "/placeholder.svg",
+  "/placeholder.svg",
+];
 
 const Index = () => {
-  const { dict } = useLanguage();
+  const { dict, language } = useLanguage();
   const isMobile = useIsMobile();
+  useSEO("home");
   
   const iconMap: Record<string, any> = {
     Sparkles,
@@ -25,6 +56,8 @@ const Index = () => {
     { text: dict.home.trustChips.aesthetic, icon: "Image", size: "sm" as const },
     { text: dict.home.trustChips.best, icon: "Award", size: "sm" as const },
   ];
+
+  const captions = featuredWorkCaptions[language];
 
   return (
     <div>
@@ -94,11 +127,11 @@ const Index = () => {
             subtitle={dict.home.featuredWork.subtitle}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {homePageData.featuredWork.map((item, index) => (
+            {featuredWorkImages.map((image, index) => (
               <GalleryItem 
                 key={index} 
-                imageSrc={item.image} 
-                caption={item.caption}
+                imageSrc={image} 
+                caption={captions[index]}
                 width={800}
                 height={1000}
               />

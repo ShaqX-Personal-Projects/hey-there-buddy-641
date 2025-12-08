@@ -697,7 +697,7 @@ export const dictionaries = {
         gashi: {
           name: "Granit Gashi",
           role: "Founder & Master Stylist",
-          bio: "With over 15 years of experience in luxury haircare, Granit Gashi has perfected the art of combining modern techniques with timeless elegance.",
+          bio: "With many years of experience in the chair, Granit Gashi has perfected the art of combining modern techniques with timeless elegance.",
           specialties: [
             "Precision Cutting",
             "Couture Colour",

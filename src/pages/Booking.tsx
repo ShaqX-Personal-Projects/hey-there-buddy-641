@@ -3,9 +3,11 @@ import SectionHeading from "@/components/SectionHeading";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { bookingPageData } from "@/data/booking";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 
 const Booking = () => {
   const { dict } = useLanguage();
+  useSEO("booking");
 
   return (
     <div className="py-20 px-4">

@@ -2,10 +2,12 @@ import CTAButton from "@/components/CTAButton";
 import SectionHeading from "@/components/SectionHeading";
 import { philosophyPageData } from "@/data/philosophy";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 import philosophyHero from "@/assets/philosophy-hero.png";
 
 const Philosophy = () => {
   const { dict } = useLanguage();
+  useSEO("philosophy");
 
   return (
     <div>

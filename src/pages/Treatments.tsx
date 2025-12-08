@@ -3,9 +3,27 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import { treatmentsPageData } from "@/data/treatments";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 
 const Treatments = () => {
-  const { dict } = useLanguage();
+  const { dict, language } = useLanguage();
+  useSEO("treatments");
+
+  // Localized price text
+  const priceText = {
+    da: {
+      precisionCut: "Fra 200 DKK",
+      coutureColor: "Fra 350 DKK",
+      blowDry: "Fra 450 DKK",
+    },
+    en: {
+      precisionCut: "From 200 DKK",
+      coutureColor: "From 350 DKK",
+      blowDry: "From 450 DKK",
+    },
+  };
+
+  const prices = priceText[language];
 
   return (
     <div className="py-20 px-4">
@@ -20,17 +38,17 @@ const Treatments = () => {
           <ServiceCard
             title={dict.treatments.precisionCut.name}
             description={dict.treatments.precisionCut.blurb}
-            priceFrom="From 1.200 DKK"
+            priceFrom={prices.precisionCut}
           />
           <ServiceCard
             title={dict.treatments.coutureColor.name}
             description={dict.treatments.coutureColor.blurb}
-            priceFrom="From 2.400 DKK"
+            priceFrom={prices.coutureColor}
           />
           <ServiceCard
             title={dict.treatments.blowDry.name}
             description={dict.treatments.blowDry.blurb}
-            priceFrom="From 900 DKK"
+            priceFrom={prices.blowDry}
           />
         </div>
 

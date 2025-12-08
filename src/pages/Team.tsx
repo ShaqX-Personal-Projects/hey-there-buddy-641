@@ -2,9 +2,11 @@ import SectionHeading from "@/components/SectionHeading";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { teamPageData } from "@/data/team";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 
 const Team = () => {
   const { dict } = useLanguage();
+  useSEO("team");
 
   return (
     <div className="py-20 px-4">

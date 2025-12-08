@@ -1,10 +1,11 @@
 import SectionHeading from "@/components/SectionHeading";
 import Timeline from "@/components/Timeline";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { aboutPageData } from "@/data/about";
+import { useSEO } from "@/hooks/useSEO";
 
 const About = () => {
   const { dict } = useLanguage();
+  useSEO("about");
 
   return (
     <div className="min-h-screen bg-background">
