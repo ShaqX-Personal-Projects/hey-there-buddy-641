@@ -1,4 +1,6 @@
+import { useState, useCallback } from "react";
 import GalleryItem from "@/components/GalleryItem";
+import GalleryLightbox from "@/components/GalleryLightbox";
 import SectionHeading from "@/components/SectionHeading";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
@@ -47,6 +49,22 @@ const Gallery = () => {
   useSEO("gallery");
 
   const captions = galleryCaptions[language];
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => setSelectedIndex(index);
+  const closeLightbox = () => setSelectedIndex(null);
+
+  const goToNext = useCallback(() => {
+    setSelectedIndex((prev) =>
+      prev !== null ? (prev + 1) % galleryImages.length : null
+    );
+  }, []);
+
+  const goToPrev = useCallback(() => {
+    setSelectedIndex((prev) =>
+      prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null
+    );
+  }, []);
 
   return (
     <div className="py-20 px-4">
@@ -59,16 +77,26 @@ const Gallery = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((image, index) => (
-            <GalleryItem 
-              key={index} 
-              imageSrc={image} 
-              caption={captions[index]}
-              width={800}
-              height={1000}
-            />
+            <div key={index} onClick={() => openLightbox(index)}>
+              <GalleryItem
+                imageSrc={image}
+                caption={captions[index]}
+                width={800}
+                height={1000}
+              />
+            </div>
           ))}
         </div>
       </div>
+
+      <GalleryLightbox
+        images={galleryImages}
+        captions={captions}
+        selectedIndex={selectedIndex}
+        onClose={closeLightbox}
+        onNext={goToNext}
+        onPrev={goToPrev}
+      />
     </div>
   );
 };
