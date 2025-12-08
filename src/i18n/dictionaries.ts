@@ -316,7 +316,7 @@ export const dictionaries = {
         gashi: {
           name: "Granit Gashi",
           role: "Grundlægger & Mester Stylist",
-          bio: "Med over 15 års erfaring inden for luksushårpleje har Granit Gashi perfektioneret kunsten at kombinere moderne teknikker med tidløs elegance.",
+          bio: "Med mange års erfaring bag stolen har Granit Gashi perfektioneret kunsten at kombinere moderne teknikker med tidløs elegance.",
           specialties: [
             "Præcisions Klipning",
             "Couture Farve",
