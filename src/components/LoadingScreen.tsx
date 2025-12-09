@@ -209,23 +209,6 @@ const LoadingScreen = () => {
           </motion.div>
         </div>
 
-        {/* Corner accents */}
-        {["top-left", "top-right", "bottom-left", "bottom-right"].map((corner, idx) => (
-          <motion.div
-            key={corner}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.5 + idx * 0.1, ease: [0.65, 0, 0.35, 1] }}
-            className={`absolute w-16 h-16 ${
-              corner.includes("top") ? "border-t" : "border-b"
-            } ${corner.includes("left") ? "border-l left-8" : "border-r right-8"} ${
-              corner.includes("top") ? "top-8" : "bottom-8"
-            }`}
-            style={{
-              borderColor: isLight ? "rgba(212, 175, 55, 0.4)" : "rgba(212, 175, 55, 0.5)",
-            }}
-          />
-        ))}
       </motion.div>
     </>
   );
