@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Cookie } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useCookieConsent } from "@/contexts/CookieConsentContext";
 import { globalSettings } from "@/data/globals";
 
 const Footer = () => {
   const { dict } = useLanguage();
+  const { openSettings } = useCookieConsent();
   const { siteTitle, businessInfo } = globalSettings;
 
   const isDanish = dict.nav.home === "Hjem";
@@ -72,7 +74,7 @@ const Footer = () => {
 
         {/* Juridiske links */}
         <div className="flex flex-wrap justify-center gap-4 mb-4">
-          {legalLinks.map((link, index) => (
+          {legalLinks.map((link) => (
             <span key={link.to} className="flex items-center">
               <Link
                 to={link.to}
@@ -80,11 +82,16 @@ const Footer = () => {
               >
                 {link.label}
               </Link>
-              {index < legalLinks.length - 1 && (
-                <span className="ml-4 text-gold/30">•</span>
-              )}
+              <span className="ml-4 text-gold/30">•</span>
             </span>
           ))}
+          <button
+            onClick={openSettings}
+            className="flex items-center gap-1.5 text-primary-foreground/60 hover:text-primary-foreground font-inter text-xs transition-colors"
+          >
+            <Cookie className="w-3 h-3" />
+            {isDanish ? "Cookie-indstillinger" : "Cookie Settings"}
+          </button>
         </div>
 
         {/* Copyright + CVR */}

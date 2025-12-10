@@ -6,10 +6,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { CookieConsentProvider } from "./contexts/CookieConsentContext";
 import Layout from "./components/Layout";
 import AnimatedLayout from "./components/AnimatedLayout";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
+import CookieConsent from "./components/CookieConsent";
 import { AnimatePresence } from "framer-motion";
 
 // Lazy load all pages for code splitting
@@ -66,18 +68,21 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
       <LanguageProvider>
-        <TooltipProvider>
-          <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-            <ScrollToTop />
-            <AnimatedLayout>
-              <Toaster />
-              <Sonner />
-              <Layout>
-                <AnimatedRoutes />
-              </Layout>
-            </AnimatedLayout>
-          </BrowserRouter>
-        </TooltipProvider>
+        <CookieConsentProvider>
+          <TooltipProvider>
+            <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+              <ScrollToTop />
+              <AnimatedLayout>
+                <Toaster />
+                <Sonner />
+                <Layout>
+                  <AnimatedRoutes />
+                </Layout>
+                <CookieConsent />
+              </AnimatedLayout>
+            </BrowserRouter>
+          </TooltipProvider>
+        </CookieConsentProvider>
       </LanguageProvider>
     </ThemeProvider>
   </QueryClientProvider>
