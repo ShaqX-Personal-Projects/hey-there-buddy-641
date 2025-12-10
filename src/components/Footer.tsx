@@ -131,6 +131,20 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-primary-foreground/20 pt-8">
+          {/* Legal Links */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mb-4 text-primary-foreground/60 font-inter text-sm">
+            <Link to="/privatlivspolitik" className="hover:text-primary-foreground transition-colors">
+              Privatlivspolitik
+            </Link>
+            <span className="text-primary-foreground/40">•</span>
+            <Link to="/cookiepolitik" className="hover:text-primary-foreground transition-colors">
+              Cookiepolitik
+            </Link>
+            <span className="text-primary-foreground/40">•</span>
+            <Link to="/handelsbetingelser" className="hover:text-primary-foreground transition-colors">
+              Handelsbetingelser
+            </Link>
+          </div>
           <div className="text-center text-primary-foreground/60 font-inter text-sm space-y-2">
             <p>© {currentYear} {dict.footer.creditPrefix} <a href="https://shaqx.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors underline">{businessInfo.credit}</a></p>
             <p className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
