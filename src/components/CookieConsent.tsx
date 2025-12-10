@@ -50,6 +50,7 @@ const CookieConsent = () => {
                         {text.description}{" "}
                         <Link
                           to="/cookiepolitik"
+                          onClick={acceptNecessary}
                           className="text-gold hover:text-gold/80 underline underline-offset-2 transition-colors"
                         >
                           {text.learnMore} {text.cookiePolicy}
