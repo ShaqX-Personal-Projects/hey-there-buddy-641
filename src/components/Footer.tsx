@@ -7,13 +7,13 @@ const Footer = () => {
   const { dict } = useLanguage();
   const { siteTitle, businessInfo } = globalSettings;
 
-  const legalLinks = [
-    { to: "/privacy-policy", label: dict.nav.home === "Hjem" ? "Privatlivspolitik" : "Privacy Policy" },
-    { to: "/cookie-policy", label: dict.nav.home === "Hjem" ? "Cookiepolitik" : "Cookie Policy" },
-    { to: "/terms-conditions", label: dict.nav.home === "Hjem" ? "Handelsbetingelser" : "Terms & Conditions" },
-  ];
-
   const isDanish = dict.nav.home === "Hjem";
+
+  const legalLinks = [
+    { to: "/privatlivspolitik", label: isDanish ? "Privatlivspolitik" : "Privacy Policy" },
+    { to: "/cookiepolitik", label: isDanish ? "Cookiepolitik" : "Cookie Policy" },
+    { to: "/handelsbetingelser", label: isDanish ? "Handelsbetingelser" : "Terms & Conditions" },
+  ];
 
   return (
     <footer className="bg-primary text-primary-foreground">
