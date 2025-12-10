@@ -78,6 +78,18 @@ const CookiePolicy = () => {
             </p>
           </section>
 
+          <section>
+            <h2 className="font-playfair text-2xl mb-4">Databehandlere</h2>
+            <p className="text-muted-foreground">
+              Følgende tredjeparter behandler data på vegne af Hair by Gashi:
+            </p>
+            <ul className="list-disc list-inside text-muted-foreground mt-2 space-y-1">
+              <li><strong>ShaqX:</strong> Webudvikling og teknisk databehandling (<a href="https://shaqx.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">shaqx.com</a>)</li>
+              <li><strong>Netlify:</strong> Hosting af website</li>
+              <li><strong>Google:</strong> Analytics (kun ved samtykke)</li>
+            </ul>
+          </section>
+
           <section className="border-t border-border pt-8">
             <h2 className="font-playfair text-2xl mb-4">Kontakt</h2>
             <p className="text-muted-foreground">
