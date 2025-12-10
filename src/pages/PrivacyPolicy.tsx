@@ -84,6 +84,7 @@ const PrivacyPolicy = () => {
             <h2 className="font-playfair text-2xl mb-4">Deling af data</h2>
             <p className="text-muted-foreground">Vi deler kun dine data med følgende tredjeparter:</p>
             <ul className="list-disc list-inside text-muted-foreground mt-2 space-y-1">
+              <li><strong>ShaqX:</strong> Webudvikling og teknisk databehandling (<a href="https://shaqx.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">shaqx.com</a>)</li>
               <li><strong>Planway:</strong> Håndtering af bookinger (databehandler)</li>
               <li><strong>Netlify:</strong> Hosting af website (databehandler)</li>
               <li><strong>Google Analytics:</strong> Statistik (kun ved samtykke)</li>
