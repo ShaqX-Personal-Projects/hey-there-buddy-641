@@ -119,15 +119,15 @@ const CookieSettings = () => {
             onClick={closeSettings}
           />
 
-          {/* Modal - Full screen centered */}
+          {/* Modal - Centered on screen */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed inset-4 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-[60] md:w-full md:max-w-xl flex items-center justify-center"
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4"
           >
-            <div className="bg-background border-2 border-gold/30 rounded-2xl shadow-2xl w-full max-h-[85vh] flex flex-col overflow-hidden">
+            <div className="bg-background border-2 border-gold/30 rounded-2xl shadow-2xl w-full max-w-xl max-h-[85vh] flex flex-col overflow-hidden">
               {/* Header */}
               <div className="bg-gold/5 border-b border-gold/20 p-5 md:p-6 flex-shrink-0">
                 <div className="flex items-center justify-between">
