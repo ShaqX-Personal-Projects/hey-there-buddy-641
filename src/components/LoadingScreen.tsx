@@ -152,31 +152,6 @@ const LoadingScreen = () => {
             
           </motion.div>
 
-          {/* Progress indicator */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.1 }}
-            className="flex flex-col items-center gap-6"
-          >
-            {/* Animated progress line */}
-            <div className="relative w-72 h-0.5 bg-border/20 overflow-hidden rounded-full">
-              <motion.div
-                animate={{ x: ["-100%", "100%"] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: [0.65, 0, 0.35, 1],
-                }}
-                className="absolute inset-y-0 w-1/2"
-                style={{
-                  background: `linear-gradient(90deg, transparent 0%, ${isLight ? "rgba(212, 175, 55, 0.8)" : "rgba(212, 175, 55, 1)"} 50%, transparent 100%)`,
-                  willChange: "transform",
-                }}
-              />
-            </div>
-
-          </motion.div>
         </div>
 
       </motion.div>
