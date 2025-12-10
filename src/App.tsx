@@ -22,6 +22,9 @@ const Team = lazy(() => import("./pages/Team"));
 const Prices = lazy(() => import("./pages/Prices"));
 const Booking = lazy(() => import("./pages/Booking"));
 const Contact = lazy(() => import("./pages/Contact"));
+const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsConditions = lazy(() => import("./pages/TermsConditions"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -49,6 +52,9 @@ const AnimatedRoutes = () => {
           <Route path="/prices" element={<PageTransition><Prices /></PageTransition>} />
           <Route path="/booking" element={<PageTransition><Booking /></PageTransition>} />
           <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+          <Route path="/cookiepolitik" element={<PageTransition><CookiePolicy /></PageTransition>} />
+          <Route path="/privatlivspolitik" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+          <Route path="/handelsbetingelser" element={<PageTransition><TermsConditions /></PageTransition>} />
           <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
         </Routes>
       </Suspense>
