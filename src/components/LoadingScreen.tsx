@@ -150,15 +150,6 @@ const LoadingScreen = () => {
               />
             </div>
             
-            <motion.div
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 1.4, delay: 0.9, ease: [0.65, 0, 0.35, 1] }}
-              className="h-px w-64 mx-auto mt-8"
-              style={{
-                background: `linear-gradient(90deg, transparent 0%, ${isLight ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0.8)"} 50%, transparent 100%)`,
-              }}
-            />
           </motion.div>
 
           {/* Progress indicator */}
@@ -185,27 +176,6 @@ const LoadingScreen = () => {
               />
             </div>
 
-            {/* Dot sequence */}
-            <div className="flex gap-4">
-              {[0, 1, 2, 3, 4].map((index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0.1, scale: 0.7 }}
-                  animate={{
-                    opacity: [0.1, 1, 0.1],
-                    scale: [0.7, 1.2, 0.7],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.2,
-                    ease: [0.65, 0, 0.35, 1],
-                  }}
-                  className="w-1.5 h-1.5 rounded-full bg-gold"
-                  style={{ willChange: "transform, opacity" }}
-                />
-              ))}
-            </div>
           </motion.div>
         </div>
 
