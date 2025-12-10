@@ -15,17 +15,19 @@ const Booking = () => {
       <div className="container mx-auto max-w-4xl">
         <SectionHeading
           eyebrow={dict.booking.eyebrow}
-          title={dict.booking.title}
-          subtitle={dict.booking.subtitle}
+          title="Book din tid hos Hair by Gashi"
+          subtitle=""
         />
 
         <div className="text-center mb-16">
-          <CTAButton href={bookingPageData.primaryCTA.url}>
-            {dict.cta.bookAppointment}
-          </CTAButton>
-          <p className="text-sm text-muted-foreground font-inter mt-4">
-            {dict.booking.ctaSubtext}
+          <p className="text-muted-foreground font-inter mb-6 max-w-2xl mx-auto">
+            Alle bookinger håndteres sikkert gennem Planway. Klik på knappen herunder for at vælge behandling, 
+            tidspunkt og frisør. Dine personoplysninger behandles fortroligt og i overensstemmelse med vores{" "}
+            <Link to="/privatlivspolitik" className="text-gold hover:underline">privatlivspolitik</Link>.
           </p>
+          <CTAButton href={bookingPageData.primaryCTA.url}>
+            Book via Planway
+          </CTAButton>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
