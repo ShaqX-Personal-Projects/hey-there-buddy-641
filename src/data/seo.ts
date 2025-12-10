@@ -48,6 +48,21 @@ export const seoData: Record<"da" | "en", SEOData> = {
       metaDescription: "Kom i kontakt med Hair by Gashi. Beliggende i Aalborg, Danmark. Kun efter aftale.",
       openGraphImage: "https://hairbygashi.dk/og-image.png",
     },
+    privacyPolicy: {
+      title: "Privatlivspolitik — Hair by Gashi",
+      metaDescription: "Læs vores privatlivspolitik og få indsigt i hvordan Hair by Gashi behandler dine personoplysninger.",
+      openGraphImage: "https://hairbygashi.dk/og-image.png",
+    },
+    cookiePolicy: {
+      title: "Cookiepolitik — Hair by Gashi",
+      metaDescription: "Information om hvordan Hair by Gashi bruger cookies på vores hjemmeside.",
+      openGraphImage: "https://hairbygashi.dk/og-image.png",
+    },
+    termsConditions: {
+      title: "Handelsbetingelser — Hair by Gashi",
+      metaDescription: "Læs vores handelsbetingelser for booking, afbestilling og betalinger hos Hair by Gashi.",
+      openGraphImage: "https://hairbygashi.dk/og-image.png",
+    },
   },
   en: {
     home: {
@@ -93,6 +108,21 @@ export const seoData: Record<"da" | "en", SEOData> = {
     contact: {
       title: "Contact — Hair by Gashi",
       metaDescription: "Get in touch with Hair by Gashi. Located in Aalborg, Denmark. By appointment only.",
+      openGraphImage: "https://hairbygashi.dk/og-image.png",
+    },
+    privacyPolicy: {
+      title: "Privacy Policy — Hair by Gashi",
+      metaDescription: "Read our privacy policy and learn how Hair by Gashi handles your personal data.",
+      openGraphImage: "https://hairbygashi.dk/og-image.png",
+    },
+    cookiePolicy: {
+      title: "Cookie Policy — Hair by Gashi",
+      metaDescription: "Information about how Hair by Gashi uses cookies on our website.",
+      openGraphImage: "https://hairbygashi.dk/og-image.png",
+    },
+    termsConditions: {
+      title: "Terms & Conditions — Hair by Gashi",
+      metaDescription: "Read our terms and conditions for booking, cancellation and payments at Hair by Gashi.",
       openGraphImage: "https://hairbygashi.dk/og-image.png",
     },
   },
