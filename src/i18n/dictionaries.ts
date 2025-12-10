@@ -24,8 +24,7 @@ export const dictionaries = {
     home: {
       eyebrow: "Eksklusiv Frisør",
       h1: "Ren, diskret luksus til dit hår",
-      subtext:
-        "Skræddersyede behandlinger, couture-farve og præcise klipninger i rolige omgivelser. Minimalistisk, kompromisløs med fokus på upåklagelig finish.",
+      subtext: "",
       trustChips: {
         handpicked: "Håndplukkede produkter",
         luxury: "Diskret luksusindstilling",
@@ -38,7 +37,7 @@ export const dictionaries = {
       },
       ctaSection: {
         heading: "Klar til at opleve ekspertise?",
-        subtext: "Book din tid i dag og oplev kunsten ved skræddersyet luksushårpleje.",
+        subtext: "Book din tid i dag.",
       },
     },
     treatments: {
@@ -393,8 +392,7 @@ export const dictionaries = {
     home: {
       eyebrow: "Exclusive Hairdresser",
       h1: "Pure, understated luxury for your hair",
-      subtext:
-        "Tailor-made treatments, couture color and precision cuts in serene surroundings. Minimal, uncompromising, with a focus on immaculate finish.",
+      subtext: "",
       trustChips: {
         handpicked: "Hand-picked products",
         luxury: "Discreet luxury setting",
@@ -407,7 +405,7 @@ export const dictionaries = {
       },
       ctaSection: {
         heading: "Ready to experience excellence?",
-        subtext: "Book your appointment today and discover the art of tailored luxury haircare.",
+        subtext: "Book your appointment today.",
       },
     },
     treatments: {
