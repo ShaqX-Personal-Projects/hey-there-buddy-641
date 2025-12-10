@@ -27,15 +27,24 @@ const CookieConsent = () => {
     <>
       <AnimatePresence>
         {showBanner && !showSettings && (
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 100, opacity: 0 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6"
-          >
-            <div className="container mx-auto max-w-4xl">
-              <div className="bg-card/95 backdrop-blur-xl border border-gold/20 rounded-2xl p-6 shadow-2xl">
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            />
+            
+            {/* Centered popup */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            >
+              <div className="bg-card border-2 border-gold/30 rounded-2xl p-6 shadow-2xl max-w-lg w-full">
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
                   {/* Icon & Text */}
                   <div className="flex items-start gap-4 flex-1">
@@ -88,8 +97,8 @@ const CookieConsent = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 
