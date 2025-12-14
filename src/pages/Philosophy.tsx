@@ -3,7 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { philosophyPageData } from "@/data/philosophy";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
-import philosophyHero from "@/assets/philosophy-hero.png";
+// Using public salon image for hero
 
 const Philosophy = () => {
   const { dict } = useLanguage();
@@ -37,7 +37,7 @@ const Philosophy = () => {
 
             <div className="relative">
               <img
-                src={philosophyHero}
+                src="/salon/salon-14.jpg"
                 alt="Hair by Gashi - Professional hairdressing"
                 className="w-full h-auto rounded-2xl bw-image card-shadow hover-lift-smooth"
               />

@@ -26,44 +26,73 @@ const Treatments = () => {
   const prices = priceText[language];
 
   return (
-    <div className="py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow={dict.treatments.eyebrow}
-          title={dict.treatments.title}
-          subtitle={dict.treatments.subtitle}
+    <div>
+      {/* Hero Section with Salon Image */}
+      <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bw-image"
+          style={{ backgroundImage: "url('/salon/salon-16.jpg')" }}
         />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          <ServiceCard
-            title={dict.treatments.precisionCut.name}
-            description={dict.treatments.precisionCut.blurb}
-            priceFrom={prices.precisionCut}
-          />
-          <ServiceCard
-            title={dict.treatments.coutureColor.name}
-            description={dict.treatments.coutureColor.blurb}
-            priceFrom={prices.coutureColor}
-          />
-          <ServiceCard
-            title={dict.treatments.blowDry.name}
-            description={dict.treatments.blowDry.blurb}
-            priceFrom={prices.blowDry}
-          />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 h-full flex items-center justify-center px-4">
+          <div className="text-center max-w-4xl">
+            <p className="eyebrow-text mb-4 text-white/90">{dict.treatments.eyebrow}</p>
+            <h1 className="font-playfair font-semibold text-3xl sm:text-4xl md:text-5xl text-white mb-4">
+              {dict.treatments.title}
+            </h1>
+            <p className="text-white/80 font-inter text-lg max-w-2xl mx-auto">
+              {dict.treatments.subtitle}
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="text-center mb-12">
-          <p className="text-sm text-muted-foreground font-inter italic">
-            {dict.treatments.note}
-          </p>
-        </div>
+      {/* Services Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Left Column - Services */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ServiceCard
+                title={dict.treatments.precisionCut.name}
+                description={dict.treatments.precisionCut.blurb}
+                priceFrom={prices.precisionCut}
+              />
+              <ServiceCard
+                title={dict.treatments.coutureColor.name}
+                description={dict.treatments.coutureColor.blurb}
+                priceFrom={prices.coutureColor}
+              />
+              <ServiceCard
+                title={dict.treatments.blowDry.name}
+                description={dict.treatments.blowDry.blurb}
+                priceFrom={prices.blowDry}
+              />
+            </div>
+            
+            {/* Right Column - Accent Image */}
+            <div className="hidden lg:block">
+              <img
+                src="/salon/salon-18.jpg"
+                alt="Hair by Gashi - Beard trimming"
+                className="w-full h-full object-cover rounded-2xl bw-image card-shadow"
+              />
+            </div>
+          </div>
 
-        <div className="text-center">
-          <CTAButton href={treatmentsPageData.cta.url}>
-            {dict.cta.bookConsultation}
-          </CTAButton>
+          <div className="text-center mt-12 mb-12">
+            <p className="text-sm text-muted-foreground font-inter italic">
+              {dict.treatments.note}
+            </p>
+          </div>
+
+          <div className="text-center">
+            <CTAButton href={treatmentsPageData.cta.url}>
+              {dict.cta.bookConsultation}
+            </CTAButton>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
