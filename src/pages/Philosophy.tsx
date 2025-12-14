@@ -66,6 +66,11 @@ const Philosophy = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center">
+              <img
+                src="/salon/salon-7.jpg"
+                alt="Precision"
+                className="w-32 h-32 mx-auto mb-6 rounded-full object-cover bw-image card-shadow hover-lift-smooth"
+              />
               <h4 className="text-2xl font-playfair font-semibold mb-4 text-foreground">
                 {dict.philosophy.values.precision.title}
               </h4>
@@ -74,6 +79,11 @@ const Philosophy = () => {
               </p>
             </div>
             <div className="text-center">
+              <img
+                src="/salon/salon-11.jpg"
+                alt="Discretion"
+                className="w-32 h-32 mx-auto mb-6 rounded-full object-cover bw-image card-shadow hover-lift-smooth"
+              />
               <h4 className="text-2xl font-playfair font-semibold mb-4 text-foreground">
                 {dict.philosophy.values.discretion.title}
               </h4>
@@ -82,6 +92,11 @@ const Philosophy = () => {
               </p>
             </div>
             <div className="text-center">
+              <img
+                src="/salon/salon-3.jpg"
+                alt="Excellence"
+                className="w-32 h-32 mx-auto mb-6 rounded-full object-cover bw-image card-shadow hover-lift-smooth"
+              />
               <h4 className="text-2xl font-playfair font-semibold mb-4 text-foreground">
                 {dict.philosophy.values.excellence.title}
               </h4>
@@ -90,6 +105,17 @@ const Philosophy = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Final Accent Image */}
+      <section className="pb-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <img
+            src="/salon/salon-6.jpg"
+            alt="Hair by Gashi - Salon interior"
+            className="w-full h-64 md:h-96 object-cover rounded-2xl bw-image card-shadow"
+          />
         </div>
       </section>
     </div>
