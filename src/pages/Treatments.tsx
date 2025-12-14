@@ -50,35 +50,47 @@ const Treatments = () => {
       {/* Services Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <ServiceCard
-              title={dict.treatments.precisionCut.name}
-              description={dict.treatments.precisionCut.blurb}
-              priceFrom={prices.precisionCut}
-            />
-            <ServiceCard
-              title={dict.treatments.coutureColor.name}
-              description={dict.treatments.coutureColor.blurb}
-              priceFrom={prices.coutureColor}
-            />
-            <ServiceCard
-              title={dict.treatments.blowDry.name}
-              description={dict.treatments.blowDry.blurb}
-              priceFrom={prices.blowDry}
-            />
-            {/* CTA Card */}
-            <div className="gold-hairline rounded-2xl p-6 sm:p-8 card-shadow hover-lift-smooth hover:card-shadow-hover hover:gold-hairline-hover flex flex-col justify-between">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-playfair font-semibold mb-3 sm:mb-4 text-foreground">
-                  {dict.treatments.yourTurn.name}
-                </h3>
-                <p className="text-muted-foreground font-inter text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
-                  {dict.treatments.yourTurn.blurb}
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Left Column - Services */}
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ServiceCard
+                title={dict.treatments.precisionCut.name}
+                description={dict.treatments.precisionCut.blurb}
+                priceFrom={prices.precisionCut}
+              />
+              <ServiceCard
+                title={dict.treatments.coutureColor.name}
+                description={dict.treatments.coutureColor.blurb}
+                priceFrom={prices.coutureColor}
+              />
+              <ServiceCard
+                title={dict.treatments.blowDry.name}
+                description={dict.treatments.blowDry.blurb}
+                priceFrom={prices.blowDry}
+              />
+              {/* CTA Card */}
+              <div className="gold-hairline rounded-2xl p-6 sm:p-8 card-shadow hover-lift-smooth hover:card-shadow-hover hover:gold-hairline-hover flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-playfair font-semibold mb-3 sm:mb-4 text-foreground">
+                    {dict.treatments.yourTurn.name}
+                  </h3>
+                  <p className="text-muted-foreground font-inter text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
+                    {dict.treatments.yourTurn.blurb}
+                  </p>
+                </div>
+                <CTAButton href={treatmentsPageData.cta.url}>
+                  {dict.cta.bookAppointment}
+                </CTAButton>
               </div>
-              <CTAButton href={treatmentsPageData.cta.url}>
-                {dict.cta.bookAppointment}
-              </CTAButton>
+            </div>
+            
+            {/* Right Column - Accent Image */}
+            <div className="hidden lg:block">
+              <img
+                src="/salon/salon-18.jpg"
+                alt="Hair by Gashi - Beard trimming"
+                className="w-full h-full object-cover rounded-2xl bw-image card-shadow"
+              />
             </div>
           </div>
 
