@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import GalleryItem from "@/components/GalleryItem";
 import GalleryLightbox from "@/components/GalleryLightbox";
 import SectionHeading from "@/components/SectionHeading";
+import SalonCarousel from "@/components/SalonCarousel";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -109,6 +110,21 @@ const Gallery = () => {
             </svg>
             {language === "da" ? "Følg os på Instagram" : "Follow us on Instagram"}
           </a>
+        </div>
+
+        {/* Salon Section with Carousel */}
+        <div className="mt-24">
+          <SectionHeading
+            eyebrow={language === "da" ? "Vores rum" : "Our space"}
+            title={language === "da" ? "Salonen" : "The Salon"}
+            subtitle={language === "da" 
+              ? "Oplev vores eksklusive salon — designet til komfort og luksus"
+              : "Experience our exclusive salon — designed for comfort and luxury"
+            }
+          />
+          <div className="mt-8">
+            <SalonCarousel />
+          </div>
         </div>
       </div>
 

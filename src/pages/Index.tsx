@@ -136,13 +136,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 sm:py-20 px-4 bg-muted/30">
-        <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-semibold mb-4 sm:mb-6 text-foreground">
+      {/* Call to Action with Background Image */}
+      <section className="relative py-24 sm:py-32 px-4 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bw-image"
+          style={{ backgroundImage: "url('/salon/salon-14.jpg')" }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70" />
+        
+        <div className="relative z-10 container mx-auto text-center max-w-2xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-semibold mb-4 sm:mb-6 text-white">
             {dict.home.ctaSection.heading}
           </h2>
-          <p className="text-muted-foreground font-inter text-sm sm:text-base mb-6 sm:mb-8">
+          <p className="text-white/80 font-inter text-sm sm:text-base mb-6 sm:mb-8">
             {dict.home.ctaSection.subtext}
           </p>
           <CTAButton href={globalSettings.primaryCTA.url}>

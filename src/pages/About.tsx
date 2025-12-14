@@ -9,13 +9,25 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container-base py-12 md:py-20">
-        <SectionHeading
-          eyebrow={dict.about.eyebrow}
-          title={dict.about.title}
-          subtitle={dict.about.subtitle}
+      {/* Hero Section with Salon Image */}
+      <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bw-image"
+          style={{ backgroundImage: "url('/salon/salon-11.jpg')" }}
         />
-      </div>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 h-full flex items-center justify-center px-4">
+          <div className="text-center max-w-4xl">
+            <p className="eyebrow-text mb-4 text-white/90">{dict.about.eyebrow}</p>
+            <h1 className="font-playfair font-semibold text-3xl sm:text-4xl md:text-5xl text-white mb-4">
+              {dict.about.title}
+            </h1>
+            <p className="text-white/80 font-inter text-lg max-w-2xl mx-auto">
+              {dict.about.subtitle}
+            </p>
+          </div>
+        </div>
+      </section>
 
       <Timeline events={dict.about.timeline} />
 
