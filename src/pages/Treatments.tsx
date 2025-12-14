@@ -94,16 +94,10 @@ const Treatments = () => {
             </div>
           </div>
 
-          <div className="text-center mt-12 mb-12">
+          <div className="text-center mt-12">
             <p className="text-sm text-muted-foreground font-inter italic">
               {dict.treatments.note}
             </p>
-          </div>
-
-          <div className="text-center">
-            <CTAButton href={treatmentsPageData.cta.url}>
-              {dict.cta.bookConsultation}
-            </CTAButton>
           </div>
         </div>
       </section>
