@@ -37,7 +37,7 @@ const Philosophy = () => {
 
             <div className="relative">
               <img
-                src="/salon/salon-14.jpg"
+                src="/salon/salon-20.jpg"
                 alt="Hair by Gashi - Professional hairdressing"
                 className="w-full h-auto rounded-2xl bw-image card-shadow hover-lift-smooth"
               />

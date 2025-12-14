@@ -84,7 +84,7 @@ const Treatments = () => {
               </div>
             </div>
             
-            {/* Right Column - Accent Image */}
+            {/* Right Column - Accent Image (Desktop) */}
             <div className="hidden lg:block">
               <img
                 src="/salon/salon-18.jpg"
@@ -92,6 +92,15 @@ const Treatments = () => {
                 className="w-full h-full object-cover rounded-2xl bw-image card-shadow"
               />
             </div>
+          </div>
+
+          {/* Mobile Accent Image */}
+          <div className="lg:hidden mt-8">
+            <img
+              src="/salon/salon-18.jpg"
+              alt="Hair by Gashi - Salon atmosphere"
+              className="w-full h-64 object-cover rounded-2xl bw-image card-shadow"
+            />
           </div>
 
           <div className="text-center mt-12">
