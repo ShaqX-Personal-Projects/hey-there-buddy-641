@@ -47,9 +47,8 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
         setShowBanner(true);
       }
     } else {
-      // Small delay before showing banner for better UX
-      const timer = setTimeout(() => setShowBanner(true), 1000);
-      return () => clearTimeout(timer);
+      // Show banner immediately if no consent stored
+      setShowBanner(true);
     }
   }, []);
 
