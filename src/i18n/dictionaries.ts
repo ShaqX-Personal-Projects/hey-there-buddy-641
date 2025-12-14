@@ -59,6 +59,11 @@ export const dictionaries = {
         blurb:
           "Poleret, fotoklar styling til særlige lejligheder. Upåklagelig finish med langtidsholdbar hold og strålende glans.",
       },
+      yourTurn: {
+        name: "Nu er det din tur",
+        blurb:
+          "Klar til at opleve forskellen? Book din personlige konsultation og lad os skabe det perfekte look sammen.",
+      },
       note: "Priserne er vejledende. Endelig pris bekræftes efter konsultation.",
     },
     gallery: {
@@ -426,6 +431,11 @@ export const dictionaries = {
         name: "Red-Carpet Blow-Dry",
         blurb:
           "Polished, photo-ready styling for special occasions. Immaculate finish with long-lasting hold and radiant shine.",
+      },
+      yourTurn: {
+        name: "Your Turn",
+        blurb:
+          "Ready to experience the difference? Book your personal consultation and let us create the perfect look together.",
       },
       note: "Prices are indicative. Final price is confirmed after consultation.",
     },
