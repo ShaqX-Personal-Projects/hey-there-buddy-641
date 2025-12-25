@@ -61,6 +61,7 @@ const Index = () => {
           muted
           playsInline
           preload="metadata"
+          poster="/salon/salon-14.jpg"
           className="absolute inset-0 w-full h-full object-cover grayscale"
         >
           <source 
