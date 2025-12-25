@@ -40,6 +40,8 @@ const Philosophy = () => {
                 src="/salon/salon-20.jpg"
                 alt="Hair by Gashi - Professional hairdressing"
                 className="w-full h-auto rounded-2xl bw-image card-shadow hover-lift-smooth"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -70,6 +72,8 @@ const Philosophy = () => {
                 src="/salon/salon-7.jpg"
                 alt="Precision"
                 className="w-32 h-32 mx-auto mb-6 rounded-full object-cover bw-image card-shadow hover-lift-smooth"
+                loading="lazy"
+                decoding="async"
               />
               <h4 className="text-2xl font-playfair font-semibold mb-4 text-foreground">
                 {dict.philosophy.values.precision.title}
@@ -83,6 +87,8 @@ const Philosophy = () => {
                 src="/salon/salon-11.jpg"
                 alt="Discretion"
                 className="w-32 h-32 mx-auto mb-6 rounded-full object-cover bw-image card-shadow hover-lift-smooth"
+                loading="lazy"
+                decoding="async"
               />
               <h4 className="text-2xl font-playfair font-semibold mb-4 text-foreground">
                 {dict.philosophy.values.discretion.title}
@@ -96,6 +102,8 @@ const Philosophy = () => {
                 src="/salon/salon-3.jpg"
                 alt="Excellence"
                 className="w-32 h-32 mx-auto mb-6 rounded-full object-cover bw-image card-shadow hover-lift-smooth"
+                loading="lazy"
+                decoding="async"
               />
               <h4 className="text-2xl font-playfair font-semibold mb-4 text-foreground">
                 {dict.philosophy.values.excellence.title}
@@ -115,6 +123,8 @@ const Philosophy = () => {
             src="/salon/salon-6.jpg"
             alt="Hair by Gashi - Salon interior"
             className="w-full h-64 md:h-96 object-cover rounded-2xl bw-image card-shadow"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>

@@ -90,6 +90,8 @@ const Treatments = () => {
                 src="/salon/salon-18.jpg"
                 alt="Hair by Gashi - Beard trimming"
                 className="w-full h-full object-cover rounded-2xl bw-image card-shadow"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -100,6 +102,8 @@ const Treatments = () => {
               src="/salon/salon-18.jpg"
               alt="Hair by Gashi - Salon atmosphere"
               className="w-full h-64 object-cover rounded-2xl bw-image card-shadow"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
