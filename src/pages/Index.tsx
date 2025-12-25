@@ -5,7 +5,6 @@ import TrustChip from "@/components/TrustChip";
 import { Sparkles, Lock, Image, Award } from "lucide-react";
 import { globalSettings } from "@/data/globals";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useSEO } from "@/hooks/useSEO";
 
 // Localized featured work captions
@@ -31,7 +30,6 @@ const featuredWorkImages = [
 
 const Index = () => {
   const { dict, language } = useLanguage();
-  const isMobile = useIsMobile();
   useSEO("home");
   
   const iconMap: Record<string, any> = {
@@ -65,7 +63,12 @@ const Index = () => {
           className="absolute inset-0 w-full h-full object-cover grayscale"
         >
           <source 
-            src={isMobile ? "/hero-video-mobile.mp4" : "/hero-video.mp4"} 
+            src="/hero-video-mobile.mp4" 
+            type="video/mp4" 
+            media="(max-width: 767px)"
+          />
+          <source 
+            src="/hero-video.mp4" 
             type="video/mp4" 
           />
         </video>
