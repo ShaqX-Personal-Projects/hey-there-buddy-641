@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CTAButton from "@/components/CTAButton";
 import GalleryItem from "@/components/GalleryItem";
 import SectionHeading from "@/components/SectionHeading";
@@ -5,6 +6,7 @@ import TrustChip from "@/components/TrustChip";
 import { Sparkles, Lock, Image, Award } from "lucide-react";
 import { globalSettings } from "@/data/globals";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useSEO } from "@/hooks/useSEO";
 
 // Localized featured work captions
@@ -30,6 +32,8 @@ const featuredWorkImages = [
 
 const Index = () => {
   const { dict, language } = useLanguage();
+  const isMobile = useIsMobile();
+  const [videoFailed, setVideoFailed] = useState(false);
   useSEO("home");
   
   const iconMap: Record<string, any> = {
@@ -53,25 +57,31 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-16 sm:py-20 overflow-hidden">
         {/* Video Background - Optimized for bandwidth */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="/salon/salon-14.jpg"
-          className="absolute inset-0 w-full h-full object-cover grayscale"
-        >
-          <source 
-            src="/hero-video-mobile.mp4" 
-            type="video/mp4" 
-            media="(max-width: 767px)"
+        {!videoFailed ? (
+          <video
+            key={isMobile ? "mobile" : "desktop"}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="/salon/salon-14.jpg"
+            className="absolute inset-0 w-full h-full object-cover grayscale"
+            onError={() => setVideoFailed(true)}
+          >
+            <source 
+              src={isMobile ? "/hero-video-mobile.mp4" : "/hero-video.mp4"} 
+              type="video/mp4" 
+            />
+          </video>
+        ) : (
+          <img 
+            src="/salon/salon-14.jpg" 
+            alt="Salon baggrund"
+            className="absolute inset-0 w-full h-full object-cover grayscale"
+            loading="eager"
           />
-          <source 
-            src="/hero-video.mp4" 
-            type="video/mp4" 
-          />
-        </video>
+        )}
         
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50" />
