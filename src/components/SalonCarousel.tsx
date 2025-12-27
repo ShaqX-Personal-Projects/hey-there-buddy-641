@@ -78,19 +78,13 @@ const SalonCarousel = () => {
         {salonImages.map((image, index) => (
           <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
             <div className="relative group overflow-hidden rounded-2xl">
-              <picture>
-                <source 
-                  srcSet={image.replace('.jpg', '.webp')} 
-                  type="image/webp" 
-                />
-                <img
-                  src={image}
-                  alt={captions[index]}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full aspect-[4/3] object-cover bw-image transition-transform duration-500 group-hover:scale-105"
-                />
-              </picture>
+              <img
+                src={image}
+                alt={captions[index]}
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-[4/3] object-cover bw-image transition-transform duration-500 group-hover:scale-105"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <p className="absolute bottom-4 left-4 right-4 text-white font-inter text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {captions[index]}
