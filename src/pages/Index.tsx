@@ -59,12 +59,11 @@ const Index = () => {
         {/* Video Background - Optimized for bandwidth */}
         {!videoFailed ? (
           <video
-            key={isMobile ? "mobile" : "desktop"}
             autoPlay
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
             poster="/salon/salon-14.jpg"
             className="absolute inset-0 w-full h-full object-cover grayscale"
             onError={() => setVideoFailed(true)}
