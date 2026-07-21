@@ -18,82 +18,47 @@ const Team = () => {
           subtitle={dict.team.subtitle}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <Card className="border-gold/20 overflow-hidden">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
-                src={teamPageData.members[0].portrait}
-                srcSet={`${teamPageData.members[0].portrait} 1x, ${teamPageData.members[0].portrait} 2x`}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                alt={dict.team.members.gashi.name}
-                width={600}
-                height={800}
-                className="w-full h-full object-cover bw-image hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <CardHeader>
-              <CardTitle className="font-playfair text-2xl">{dict.team.members.gashi.name}</CardTitle>
-              <CardDescription className="font-inter text-gold">{dict.team.members.gashi.role}</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground font-inter leading-relaxed">
-                {dict.team.members.gashi.bio}
-              </p>
-              <div>
-                <h4 className="font-inter font-semibold text-sm mb-2">{dict.team.specialties}</h4>
-                <div className="flex flex-wrap gap-2">
-                  {dict.team.members.gashi.specialties.map((specialty, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs font-inter px-3 py-1 border border-gold/30 rounded-full"
-                    >
-                      {specialty}
-                    </span>
-                  ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          {teamPageData.members.map((member) => {
+            const info = dict.team.members[member.key];
+            return (
+              <Card key={member.key} className="border-gold/20 overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden bg-muted/30">
+                  <img
+                    src={member.portrait}
+                    alt={info.name}
+                    width={600}
+                    height={800}
+                    className="w-full h-full object-cover bw-image hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-gold/20 overflow-hidden">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
-                src={teamPageData.members[1].portrait}
-                srcSet={`${teamPageData.members[1].portrait} 1x, ${teamPageData.members[1].portrait} 2x`}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                alt={dict.team.members.comingSoon.name}
-                width={600}
-                height={800}
-                className="w-full h-full object-cover bw-image hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <CardHeader>
-              <CardTitle className="font-playfair text-2xl">{dict.team.members.comingSoon.name}</CardTitle>
-              <CardDescription className="font-inter text-gold">{dict.team.members.comingSoon.role}</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground font-inter leading-relaxed">
-                {dict.team.members.comingSoon.bio}
-              </p>
-              <div>
-                <h4 className="font-inter font-semibold text-sm mb-2">{dict.team.specialties}</h4>
-                <div className="flex flex-wrap gap-2">
-                  {dict.team.members.comingSoon.specialties.map((specialty, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs font-inter px-3 py-1 border border-gold/30 rounded-full"
-                    >
-                      {specialty}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                <CardHeader>
+                  <CardTitle className="font-playfair text-2xl">{info.name}</CardTitle>
+                  <CardDescription className="font-inter text-gold">{info.role}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground font-inter leading-relaxed">
+                    {info.bio}
+                  </p>
+                  <div>
+                    <h4 className="font-inter font-semibold text-sm mb-2">{dict.team.specialties}</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {info.specialties.map((specialty, idx) => (
+                        <span
+                          key={idx}
+                          className="text-xs font-inter px-3 py-1 border border-gold/30 rounded-full"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         <div className="mt-16 text-center">
