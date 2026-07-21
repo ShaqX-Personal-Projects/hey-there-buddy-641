@@ -6,7 +6,31 @@ import SalonCarousel from "@/components/SalonCarousel";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 
-// Localized gallery captions
+// Localized captions for new gallery images (shown first)
+const newCaptions = {
+  da: [
+    "Portræt — naturligt lys",
+    "Skarp fade — set bagfra",
+    "Præcisionsklip — krøllet tekstur",
+    "Curly top — ren neckline",
+    "Skær og form — detaljearbejde",
+    "Blow-out — volumen og bevægelse",
+    "Frisk klip — rent finish",
+    "Blond finish — blødt fald",
+  ],
+  en: [
+    "Portrait — natural light",
+    "Sharp fade — back view",
+    "Precision cut — curly texture",
+    "Curly top — clean neckline",
+    "Shape and form — detail work",
+    "Blow-out — volume and movement",
+    "Fresh cut — clean finish",
+    "Blonde finish — soft fall",
+  ],
+};
+
+// Localized captions for older gallery items
 const galleryCaptions = {
   da: [
     "Præcisions fade — skarp geometri",
@@ -32,8 +56,20 @@ const galleryCaptions = {
   ],
 };
 
-// Gallery images
-const galleryImages = [
+// New gallery images (primary)
+const newImages = [
+  "/gallery/new-1.jpg",
+  "/gallery/new-2.jpg",
+  "/gallery/new-3.jpg",
+  "/gallery/new-4.jpg",
+  "/gallery/new-5.jpg",
+  "/gallery/new-6.jpg",
+  "/gallery/new-7.jpg",
+  "/gallery/new-8.jpg",
+];
+
+// Older gallery images (behind "see more")
+const olderImages = [
   "/gallery/gallery-1.png",
   "/gallery/gallery-2.png",
   "/gallery/gallery-3.png",
@@ -49,7 +85,12 @@ const Gallery = () => {
   const { dict, language } = useLanguage();
   useSEO("gallery");
 
-  const captions = galleryCaptions[language];
+  const [showMore, setShowMore] = useState(false);
+
+  const galleryImages = showMore ? [...newImages, ...olderImages] : newImages;
+  const captions = showMore
+    ? [...newCaptions[language], ...galleryCaptions[language]]
+    : newCaptions[language];
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => setSelectedIndex(index);
@@ -87,6 +128,17 @@ const Gallery = () => {
               />
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={() => setShowMore((v) => !v)}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-muted text-foreground rounded-xl gold-hairline hover:bg-gold hover:text-gold-foreground transition-colors font-inter font-medium"
+          >
+            {showMore
+              ? language === "da" ? "Vis mindre" : "Show less"
+              : language === "da" ? "Se mere" : "See more"}
+          </button>
         </div>
 
         <div className="mt-12 flex justify-center">
