@@ -86,6 +86,7 @@ const Gallery = () => {
   useSEO("gallery");
 
   const [showMore, setShowMore] = useState(false);
+  const [colorOn, setColorOn] = useState(false);
 
   const galleryImages = showMore ? [...newImages, ...olderImages] : newImages;
   const captions = showMore
@@ -117,6 +118,30 @@ const Gallery = () => {
           subtitle={dict.gallery.subtitle}
         />
 
+        <div className="mb-8 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setColorOn((v) => !v)}
+            role="switch"
+            aria-checked={colorOn}
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-muted gold-hairline hover:bg-muted/80 transition-colors font-inter text-sm text-foreground"
+          >
+            <span>{language === "da" ? "Farve" : "Color"}</span>
+            <span
+              className={`relative inline-block w-10 h-5 rounded-full transition-colors ${colorOn ? "bg-gold" : "bg-foreground/20"}`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-background transition-transform ${colorOn ? "translate-x-5" : ""}`}
+              />
+            </span>
+            <span className="text-muted-foreground text-xs">
+              {colorOn
+                ? language === "da" ? "Til" : "On"
+                : language === "da" ? "Fra" : "Off"}
+            </span>
+          </button>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((image, index) => (
             <div key={index} onClick={() => openLightbox(index)}>
@@ -125,6 +150,7 @@ const Gallery = () => {
                 caption={captions[index]}
                 width={800}
                 height={1000}
+                bw={!colorOn}
               />
             </div>
           ))}
@@ -210,6 +236,7 @@ const Gallery = () => {
         onClose={closeLightbox}
         onNext={goToNext}
         onPrev={goToPrev}
+        bw={!colorOn}
       />
     </div>
   );
