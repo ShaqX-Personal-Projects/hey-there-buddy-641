@@ -9,6 +9,7 @@ interface GalleryLightboxProps {
   onClose: () => void;
   onNext: () => void;
   onPrev: () => void;
+  bw?: boolean;
 }
 
 const GalleryLightbox = ({
@@ -18,6 +19,7 @@ const GalleryLightbox = ({
   onClose,
   onNext,
   onPrev,
+  bw = true,
 }: GalleryLightboxProps) => {
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -97,7 +99,8 @@ const GalleryLightbox = ({
           <img
             src={images[selectedIndex]}
             alt={captions[selectedIndex]}
-            className="max-w-full max-h-[75vh] object-contain rounded-xl bw-image"
+            className={`max-w-full max-h-[75vh] object-contain rounded-xl ${bw ? "bw-image" : ""}`}
+            style={{ transition: "filter 300ms ease-out" }}
           />
           <p className="mt-4 text-foreground font-inter text-sm md:text-base text-center px-4">
             {captions[selectedIndex]}

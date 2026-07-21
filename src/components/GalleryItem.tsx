@@ -3,9 +3,10 @@ interface GalleryItemProps {
   caption: string;
   width?: number;
   height?: number;
+  bw?: boolean;
 }
 
-const GalleryItem = ({ imageSrc, caption, width = 800, height = 1000 }: GalleryItemProps) => {
+const GalleryItem = ({ imageSrc, caption, width = 800, height = 1000, bw = true }: GalleryItemProps) => {
   return (
     <div className="group relative overflow-hidden rounded-2xl hover-lift-smooth cursor-pointer card-shadow hover:card-shadow-hover" style={{ aspectRatio: `${width}/${height}` }}>
       <img
@@ -14,8 +15,8 @@ const GalleryItem = ({ imageSrc, caption, width = 800, height = 1000 }: GalleryI
         alt={caption}
         width={width}
         height={height}
-        className="w-full h-full object-cover bw-image group-hover:scale-105"
-        style={{ transition: 'transform 400ms ease-out' }}
+        className={`w-full h-full object-cover group-hover:scale-105 ${bw ? "bw-image" : ""}`}
+        style={{ transition: 'transform 400ms ease-out, filter 300ms ease-out' }}
         loading="lazy"
         decoding="async"
       />
