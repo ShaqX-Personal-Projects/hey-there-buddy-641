@@ -334,6 +334,24 @@ export const dictionaries = {
             "Permanent Krøller",
           ],
         },
+        erjon: {
+          name: "Erjon",
+          role: "Stylist",
+          bio: "Roligt, sikkert håndværk. Erjon leverer skarpe klip og rene overgange i et diskret tempo.",
+          specialties: ["Skinfade", "Herreklip", "Skægtrimning", "Design"],
+        },
+        mikkel: {
+          name: "Mikkel",
+          role: "Stylist",
+          bio: "Præcis håndværker med skarpt blik for form og linje. Mikkel forener klassisk teknik med moderne udtryk.",
+          specialties: ["Herreklip", "Skinfade", "Skæg", "Klassisk Barbering"],
+        },
+        cecilie: {
+          name: "Cecilie",
+          role: "Colorist & Stylist",
+          bio: "Farvespecialist med sans for detalje. Cecilie skaber naturlige, tonede resultater tilpasset den enkelte.",
+          specialties: ["Balayage", "Babylights", "Farve Korrektion", "Dameklip"],
+        },
         comingSoon: {
           name: "Kommer Snart",
           role: "Senior Kolorist",
@@ -718,6 +736,24 @@ export const dictionaries = {
             "Ombre",
             "Permanent Curls",
           ],
+        },
+        erjon: {
+          name: "Erjon",
+          role: "Stylist",
+          bio: "Calm, confident craftsmanship. Erjon delivers sharp cuts and clean transitions at a discreet pace.",
+          specialties: ["Skin Fade", "Men's Cut", "Beard Trim", "Design"],
+        },
+        mikkel: {
+          name: "Mikkel",
+          role: "Stylist",
+          bio: "A precise craftsman with a sharp eye for shape and line. Mikkel unites classic technique with a modern expression.",
+          specialties: ["Men's Cut", "Skin Fade", "Beard", "Classic Shave"],
+        },
+        cecilie: {
+          name: "Cecilie",
+          role: "Colourist & Stylist",
+          bio: "Colour specialist with a feel for detail. Cecilie creates natural, tonal results tailored to each guest.",
+          specialties: ["Balayage", "Babylights", "Colour Correction", "Women's Cut"],
         },
         comingSoon: {
           name: "Coming Soon",
