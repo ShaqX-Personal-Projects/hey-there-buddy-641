@@ -128,18 +128,41 @@ const Gallery = () => {
               />
             </div>
           ))}
+          {!showMore && (
+            <button
+              type="button"
+              onClick={() => setShowMore(true)}
+              className="group relative overflow-hidden rounded-2xl hover-lift-smooth card-shadow hover:card-shadow-hover bg-muted gold-hairline flex flex-col items-center justify-center text-center px-6"
+              style={{ aspectRatio: "800/1000" }}
+              aria-label={language === "da" ? "Se mere" : "See more"}
+            >
+              <span className="font-playfair text-3xl md:text-4xl text-foreground group-hover:text-gold transition-colors">
+                {language === "da" ? "Se mere" : "See more"}
+              </span>
+              <span className="mt-3 font-inter text-sm text-muted-foreground">
+                {language === "da"
+                  ? `+${olderImages.length} klipninger`
+                  : `+${olderImages.length} cuts`}
+              </span>
+              <span className="mt-6 inline-flex items-center justify-center w-12 h-12 rounded-full gold-hairline text-foreground group-hover:bg-gold group-hover:text-gold-foreground transition-colors">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </span>
+            </button>
+          )}
         </div>
 
-        <div className="mt-10 flex justify-center">
-          <button
-            onClick={() => setShowMore((v) => !v)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-muted text-foreground rounded-xl gold-hairline hover:bg-gold hover:text-gold-foreground transition-colors font-inter font-medium"
-          >
-            {showMore
-              ? language === "da" ? "Vis mindre" : "Show less"
-              : language === "da" ? "Se mere" : "See more"}
-          </button>
-        </div>
+        {showMore && (
+          <div className="mt-10 flex justify-center">
+            <button
+              onClick={() => setShowMore(false)}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-muted text-foreground rounded-xl gold-hairline hover:bg-gold hover:text-gold-foreground transition-colors font-inter font-medium"
+            >
+              {language === "da" ? "Vis mindre" : "Show less"}
+            </button>
+          </div>
+        )}
 
         <div className="mt-12 flex justify-center">
           <a
