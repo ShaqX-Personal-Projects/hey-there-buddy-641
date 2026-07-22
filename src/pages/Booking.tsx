@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import CTAButton from "@/components/CTAButton";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { bookingPageData } from "@/data/booking";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
+import { useState } from "react";
 
 const Booking = () => {
   const { dict, language } = useLanguage();
+  const [iframeLoaded, setIframeLoaded] = useState(false);
   useSEO("booking");
 
   return (
