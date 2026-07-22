@@ -32,7 +32,7 @@ const Booking = () => {
 
       <div className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <p className="text-muted-foreground font-inter mb-6 max-w-2xl mx-auto">
               {language === "da" 
                 ? "Alle bookinger håndteres sikkert gennem Planway. Vælg din behandling, tidspunkt og frisør direkte herunder. Dine personoplysninger behandles fortroligt og i overensstemmelse med vores "
@@ -41,10 +41,24 @@ const Booking = () => {
                 {language === "da" ? "privatlivspolitik" : "privacy policy"}
               </Link>.
             </p>
+            <Button
+              asChild
+              className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
+            >
+              <a
+                href={bookingPageData.primaryCTA.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {language === "da" ? "Åbn booking i nyt vindue" : "Open booking in new window"}
+              </a>
+            </Button>
           </div>
+        </div>
 
-          {/* Planway Booking Iframe */}
-          <div className="relative max-w-5xl mx-auto mb-16 border border-gold/20 rounded-sm overflow-hidden bg-card shadow-lg">
+        {/* Planway Booking Iframe — wider on desktop */}
+        <div className="container mx-auto max-w-7xl px-4 mb-16">
+          <div className="relative border border-gold/20 rounded-sm overflow-hidden bg-card shadow-lg">
             {!iframeLoaded && (
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-background/95 backdrop-blur-sm">
                 <div className="w-10 h-10 border-2 border-gold border-t-transparent rounded-full animate-spin mb-4" />
@@ -65,6 +79,9 @@ const Booking = () => {
               onLoad={() => setIframeLoaded(true)}
             />
           </div>
+        </div>
+
+        <div className="container mx-auto max-w-4xl">
 
           <div className="text-center mb-16">
             <p className="text-muted-foreground font-inter text-sm">
