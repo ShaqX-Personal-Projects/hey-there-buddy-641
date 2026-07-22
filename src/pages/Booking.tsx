@@ -67,7 +67,7 @@ const Booking = () => {
                 </p>
               </div>
             )}
-            <div className="w-full h-[700px] md:h-[1000px] lg:h-[1100px] overflow-hidden relative">
+            <div className="w-full h-[650px] md:h-[800px] lg:h-[850px] overflow-hidden relative">
               <iframe
                 src={bookingPageData.primaryCTA.url}
                 title={language === "da" ? "Book tid hos Hair by Gashi" : "Book appointment at Hair by Gashi"}
