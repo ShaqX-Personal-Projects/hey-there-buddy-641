@@ -206,4 +206,9 @@ All colors MUST be HSL.
   .gold-hairline-hover {
     border: 1px solid hsl(var(--gold) / 0.45);
   }
+  
+  /* Hide iframe scrollbar while keeping scroll functional */
+  iframe::-webkit-scrollbar {
+    display: none;
+  }
 }

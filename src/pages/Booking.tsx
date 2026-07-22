@@ -67,17 +67,19 @@ const Booking = () => {
                 </p>
               </div>
             )}
-            <iframe
-              src={bookingPageData.primaryCTA.url}
-              title={language === "da" ? "Book tid hos Hair by Gashi" : "Book appointment at Hair by Gashi"}
-              width="100%"
-              height="1100"
-              className="w-full h-[700px] md:h-[1000px] lg:h-[1100px]"
-              style={{ border: 0 }}
-              loading="lazy"
-              allow="fullscreen"
-              onLoad={() => setIframeLoaded(true)}
-            />
+            <div className="w-full h-[700px] md:h-[1000px] lg:h-[1100px] overflow-hidden relative">
+              <iframe
+                src={bookingPageData.primaryCTA.url}
+                title={language === "da" ? "Book tid hos Hair by Gashi" : "Book appointment at Hair by Gashi"}
+                width="100%"
+                height="1100"
+                className="absolute top-0 left-0 w-[calc(100%+17px)] h-full"
+                style={{ border: 0, scrollbarWidth: "none", msOverflowStyle: "none" }}
+                loading="lazy"
+                allow="fullscreen"
+                onLoad={() => setIframeLoaded(true)}
+              />
+            </div>
           </div>
         </div>
 
