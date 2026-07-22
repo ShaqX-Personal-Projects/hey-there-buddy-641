@@ -63,6 +63,6 @@ export const pricesPageData: PricesPageData = {
   ],
   cta: {
     label: "Book Consultation",
-    url: "https://hair-by-gashi.planway.com/",
+    url: "/booking",
   },
 };

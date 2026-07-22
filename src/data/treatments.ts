@@ -22,6 +22,6 @@ export const treatmentsPageData: TreatmentsPageData = {
   note: "Prices are indicative. Final price is confirmed after consultation.",
   cta: {
     label: "Book Consultation",
-    url: "https://hair-by-gashi.planway.com/",
+    url: "/booking",
   },
 };
