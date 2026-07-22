@@ -182,9 +182,9 @@ const Header = () => {
             size="sm"
             className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium"
           >
-            <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
+            <Link to="/booking">
               {dict.nav.booking}
-            </a>
+            </Link>
           </Button>
           </div>
 
@@ -323,9 +323,9 @@ const Header = () => {
             size="sm"
             className="bg-gold text-gold-foreground hover:bg-gold/90 font-inter font-medium mt-2"
           >
-            <a href={primaryCTA.url} target="_blank" rel="noopener noreferrer">
+            <Link to="/booking" onClick={() => setMobileMenuOpen(false)}>
               {dict.nav.booking}
-            </a>
+            </Link>
           </Button>
           </nav>
         </div>
