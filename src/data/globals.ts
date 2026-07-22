@@ -23,7 +23,7 @@ export const globalSettings: GlobalSettings = {
   ],
   primaryCTA: {
     label: "Book Appointment",
-    url: "https://hair-by-gashi.planway.com/",
+    url: "/booking",
   },
   businessInfo: {
     cvr: "43421212",
