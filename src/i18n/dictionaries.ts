@@ -401,6 +401,13 @@ export const dictionaries = {
     loading: {
       message: "Perfecting the Look...",
     },
+    phoneNotice: {
+      eyebrow: "Notice",
+      title: "Our phone line is temporarily down",
+      body: "We're currently experiencing issues with our phone. Please reach out to us on Instagram:",
+      handle: "@hairbygashi_",
+      cta: "Contact us on Instagram",
+    },
     nav: {
       home: "Home",
       treatments: "Treatments",
