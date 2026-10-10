@@ -1,6 +1,7 @@
 import { ReactNode, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import LoadingScreen from "./LoadingScreen";
+import PhoneNoticeModal from "./PhoneNoticeModal";
 
 interface AnimatedLayoutProps {
   children: ReactNode;
@@ -23,6 +24,8 @@ const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
       <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen key="loading" />}
       </AnimatePresence>
+
+      {!isLoading && <PhoneNoticeModal />}
 
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
