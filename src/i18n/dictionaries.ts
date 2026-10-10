@@ -3,6 +3,13 @@ export const dictionaries = {
     loading: {
       message: "Perfektionerer looket...",
     },
+    phoneNotice: {
+      eyebrow: "Opmærksomhed",
+      title: "Telefonen er midlertidigt ude af drift",
+      body: "Vi oplever i øjeblikket problemer med vores telefon. Kontakt os derfor venligst via Instagram:",
+      handle: "@hairbygashi_",
+      cta: "Kontakt os på Instagram",
+    },
     nav: {
       home: "Hjem",
       treatments: "Behandlinger",
