@@ -1,7 +1,6 @@
 import { ReactNode, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import LoadingScreen from "./LoadingScreen";
-import PhoneNoticeModal from "./PhoneNoticeModal";
 
 interface AnimatedLayoutProps {
   children: ReactNode;
