@@ -24,7 +24,6 @@ const AnimatedLayout = ({ children }: AnimatedLayoutProps) => {
         {isLoading && <LoadingScreen key="loading" />}
       </AnimatePresence>
 
-      {!isLoading && <PhoneNoticeModal />}
 
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
